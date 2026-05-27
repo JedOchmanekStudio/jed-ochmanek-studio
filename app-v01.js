@@ -1,5 +1,31 @@
-
 (function () {
+  function joReplaceNewsCvFromData() {
+    if (!window.JO_NEWS_CV) return;
+
+    var temp = document.createElement('div');
+    temp.innerHTML = window.JO_NEWS_CV;
+
+    var newNews = temp.querySelector('#joNewsPage');
+    var newCv = temp.querySelector('#joCvPage');
+
+    var oldNews = document.getElementById('joNewsPage');
+    var oldCv = document.getElementById('joCvPage');
+
+    if (newNews && oldNews) {
+      oldNews.replaceWith(newNews);
+    } else if (newNews) {
+      document.body.appendChild(newNews);
+    }
+
+    if (newCv && oldCv) {
+      oldCv.replaceWith(newCv);
+    } else if (newCv) {
+      document.body.appendChild(newCv);
+    }
+  }
+
+  joReplaceNewsCvFromData();
+
   const stage = document.getElementById('joStage');
   const sections = Array.from(document.querySelectorAll('.jo-stage .jo-section'));
   const galleries = {};
