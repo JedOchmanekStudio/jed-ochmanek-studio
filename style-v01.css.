@@ -1,1 +1,2129 @@
+:root {
+  --menu-size: 18px;
+  --body-size: 14px;
+  --gutter: 54px;
+  --menu-width: 260px;
+  --content-left: 360px;
+  --transition: .12s;
+  --snap-speed: .62s;
+  --black: rgba(0,0,0,1);
+  --black-hover: rgba(0,0,0,.45);
+  --white: rgba(255,255,255,1);
+  --white-hover: rgba(255,255,255,.55);
+
+  --news-date-width: 140px;
+  --news-info-width: 460px;
+  --news-image-width: 520px;
+  --news-gap: 48px;
+  --news-content-width: calc(
+    var(--news-date-width) +
+    var(--news-info-width) +
+    var(--news-image-width) +
+    (var(--news-gap) * 2)
+  );
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #fff;
+  color: var(--black);
+  font-family: aktiv-grotesk-thin, aktiv-grotesk, Arial, sans-serif;
+}
+
+body {
+  font-weight: 200;
+}
+
+/* =========================================================
+   GLOBAL MENU
+========================================================= */
+
+.jo-nav {
+  position: fixed;
+  top: 42px;
+  left: var(--gutter);
+  z-index: 1000;
+  width: var(--menu-width);
+  color: var(--black);
+  font-family: aktiv-grotesk-thin, aktiv-grotesk, Arial, sans-serif;
+}
+
+.jo-title,
+.jo-nav a {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-decoration: none;
+  font-family: aktiv-grotesk-thin, aktiv-grotesk, Arial, sans-serif;
+  font-size: var(--menu-size);
+  transition: color var(--transition) ease;
+}
+
+.jo-title {
+  font-weight: 300;
+}
+
+.jo-nav a {
+  font-weight: 200;
+}
+
+.jo-title:hover,
+.jo-nav a:hover {
+  color: var(--black-hover);
+}
+
+.jo-spacer {
+  height: 1.22em;
+}
+
+.jo-search-form {
+  display: none;
+  margin: 0;
+  padding: 0;
+}
+
+body.is-search-open .jo-search-form {
+  display: block;
+}
+
+body.is-search-open [data-search-open] {
+  display: none;
+}
+
+.jo-search-input {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  outline: 0;
+  background: transparent;
+  color: inherit;
+  font-family: aktiv-grotesk-thin, aktiv-grotesk, Arial, sans-serif;
+  font-size: var(--menu-size);
+  font-weight: 200;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.jo-search-input::-webkit-search-decoration,
+.jo-search-input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+.jo-search-input::placeholder {
+  color: inherit;
+  opacity: .45;
+}
+
+
+body.is-dark .jo-nav,
+body.is-pr-dark .jo-nav {
+  color: var(--white);
+}
+
+body.is-dark .jo-title:hover,
+body.is-dark .jo-nav a:hover,
+body.is-pr-dark .jo-title:hover,
+body.is-pr-dark .jo-nav a:hover {
+  color: var(--white-hover);
+}
+
+body.is-news-open .jo-nav,
+body.is-cv-open .jo-nav {
+  color: var(--black);
+}
+
+body.is-news-open .jo-title:hover,
+body.is-news-open .jo-nav a:hover,
+body.is-cv-open .jo-title:hover,
+body.is-cv-open .jo-nav a:hover {
+  color: var(--black-hover);
+}
+
+/* =========================================================
+   MAIN WORK SNAP STAGE
+========================================================= */
+
+.jo-stage {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  transform: translate3d(0, 0, 0);
+  transition: transform var(--snap-speed) cubic-bezier(.22, .61, .36, 1);
+  will-change: transform;
+}
+
+.jo-section {
+  position: relative;
+  width: 100vw;
+  height: 100svh;
+  overflow: hidden;
+  background: #fff;
+  color: var(--black);
+}
+
+.jo-section.jo-dark {
+  background: #000;
+  color: var(--white);
+}
+
+.jo-gallery {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.jo-slide {
+  position: absolute;
+  inset: 0;
+  display: none;
+}
+
+.jo-slide.active {
+  display: block;
+}
+
+.jo-slide img,
+.jo-slide iframe {
+  position: absolute;
+  display: block;
+  border: 0;
+  pointer-events: none;
+}
+
+/* true full bleed */
+.jo-mode-full .jo-slide img,
+.jo-mode-full .jo-slide iframe {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100svh;
+  object-fit: cover;
+  object-position: center center;
+}
+
+/* full height, pinned right, white field left */
+.jo-mode-right .jo-slide img,
+.jo-mode-right .jo-slide iframe {
+  top: 0;
+  right: 0;
+  width: auto;
+  height: 100svh;
+  max-width: none;
+  object-fit: contain;
+  object-position: right top;
+}
+
+/* protected left field */
+.jo-mode-protected .jo-slide img,
+.jo-mode-protected .jo-slide iframe {
+  top: 0;
+  right: 0;
+  width: calc(100vw - 320px);
+  height: 100svh;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.jo-mode-full .jo-slide iframe,
+.jo-mode-protected .jo-slide iframe {
+  width: 100vw;
+  height: 100svh;
+}
+
+.jo-mode-protected .jo-slide iframe {
+  width: calc(100vw - 320px);
+}
+
+/* per-slide vertical / right-anchored override */
+.jo-slide.jo-fit-right img,
+.jo-slide.jo-fit-right iframe,
+.jo-mode-full .jo-slide.jo-fit-right img,
+.jo-mode-full .jo-slide.jo-fit-right iframe,
+.jo-mode-protected .jo-slide.jo-fit-right img,
+.jo-mode-protected .jo-slide.jo-fit-right iframe {
+  top: 0 !important;
+  right: 0 !important;
+  left: auto !important;
+  width: auto !important;
+  height: 100svh !important;
+  max-width: none !important;
+  object-fit: contain !important;
+  object-position: right top !important;
+}
+
+/* =========================================================
+   WORK TEXT
+========================================================= */
+
+.jo-meta {
+  position: absolute;
+  left: var(--gutter);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  width: var(--menu-width);
+  color: inherit;
+  font-family: aktiv-grotesk-thin, aktiv-grotesk, Arial, sans-serif;
+  font-size: var(--body-size);
+}
+
+.jo-section-title {
+  margin: 0;
+  padding: 0;
+  font-size: var(--body-size);
+  font-weight: 300;
+  font-style: normal;
+}
+
+.jo-meta-line,
+.jo-document-link,
+.jo-caption {
+  margin: 0;
+  padding: 0;
+  font-size: var(--body-size);
+  font-weight: 200;
+}
+
+.jo-document-links {
+  margin-top: 0;
+}
+
+.jo-document-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition) ease;
+}
+
+.jo-document-link:hover {
+  color: var(--black-hover);
+}
+
+.jo-dark .jo-document-link:hover {
+  color: var(--white-hover);
+}
+
+.jo-caption {
+  position: absolute;
+  left: var(--gutter);
+  bottom: 42px;
+  z-index: 20;
+  width: 360px;
+  color: inherit;
+}
+
+/* =========================================================
+   CURSOR ARROWS
+========================================================= */
+
+.jo-gallery.cursor-prev {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M30 10 L16 24 L30 38' fill='none' stroke='black' stroke-width='1.05' stroke-linecap='square' stroke-linejoin='miter'/%3E%3C/svg%3E") 16 24, w-resize;
+}
+
+.jo-gallery.cursor-next {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M18 10 L32 24 L18 38' fill='none' stroke='black' stroke-width='1.05' stroke-linecap='square' stroke-linejoin='miter'/%3E%3C/svg%3E") 32 24, e-resize;
+}
+
+.jo-dark .jo-gallery.cursor-prev {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M30 10 L16 24 L30 38' fill='none' stroke='white' stroke-width='1.05' stroke-linecap='square' stroke-linejoin='miter'/%3E%3C/svg%3E") 16 24, w-resize;
+}
+
+.jo-dark .jo-gallery.cursor-next {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M18 10 L32 24 L18 38' fill='none' stroke='white' stroke-width='1.05' stroke-linecap='square' stroke-linejoin='miter'/%3E%3C/svg%3E") 32 24, e-resize;
+}
+
+/* =========================================================
+   NEWS PAGE
+   Utility layer. CV-adjacent, not cinematic.
+========================================================= */
+
+.jo-news-page {
+  position: fixed;
+  inset: 0;
+  z-index: 600;
+  display: none;
+  overflow-y: auto;
+  background: #efefef;
+  color: var(--black);
+}
+
+body.is-news-open .jo-news-page {
+  display: block;
+}
+
+.jo-news-wrap {
+  width: var(--news-content-width);
+  min-width: var(--news-content-width);
+  margin-left: max(
+    calc(var(--gutter) + var(--menu-width) + 54px),
+    calc(100vw - var(--gutter) - var(--news-content-width))
+  );
+  padding-top: 42px;
+  padding-bottom: 180px;
+}
+
+.jo-news-entry {
+  display: grid;
+  grid-template-columns:
+    var(--news-date-width)
+    var(--news-info-width)
+    var(--news-image-width);
+  column-gap: var(--news-gap);
+  align-items: start;
+}
+
+.jo-news-separator {
+  margin: 72px 0;
+  font-size: var(--body-size);
+  visibility: hidden;
+}
+
+.jo-news-date,
+.jo-news-info,
+.jo-news-link {
+  font-family: aktiv-grotesk-thin, aktiv-grotesk, Arial, sans-serif;
+  font-size: var(--body-size);
+  font-weight: 200;
+}
+
+.jo-news-date {
+  color: rgba(0,0,0,.45);
+}
+
+.jo-news-title {
+  margin: 0;
+  font-weight: 300;
+}
+
+.jo-news-meta {
+  margin: 0;
+}
+
+.jo-news-body {
+  margin: 0;
+}
+
+.jo-news-link {
+  display: inline-block;
+  margin-top: 1em;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: rgba(0,0,0,.45);
+  text-decoration: none;
+  transition: color var(--transition) ease;
+  cursor: pointer;
+}
+
+.jo-news-link:hover {
+  color: var(--black);
+}
+
+.jo-news-image-wrap,
+.jo-news-slideshow {
+  position: relative;
+  width: var(--news-image-width);
+}
+
+.jo-news-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.jo-news-image-button {
+  display: block;
+  position: relative;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: transparent;
+  cursor: default;
+}
+
+.jo-news-minor .jo-news-image-wrap {
+  display: none;
+}
+
+.jo-news-minor {
+  grid-template-columns: var(--news-date-width) var(--news-info-width);
+}
+
+/* =========================================================
+   PR VIEW
+========================================================= */
+
+body.is-pr-open .jo-stage {
+  pointer-events: none;
+}
+
+.jo-pr {
+  position: fixed;
+  inset: 0;
+  z-index: 700;
+  display: none;
+  overflow-y: auto;
+  background: #fff;
+  color: var(--black);
+}
+
+.jo-pr.open {
+  display: block;
+}
+
+.jo-pr.jo-dark {
+  background: #000;
+  color: var(--white);
+}
+
+.jo-pr-image {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.jo-pr-image img,
+.jo-pr-image iframe {
+  position: absolute;
+  display: block;
+  border: 0;
+  pointer-events: none;
+}
+
+.jo-pr-full .jo-pr-image img,
+.jo-pr-full .jo-pr-image iframe {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100svh;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.jo-pr-right .jo-pr-image img,
+.jo-pr-right .jo-pr-image iframe {
+  top: 0;
+  right: 0;
+  width: auto;
+  height: 100svh;
+  max-width: none;
+  object-fit: contain;
+  object-position: right top;
+}
+
+.jo-pr-protected .jo-pr-image img,
+.jo-pr-protected .jo-pr-image iframe {
+  top: 0;
+  right: 0;
+  width: calc(100vw - 320px);
+  height: 100svh;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.jo-pr-text {
+  position: relative;
+  z-index: 20;
+  width: 320px;
+  margin-left: var(--content-left);
+  padding-top: 42px;
+  padding-bottom: 140px;
+  color: inherit;
+  font-family: aktiv-grotesk-thin, aktiv-grotesk, Arial, sans-serif;
+  font-size: var(--body-size);
+  font-weight: 200;
+}
+
+.jo-pr-title {
+  margin: 0 0 1em 0;
+  padding: 0;
+  font-size: var(--body-size);
+  font-weight: 300;
+}
+
+.jo-pr-text p {
+  margin: 0 0 1em 0;
+  padding: 0;
+}
+
+.jo-pr-back-zone {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 320px;
+  z-index: 750;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M30 10 L16 24 L30 38' fill='none' stroke='black' stroke-width='1.05' stroke-linecap='square' stroke-linejoin='miter'/%3E%3C/svg%3E") 16 24, w-resize;
+}
+
+.jo-pr.jo-dark .jo-pr-back-zone {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M30 10 L16 24 L30 38' fill='none' stroke='white' stroke-width='1.05' stroke-linecap='square' stroke-linejoin='miter'/%3E%3C/svg%3E") 16 24, w-resize;
+}
+
+body.is-pr-open .jo-nav {
+  z-index: 1000;
+}
+
+body.is-pr-dark .jo-nav,
+body.is-pr-dark .jo-pr.open,
+body.is-pr-dark .jo-pr.open .jo-pr-text,
+body.is-pr-dark .jo-pr.open .jo-pr-title,
+body.is-pr-dark .jo-pr.open .jo-pr-text p {
+  color: var(--white) !important;
+}
+
+/* =========================================================
+   CV PAGE
+   Plain white, own scroll.
+========================================================= */
+
+.jo-cv-page {
+  position: fixed;
+  inset: 0;
+  z-index: 600;
+  display: none;
+  overflow-y: auto;
+  background: #fff;
+  color: var(--black);
+}
+
+body.is-cv-open .jo-cv-page {
+  display: block;
+}
+
+.jo-cv-content {
+  position: relative;
+  z-index: 20;
+  width: min(760px, calc(100vw - 420px));
+  margin-left: var(--content-left);
+  padding-top: 42px;
+  padding-bottom: 180px;
+  font-size: var(--body-size);
+  font-weight: 200;
+}
+
+.jo-cv-block {
+  margin-bottom: 1em;
+}
+
+.jo-cv-section {
+  margin: 0 0 1em 0;
+  font-weight: 300;
+}
+
+.jo-cv-row {
+  display: grid;
+  grid-template-columns: 70px minmax(0, 1fr);
+  margin: 0;
+}
+
+.jo-cv-full {
+  grid-column: 1 / -1;
+}
+
+.jo-cv em {
+  font-style: italic;
+}
+
+
+.jo-utility-social {
+  position: fixed;
+  left: var(--gutter);
+  bottom: 42px;
+  z-index: 900;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  color: rgba(0,0,0,.58);
+}
+
+.jo-utility-social a {
+  display: block;
+  width: 18px;
+  height: 18px;
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition) ease;
+}
+
+.jo-utility-social a:hover {
+  color: var(--black);
+}
+
+.jo-utility-social svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.35;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+}
+
+
+/* Caption title italics only. Same size, same family, same weight. */
+.jo-caption em {
+  font-family: inherit !important;
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  font-style: italic !important;
+  letter-spacing: normal !important;
+}
+
+/* =========================================================
+   PR / INTERVIEW / DOCUMENT LAYOUT
+   Desktop: locked margins, content begins at the same left boundary
+   as the work-text column. Text and image split the remaining screen.
+========================================================= */
+
+.jo-pr-document {
+  background: #fff;
+  color: var(--black);
+}
+
+.jo-pr-document .jo-pr-document-wrap {
+  position: relative;
+  z-index: 20;
+  display: grid;
+  grid-template-columns: var(--menu-width) minmax(0, 1fr) minmax(0, 1fr);
+  column-gap: var(--gutter);
+  align-items: start;
+  width: calc(100vw - var(--content-left) - var(--gutter));
+  min-width: 0;
+  margin-left: var(--content-left);
+  padding-top: 42px;
+  padding-bottom: 180px;
+}
+
+.jo-pr-document .jo-pr-text,
+.jo-pr-document .jo-pr-text.jo-pr-wide {
+  position: relative;
+  z-index: 20;
+  width: auto;
+  max-width: none;
+  margin-left: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  color: inherit;
+}
+
+.jo-pr-document .jo-pr-title {
+  margin: 0 0 1em 0;
+}
+
+.jo-pr-document .jo-pr-image {
+  position: relative;
+  inset: auto;
+  z-index: 20;
+  width: 100%;
+  pointer-events: none;
+}
+
+.jo-pr-document .jo-pr-image img,
+.jo-pr-document .jo-pr-image iframe {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: none;
+  max-height: calc(100svh - 84px);
+  object-fit: contain;
+  object-position: left top;
+}
+
+/* Document image stacks use the same plain paragraph-return rhythm. */
+.jo-pr-document .jo-pr-image img + img {
+  margin-top: 1em;
+}
+
+/* PR / interview / review project information.
+   This replaces the redundant document title inside the body text. */
+.jo-pr-document .jo-pr-meta {
+  position: relative;
+  z-index: 20;
+  margin: 0;
+  padding: 0;
+  color: inherit;
+}
+
+.jo-pr-document .jo-pr-meta p {
+  margin: 0;
+  padding: 0;
+}
+
+.jo-pr-document .jo-pr-meta-spacer {
+  height: 1em;
+}
+
+/* keep the document columns from getting absurdly wide on very large screens */
+@media (min-width: 1800px) {
+  .jo-pr-document .jo-pr-document-wrap {
+    grid-template-columns: var(--menu-width) minmax(0, 1fr) minmax(0, 1fr);
+  }
+}
+
+/* =========================================================
+   MOBILE / TABLET
+   Separate design: no desktop overlay.
+   Vertical snap sections, horizontal swipe images.
+========================================================= */
+
+
+/* =========================================================
+   PR TEXT WIDTH VARIANT
+   Used for long press releases that need more screen width.
+========================================================= */
+
+.jo-pr-text.jo-pr-wide {
+  width: min(620px, calc(100vw - 460px));
+}
+
+@media (max-width: 900px) {
+  :root {
+    --menu-size: 18px;
+    --body-size: 14px;
+    --gutter: 28px;
+    --menu-width: calc(100vw - 56px);
+    --content-left: 28px;
+  }
+
+  html,
+  body {
+    height: 100%;
+    overflow: hidden;
+    background: #fff;
+    color: #000;
+  }
+
+  .jo-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    height: 165px;
+    padding: 36px var(--gutter) 0 var(--gutter);
+    background: #fff;
+    color: #000 !important;
+    z-index: 1000;
+  }
+
+  .jo-title,
+  .jo-nav a {
+    font-size: var(--menu-size);
+      color: #000 !important;
+  }
+
+  .jo-spacer {
+    height: 1.2em;
+  }
+
+  .jo-stage {
+    position: fixed;
+    inset: 0;
+    transition: transform .58s cubic-bezier(.22, .61, .36, 1);
+  }
+
+  .jo-section {
+    width: 100vw;
+    height: 100svh;
+    overflow: hidden;
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  .jo-gallery {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 165px;
+    height: 54svh;
+    background: #fff;
+    overflow: hidden;
+  }
+
+  .jo-mode-right .jo-gallery,
+  .jo-section.has-vertical-mobile .jo-gallery {
+    height: 74svh;
+  }
+
+  .jo-slide,
+  .jo-slide.active {
+    position: absolute;
+    inset: 0;
+    display: block;
+  }
+
+  .jo-slide:not(.active) {
+    display: none;
+  }
+
+  .jo-slide img,
+  .jo-slide iframe,
+  .jo-mode-full .jo-slide img,
+  .jo-mode-right .jo-slide img,
+  .jo-mode-protected .jo-slide img,
+  .jo-mode-full .jo-slide iframe,
+  .jo-mode-right .jo-slide iframe,
+  .jo-mode-protected .jo-slide iframe,
+  .jo-slide.jo-fit-right img,
+  .jo-mode-full .jo-slide.jo-fit-right img {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100vw !important;
+    height: 100% !important;
+    max-width: none !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+  }
+
+  .jo-meta {
+    position: absolute;
+    left: var(--gutter);
+    top: calc(165px + 54svh + 30px);
+    transform: none;
+    width: calc(100vw - 56px);
+    color: #000 !important;
+    font-size: var(--body-size);
+    }
+
+  .jo-mode-right .jo-meta,
+  .jo-section.has-vertical-mobile .jo-meta {
+    top: calc(165px + 74svh + 24px);
+  }
+
+  .jo-section-title,
+  .jo-meta-line,
+  .jo-document-link {
+    font-size: var(--body-size);
+      color: #000 !important;
+  }
+
+  .jo-document-links {
+    margin-top: 0;
+  }
+
+  .jo-caption {
+    display: none;
+  }
+
+  .jo-gallery.cursor-prev,
+  .jo-gallery.cursor-next,
+  .jo-dark .jo-gallery.cursor-prev,
+  .jo-dark .jo-gallery.cursor-next {
+    cursor: default;
+  }
+
+  .jo-news-page,
+  .jo-cv-page {
+    background: #fff;
+    color: #000;
+  }
+
+  .jo-news-wrap {
+    width: calc(100vw - 56px);
+    min-width: 0;
+    margin-left: var(--gutter);
+    padding-top: 195px;
+    padding-bottom: 120px;
+  }
+
+  .jo-news-entry,
+  .jo-news-minor {
+    display: block;
+  }
+
+  .jo-news-date,
+  .jo-news-info,
+  .jo-news-link {
+    font-size: var(--body-size);
+    }
+
+  .jo-news-image-wrap,
+  .jo-news-slideshow {
+    width: 100%;
+    margin-bottom: 24px;
+  }
+
+  .jo-news-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .jo-news-date {
+    margin-bottom: 24px;
+  }
+
+  .jo-news-separator {
+    margin: 64px 0;
+    visibility: visible;
+  }
+
+  .jo-pr {
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  .jo-pr-image {
+    display: none;
+  }
+
+  .jo-pr-text,
+  .jo-pr-text.jo-pr-wide {
+    width: calc(100vw - 56px);
+    margin-left: var(--gutter);
+    padding-top: 195px;
+    padding-bottom: 120px;
+    color: #000 !important;
+    font-size: var(--body-size);
+    }
+
+  .jo-pr-title {
+    font-size: var(--body-size);
+      color: #000 !important;
+  }
+
+
+
+  .jo-pr-document .jo-pr-document-wrap {
+    display: flex;
+    flex-direction: column;
+    width: calc(100vw - 56px);
+    min-width: 0;
+    margin-left: var(--gutter);
+    padding-top: 195px;
+    padding-bottom: 120px;
+  }
+
+  .jo-pr-document .jo-pr-meta {
+    order: 1;
+    margin-bottom: 2em;
+  }
+
+  .jo-pr-document .jo-pr-image {
+    order: 2;
+    display: block;
+    width: 100%;
+    margin-bottom: 2em;
+  }
+
+  .jo-pr-document .jo-pr-text,
+  .jo-pr-document .jo-pr-text.jo-pr-wide {
+    order: 3;
+    width: 100%;
+    margin-left: 0;
+    padding-top: 0;
+  }
+
+  .jo-pr-document .jo-pr-image img,
+  .jo-pr-document .jo-pr-image iframe {
+    width: 100%;
+    height: auto;
+  }
+
+  .jo-pr-back-zone {
+    display: none;
+  }
+
+  .jo-cv-content {
+    width: calc(100vw - 56px);
+    margin-left: var(--gutter);
+    padding-top: 195px;
+    padding-bottom: 120px;
+    font-size: var(--body-size);
+    }
+
+  .jo-cv-row {
+    grid-template-columns: 58px minmax(0, 1fr);
+  }
+}
+
+
+/* =========================================================
+   FINAL WEBFLOW FONT LOCK - OLD SITE PALETTE
+   Uses Webflow/Adobe Fonts project fonts. No custom tracking.
+========================================================= */
+
+.jo-nav,
+.jo-nav *,
+.jo-stage,
+.jo-stage *,
+.jo-news-page,
+.jo-news-page *,
+.jo-cv-page,
+.jo-cv-page *,
+.jo-pr,
+.jo-pr * {
+  font-family: aktiv-grotesk-thin, "Aktiv Grotesk Thin", Arial, sans-serif !important;
+  font-weight: 200 !important;
+  font-style: normal;
+  font-size: 14px !important;
+  letter-spacing: normal !important;
+  word-spacing: normal !important;
+  font-kerning: normal !important;
+  font-synthesis: none !important;
+}
+
+.jo-title,
+.jo-section-title,
+.jo-news-title,
+.jo-pr-title,
+.jo-cv-section {
+  font-family: aktiv-grotesk, "Aktiv Grotesk", aktiv-grotesk-thin, "Aktiv Grotesk Thin", Arial, sans-serif !important;
+  font-weight: 300 !important;
+  font-style: normal;
+  letter-spacing: normal !important;
+  word-spacing: normal !important;
+  font-kerning: normal !important;
+  font-synthesis: none !important;
+}
+
+.jo-title,
+.jo-nav a {
+  font-size: 18px !important;
+}
+
+.jo-meta,
+.jo-meta *,
+.jo-caption,
+.jo-caption *,
+.jo-news-page,
+.jo-news-page *,
+.jo-cv-page,
+.jo-cv-page *,
+.jo-pr,
+.jo-pr * {
+  font-size: 14px !important;
+}
+
+.jo-spacer {
+  height: 1em !important;
+}
+
+.jo-document-links {
+  margin-top: 0 !important;
+}
+
+.jo-title,
+.jo-nav a,
+.jo-section-title,
+.jo-meta-line,
+.jo-document-link,
+.jo-caption,
+.jo-news-date,
+.jo-news-info,
+.jo-news-link,
+.jo-news-title,
+.jo-news-meta,
+.jo-news-body,
+.jo-pr-title,
+.jo-pr-text,
+.jo-pr-text p,
+.jo-cv-content,
+.jo-cv-section,
+.jo-cv-row {
+  letter-spacing: normal !important;
+  word-spacing: normal !important;
+}
+
+
+
+/* =========================================================
+   SLIDE-SPECIFIC CROP + TYPE TONE LOCKS
+   Used only when a particular image needs protected top crop
+   or white metadata/captions over dark image fields.
+========================================================= */
+
+
+
+/* Slide-specific left protection: image stays off the menu/meta field, but still fills the remaining screen. */
+.jo-slide.jo-protect-left img,
+.jo-slide.jo-protect-left iframe,
+.jo-mode-full .jo-slide.jo-protect-left img,
+.jo-mode-full .jo-slide.jo-protect-left iframe {
+  top: 0 !important;
+  right: 0 !important;
+  left: auto !important;
+  width: calc(100vw - 320px) !important;
+  height: 100svh !important;
+  max-width: none !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+}
+
+.jo-slide.jo-fit-left img,
+.jo-slide.jo-fit-left iframe,
+.jo-mode-full 
+/* Slide-specific left protection: image stays off the menu/meta field, but still fills the remaining screen. */
+.jo-slide.jo-protect-left img,
+.jo-slide.jo-protect-left iframe,
+.jo-mode-full .jo-slide.jo-protect-left img,
+.jo-mode-full .jo-slide.jo-protect-left iframe {
+  top: 0 !important;
+  right: 0 !important;
+  left: auto !important;
+  width: calc(100vw - 320px) !important;
+  height: 100svh !important;
+  max-width: none !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+}
+
+.jo-slide.jo-fit-left img,
+.jo-mode-full .jo-slide.jo-fit-left iframe,
+.jo-mode-protected 
+/* Slide-specific left protection: image stays off the menu/meta field, but still fills the remaining screen. */
+.jo-slide.jo-protect-left img,
+.jo-slide.jo-protect-left iframe,
+.jo-mode-full .jo-slide.jo-protect-left img,
+.jo-mode-full .jo-slide.jo-protect-left iframe {
+  top: 0 !important;
+  right: 0 !important;
+  left: auto !important;
+  width: calc(100vw - 320px) !important;
+  height: 100svh !important;
+  max-width: none !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+}
+
+.jo-slide.jo-fit-left img,
+.jo-mode-protected .jo-slide.jo-fit-left iframe {
+  object-position: left center !important;
+}
+
+.jo-slide.jo-fit-top img,
+.jo-slide.jo-fit-top iframe,
+.jo-mode-full .jo-slide.jo-fit-top img,
+.jo-mode-full .jo-slide.jo-fit-top iframe,
+.jo-mode-protected .jo-slide.jo-fit-top img,
+.jo-mode-protected .jo-slide.jo-fit-top iframe {
+  object-position: center top !important;
+}
+
+@media (min-width: 901px) {
+  body.is-slide-meta-white .jo-meta,
+  body.is-slide-meta-white .jo-meta *,
+  body.is-slide-meta-white .jo-caption,
+  body.is-slide-meta-white .jo-caption *,
+  body.is-slide-meta-white .jo-document-link {
+    color: var(--white) !important;
+  }
+
+  body.is-slide-meta-white .jo-document-link:hover {
+    color: var(--white-hover) !important;
+  }
+
+  body.is-slide-all-white .jo-nav,
+  body.is-slide-all-white .jo-nav *,
+  body.is-slide-all-white .jo-meta,
+  body.is-slide-all-white .jo-meta *,
+  body.is-slide-all-white .jo-caption,
+  body.is-slide-all-white .jo-caption *,
+  body.is-slide-all-white .jo-document-link {
+    color: var(--white) !important;
+  }
+
+  body.is-slide-all-white .jo-title:hover,
+  body.is-slide-all-white .jo-nav a:hover,
+  body.is-slide-all-white .jo-document-link:hover {
+    color: var(--white-hover) !important;
+  }
+}
+
+
+/* =========================================================
+   V34 PR DOCUMENT LOCK
+   PR project meta stays in the same position as the work-feed meta.
+   The document itself uses the remaining content field only.
+========================================================= */
+
+.jo-pr-document .jo-pr-document-wrap {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+  column-gap: var(--gutter) !important;
+  align-items: start !important;
+  width: calc(100vw - var(--content-left) - var(--gutter)) !important;
+  min-width: 0 !important;
+  margin-left: var(--content-left) !important;
+  padding-top: 42px !important;
+  padding-bottom: 180px !important;
+}
+
+.jo-pr-document .jo-pr-meta {
+  position: fixed !important;
+  left: var(--gutter) !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  z-index: 760 !important;
+  width: var(--menu-width) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  color: inherit !important;
+}
+
+.jo-pr-document .jo-pr-text,
+.jo-pr-document .jo-pr-text.jo-pr-wide {
+  grid-column: 1 !important;
+  width: auto !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.jo-pr-document .jo-pr-image {
+  grid-column: 2 !important;
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+@media (max-width: 900px) {
+  .jo-pr-document .jo-pr-document-wrap {
+    display: flex !important;
+    flex-direction: column !important;
+    width: calc(100vw - 56px) !important;
+    min-width: 0 !important;
+    margin-left: var(--gutter) !important;
+    padding-top: 195px !important;
+    padding-bottom: 120px !important;
+  }
+
+  .jo-pr-document .jo-pr-meta {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    order: 1 !important;
+    width: 100% !important;
+    margin-bottom: 2em !important;
+  }
+
+  .jo-pr-document .jo-pr-image {
+    order: 2 !important;
+    width: 100% !important;
+    margin-bottom: 2em !important;
+  }
+
+  .jo-pr-document .jo-pr-text,
+  .jo-pr-document .jo-pr-text.jo-pr-wide {
+    order: 3 !important;
+    width: 100% !important;
+  }
+}
+
+/* =========================================================
+   V35 PR META EXACT WORK-FEED MATCH
+   In document mode, the project meta must not move or restyle.
+   It is the same object as the work-feed meta, minus document links.
+========================================================= */
+
+.jo-pr-document .jo-pr-meta {
+  position: fixed !important;
+  left: var(--gutter) !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  z-index: 760 !important;
+  width: var(--menu-width) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  color: inherit !important;
+  font-family: aktiv-grotesk-thin, "Aktiv Grotesk Thin", Arial, sans-serif !important;
+  font-size: var(--body-size) !important;
+  font-weight: 200 !important;
+  letter-spacing: normal !important;
+}
+
+.jo-pr-document .jo-pr-meta .jo-section-title {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: aktiv-grotesk, "Aktiv Grotesk", Arial, sans-serif !important;
+  font-size: var(--body-size) !important;
+  font-weight: 300 !important;
+  font-style: normal !important;
+  letter-spacing: normal !important;
+}
+
+.jo-pr-document .jo-pr-meta .jo-meta-line {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: aktiv-grotesk-thin, "Aktiv Grotesk Thin", Arial, sans-serif !important;
+  font-size: var(--body-size) !important;
+  font-weight: 200 !important;
+  font-style: normal !important;
+  letter-spacing: normal !important;
+}
+
+.jo-pr-document .jo-pr-meta br {
+  display: block !important;
+  content: "" !important;
+}
+
+@media (max-width: 900px) {
+  .jo-pr-document .jo-pr-meta {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    order: 1 !important;
+    width: 100% !important;
+    margin-bottom: 2em !important;
+  }
+}
+
+
+/* =========================================================
+   V36 PR META HEIGHT RESERVE
+   In PR mode the project meta uses an invisible Press Release
+   line so the block keeps the exact same vertical center as the
+   work-feed meta. Nothing visible moves or changes weight.
+========================================================= */
+
+.jo-pr-document .jo-pr-meta .jo-pr-meta-reserve {
+  visibility: hidden !important;
+  pointer-events: none !important;
+  margin-top: 0 !important;
+}
+
+.jo-pr-document .jo-pr-meta .jo-pr-meta-reserve .jo-document-link {
+  color: inherit !important;
+  font-family: aktiv-grotesk-thin, "Aktiv Grotesk Thin", Arial, sans-serif !important;
+  font-size: var(--body-size) !important;
+  font-weight: 200 !important;
+  font-style: normal !important;
+  letter-spacing: normal !important;
+}
+
+
+/* V42 PR text links and no-image PR option */
+.jo-pr-text a {
+  color: inherit !important;
+  text-decoration: none !important;
+  font-family: aktiv-grotesk-thin, "Aktiv Grotesk Thin", Arial, sans-serif !important;
+  font-size: var(--body-size) !important;
+  font-weight: 200 !important;
+  font-style: normal !important;
+  letter-spacing: normal !important;
+  transition: color var(--transition) ease !important;
+}
+
+.jo-pr-text a:hover {
+  color: var(--black-hover) !important;
+}
+
+.jo-pr.jo-dark .jo-pr-text a:hover,
+body.is-pr-dark .jo-pr-text a:hover {
+  color: var(--white-hover) !important;
+}
+
+.jo-pr-document.jo-pr-no-image .jo-pr-text,
+.jo-pr-document.jo-pr-no-image .jo-pr-text.jo-pr-wide {
+  grid-column: 1 / -1 !important;
+  max-width: 760px !important;
+}
+
+
+/* =========================================================
+   SEARCH FIELD LOCK
+   Matches menu link size and reserves the same line height.
+========================================================= */
+
+.jo-search-form {
+  height: 1em !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.jo-search-input,
+.jo-nav .jo-search-input,
+.jo-nav form .jo-search-input {
+  display: block !important;
+  width: 100% !important;
+  height: 1em !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  outline: 0 !important;
+  background: transparent !important;
+  color: inherit !important;
+  font-family: aktiv-grotesk-thin, "Aktiv Grotesk Thin", Arial, sans-serif !important;
+  font-size: 18px !important;
+  font-weight: 200 !important;
+  line-height: 1 !important;
+  letter-spacing: normal !important;
+  word-spacing: normal !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+}
+
+.jo-search-input::placeholder {
+  color: inherit !important;
+  opacity: .45 !important;
+  font-size: 18px !important;
+  font-weight: 200 !important;
+}
+
+/* =========================================================
+   SEARCH ROW STABILITY LOCK
+   Keeps News/CV from moving when Search becomes an input.
+========================================================= */
+
+.jo-search-row {
+  position: relative !important;
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.jo-search-row [data-search-open] {
+  display: block !important;
+  visibility: visible !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+body.is-search-open .jo-search-row [data-search-open] {
+  display: block !important;
+  visibility: hidden !important;
+}
+
+.jo-search-row .jo-search-form,
+body.is-search-open .jo-search-row .jo-search-form {
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
+  width: 100% !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.jo-search-row .jo-search-form {
+  display: none !important;
+}
+
+body.is-search-open .jo-search-row .jo-search-form {
+  display: block !important;
+}
+
+.jo-search-input,
+.jo-nav .jo-search-input,
+.jo-nav form .jo-search-input {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  outline: 0 !important;
+  background: transparent !important;
+  color: inherit !important;
+  font-family: aktiv-grotesk-thin, "Aktiv Grotesk Thin", Arial, sans-serif !important;
+  font-size: var(--menu-size) !important;
+  font-weight: 200 !important;
+  line-height: normal !important;
+  letter-spacing: normal !important;
+  word-spacing: normal !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+}
+
+.jo-search-input::placeholder {
+  color: inherit !important;
+  opacity: .45 !important;
+  font-size: var(--menu-size) !important;
+  font-weight: 200 !important;
+}
+
+/* =========================================================
+   FINAL SEARCH POSITION LOCK V50
+   Search input is absolute-only. The visible menu row never changes height.
+========================================================= */
+
+.jo-nav .jo-search-row {
+  position: relative !important;
+  display: block !important;
+  height: auto !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: visible !important;
+}
+
+.jo-nav .jo-search-row > a[data-search-open] {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: var(--menu-size) !important;
+  font-weight: 200 !important;
+}
+
+body.is-search-open .jo-nav .jo-search-row > a[data-search-open] {
+  display: block !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+.jo-nav .jo-search-row .jo-search-form {
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: auto !important;
+  display: none !important;
+  width: 100% !important;
+  height: 1em !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: inherit !important;
+}
+
+body.is-search-open .jo-nav .jo-search-row .jo-search-form {
+  display: block !important;
+}
+
+.jo-nav .jo-search-input {
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
+  display: block !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  height: 1em !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  outline: 0 !important;
+  background: transparent !important;
+  color: inherit !important;
+  font-family: aktiv-grotesk-thin, "Aktiv Grotesk Thin", Arial, sans-serif !important;
+  font-size: var(--menu-size) !important;
+  font-weight: 200 !important;
+  line-height: 1 !important;
+  letter-spacing: normal !important;
+  word-spacing: normal !important;
+  appearance: none !important;
+  -webkit-appearance: none !important;
+}
+
+.jo-nav .jo-search-input::placeholder {
+  color: inherit !important;
+  opacity: .45 !important;
+  font-size: var(--menu-size) !important;
+  font-weight: 200 !important;
+}
+
+
+/* Search cursor-only state: no gray placeholder text. */
+.jo-search-input::placeholder {
+  color: transparent !important;
+  opacity: 0 !important;
+}
+
+/* Final search placeholder kill: show caret/typed text only. */
+.jo-nav .jo-search-input::placeholder {
+  color: transparent !important;
+  opacity: 0 !important;
+}
+(function () {
+  const stage = document.getElementById('joStage');
+  const sections = Array.from(document.querySelectorAll('.jo-stage .jo-section'));
+  const galleries = {};
+  let activeIndex = 0;
+  let locked = false;
+  let touchStartY = null;
+  let touchStartX = null;
+
+  document.querySelectorAll('[data-gallery]').forEach(function(gallery) {
+    const name = gallery.dataset.gallery;
+    const slides = Array.from(gallery.querySelectorAll('[data-slide]'));
+    galleries[name] = { slides: slides, index: 0 };
+
+    slides.forEach(function(slide, index) {
+      slide.classList.toggle('active', index === 0);
+      slide.style.display = index === 0 ? 'block' : 'none';
+    });
+
+    updateCaption(name);
+  });
+
+  function isMobile() {
+    return window.matchMedia('(max-width: 900px)').matches;
+  }
+
+  function clearSlideTone() {
+    document.body.classList.remove('is-slide-meta-white', 'is-slide-all-white');
+  }
+
+  function applySlideTone(section) {
+    clearSlideTone();
+
+    if (isMobile()) return;
+    if (!section) return;
+    if (
+      document.body.classList.contains('is-pr-open') ||
+      document.body.classList.contains('is-news-open') ||
+      document.body.classList.contains('is-cv-open')
+    ) return;
+
+    const galleryEl = section.querySelector('[data-gallery]');
+    if (!galleryEl) return;
+
+    const gallery = galleries[galleryEl.dataset.gallery];
+    if (!gallery || !gallery.slides.length) return;
+
+    const activeSlide = gallery.slides[gallery.index];
+    const tone = activeSlide ? activeSlide.dataset.textTone : '';
+
+    if (tone === 'meta-white') {
+      document.body.classList.add('is-slide-meta-white');
+    }
+
+    if (tone === 'all-white') {
+      document.body.classList.add('is-slide-all-white');
+    }
+  }
+
+  function setTone(section) {
+    if (isMobile()) {
+      document.body.classList.remove('is-dark');
+      clearSlideTone();
+      return;
+    }
+
+    const dark = !!(section && section.classList.contains('jo-dark'));
+    document.body.classList.toggle('is-dark', dark);
+    applySlideTone(section);
+  }
+
+  function closeUtility() {
+    document.body.classList.remove('is-news-open', 'is-cv-open', 'is-search-open');
+    setTone(sections[activeIndex]);
+  }
+
+  function updateCaption(galleryName) {
+    const gallery = galleries[galleryName];
+    if (!gallery || !gallery.slides.length) return;
+
+    const activeSlide = gallery.slides[gallery.index];
+    const section = activeSlide.closest('.jo-section');
+    const caption = section ? section.querySelector('.jo-caption') : null;
+
+    if (!caption) return;
+
+    caption.innerHTML = activeSlide.dataset.caption || '';
+  }
+
+  function go(index) {
+    if (!sections.length) return;
+
+    closePR(false);
+    closeUtility();
+
+    activeIndex = Math.max(0, Math.min(sections.length - 1, index));
+    locked = true;
+
+    stage.style.transform = 'translate3d(0,' + (-activeIndex * 100) + 'svh,0)';
+    setTone(sections[activeIndex]);
+
+    setTimeout(function() {
+      locked = false;
+    }, 680);
+  }
+
+  function showSlide(galleryName, nextIndex) {
+    const gallery = galleries[galleryName];
+    if (!gallery) return;
+
+    if (nextIndex < 0) nextIndex = gallery.slides.length - 1;
+    if (nextIndex >= gallery.slides.length) nextIndex = 0;
+
+    gallery.index = nextIndex;
+
+    gallery.slides.forEach(function(slide, index) {
+      slide.classList.toggle('active', index === nextIndex);
+      slide.style.display = index === nextIndex ? 'block' : 'none';
+    });
+
+    updateCaption(galleryName);
+    setTone(sections[activeIndex]);
+  }
+
+  function clickIsBlocked(target) {
+    return !!(
+      target.closest('.jo-nav') ||
+      target.closest('.jo-meta') ||
+      target.closest('.jo-caption') ||
+      target.closest('[data-pr]') ||
+      target.closest('.jo-pr') ||
+      target.closest('.jo-news-page') ||
+      target.closest('.jo-cv-page')
+    );
+  }
+
+  function snapByDirection(direction) {
+    if (locked) return;
+    go(activeIndex + direction);
+  }
+
+  window.addEventListener('wheel', function(event) {
+    if (
+      document.body.classList.contains('is-pr-open') ||
+      document.body.classList.contains('is-news-open') ||
+      document.body.classList.contains('is-cv-open')
+    ) return;
+
+    event.preventDefault();
+
+    if (Math.abs(event.deltaY) < 8) return;
+    snapByDirection(event.deltaY > 0 ? 1 : -1);
+  }, { passive: false });
+
+  window.addEventListener('keydown', function(event) {
+    if (document.body.classList.contains('is-search-open')) {
+      if (event.key === 'Escape') closeSearch();
+      return;
+    }
+
+    if (document.body.classList.contains('is-pr-open')) {
+      if (event.key === 'Escape') closePR();
+      return;
+    }
+
+    if (document.body.classList.contains('is-news-open') || document.body.classList.contains('is-cv-open')) {
+      if (event.key === 'Escape') closeUtility();
+      return;
+    }
+
+    if (event.key === 'ArrowDown') {
+      event.preventDefault();
+      snapByDirection(1);
+    }
+
+    if (event.key === 'ArrowUp') {
+      event.preventDefault();
+      snapByDirection(-1);
+    }
+  });
+
+  document.addEventListener('touchstart', function(event) {
+    if (
+      document.body.classList.contains('is-pr-open') ||
+      document.body.classList.contains('is-news-open') ||
+      document.body.classList.contains('is-cv-open')
+    ) return;
+
+    if (!event.touches || !event.touches.length) return;
+
+    touchStartY = event.touches[0].clientY;
+    touchStartX = event.touches[0].clientX;
+  }, { passive: true });
+
+  document.addEventListener('touchend', function(event) {
+    if (
+      document.body.classList.contains('is-pr-open') ||
+      document.body.classList.contains('is-news-open') ||
+      document.body.classList.contains('is-cv-open')
+    ) return;
+
+    if (touchStartY === null || touchStartX === null) return;
+    if (!event.changedTouches || !event.changedTouches.length) return;
+
+    const dy = touchStartY - event.changedTouches[0].clientY;
+    const dx = touchStartX - event.changedTouches[0].clientX;
+
+    touchStartY = null;
+    touchStartX = null;
+
+    if (Math.abs(dx) > 42 && Math.abs(dx) > Math.abs(dy)) {
+      const gallery = sections[activeIndex].querySelector('[data-gallery]');
+      if (gallery) {
+        const data = galleries[gallery.dataset.gallery];
+        if (data) showSlide(gallery.dataset.gallery, data.index + (dx > 0 ? 1 : -1));
+      }
+      return;
+    }
+
+    if (Math.abs(dy) > 48 && Math.abs(dy) > Math.abs(dx)) {
+      snapByDirection(dy > 0 ? 1 : -1);
+    }
+  }, { passive: true });
+
+  document.addEventListener('mousemove', function(event) {
+    document.querySelectorAll('[data-gallery]').forEach(function(gallery) {
+      gallery.classList.remove('cursor-prev', 'cursor-next');
+    });
+
+    if (isMobile()) return;
+
+    const gallery = event.target.closest('[data-gallery]');
+    if (!gallery) return;
+
+    const rect = gallery.getBoundingClientRect();
+    const midpoint = rect.left + rect.width / 2;
+
+    gallery.classList.add(event.clientX < midpoint ? 'cursor-prev' : 'cursor-next');
+  });
+
+  document.addEventListener('click', function(event) {
+    if (isMobile()) return;
+    if (clickIsBlocked(event.target)) return;
+
+    const gallery = event.target.closest('[data-gallery]');
+    if (!gallery) return;
+
+    event.preventDefault();
+
+    const data = galleries[gallery.dataset.gallery];
+    if (!data) return;
+
+    const rect = gallery.getBoundingClientRect();
+    const midpoint = rect.left + rect.width / 2;
+    const direction = event.clientX < midpoint ? -1 : 1;
+
+    showSlide(gallery.dataset.gallery, data.index + direction);
+  });
+
+
+  function normalizeSearchText(value) {
+    return String(value || '')
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/[^a-z0-9]+/g, ' ')
+      .trim();
+  }
+
+  function openSearch() {
+    closePR(false);
+    closeUtility();
+    document.body.classList.add('is-search-open');
+    const input = document.querySelector('[data-search-input]');
+    if (input) {
+      input.value = '';
+      input.placeholder = '';
+      input.focus();
+    }
+  }
+
+  function closeSearch() {
+    document.body.classList.remove('is-search-open');
+    const input = document.querySelector('[data-search-input]');
+    if (input) input.value = '';
+  }
+
+  function sectionSearchText(section) {
+    const slideText = Array.from(section.querySelectorAll('[data-slide]')).map(function(slide) {
+      return slide.dataset.caption || '';
+    }).join(' ');
+
+    return normalizeSearchText(
+      (section.dataset.search || '') + ' ' + section.textContent + ' ' + slideText
+    );
+  }
+
+  function findSlideMatch(section, needle) {
+    const galleryEl = section.querySelector('[data-gallery]');
+    if (!galleryEl) return null;
+
+    const slides = Array.from(galleryEl.querySelectorAll('[data-slide]'));
+    const slideIndex = slides.findIndex(function(slide) {
+      return normalizeSearchText(slide.dataset.caption || '').indexOf(needle) !== -1;
+    });
+
+    if (slideIndex < 0) return null;
+    return { galleryName: galleryEl.dataset.gallery, slideIndex: slideIndex };
+  }
+
+  function searchAndGo(query) {
+    const needle = normalizeSearchText(query);
+    if (!needle) return;
+
+    if (needle === 'cv' || needle === 'curriculum vitae') {
+      closeSearch();
+      closePR(false);
+      document.body.classList.remove('is-news-open', 'is-dark', 'is-pr-dark', 'is-slide-meta-white', 'is-slide-all-white');
+      document.body.classList.add('is-cv-open');
+      const cvPage = document.getElementById('joCvPage');
+      if (cvPage) cvPage.scrollTop = 0;
+      return;
+    }
+
+    if (needle === 'news') {
+      closeSearch();
+      closePR(false);
+      document.body.classList.remove('is-cv-open', 'is-dark', 'is-pr-dark', 'is-slide-meta-white', 'is-slide-all-white');
+      document.body.classList.add('is-news-open');
+      const newsPage = document.getElementById('joNewsPage');
+      if (newsPage) newsPage.scrollTop = 0;
+      return;
+    }
+
+    let matchIndex = -1;
+    let slideMatch = null;
+
+    sections.some(function(section, index) {
+      const directSlideMatch = findSlideMatch(section, needle);
+      if (directSlideMatch) {
+        matchIndex = index;
+        slideMatch = directSlideMatch;
+        return true;
+      }
+
+      if (sectionSearchText(section).indexOf(needle) !== -1) {
+        matchIndex = index;
+        return true;
+      }
+
+      return false;
+    });
+
+    if (matchIndex >= 0) {
+      closeSearch();
+      go(matchIndex);
+
+      if (slideMatch) {
+        window.setTimeout(function() {
+          showSlide(slideMatch.galleryName, slideMatch.slideIndex);
+          updateCaption(slideMatch.galleryName);
+          applySlideTone(sections[matchIndex]);
+        }, 0);
+      }
+    } else {
+      const input = document.querySelector('[data-search-input]');
+      if (input) {
+        input.value = '';
+        input.placeholder = '';
+      }
+    }
+  }
+
+  document.querySelectorAll('[data-search-open]').forEach(function(link) {
+    link.addEventListener('click', function(event) {
+      event.preventDefault();
+      openSearch();
+    });
+  });
+
+  document.querySelectorAll('[data-search-form]').forEach(function(form) {
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const input = form.querySelector('[data-search-input]');
+      searchAndGo(input ? input.value : '');
+    });
+  });
+
+  document.querySelectorAll('[data-search-input]').forEach(function(input) {
+    input.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        closeSearch();
+      }
+    });
+  });
+
+  document.querySelectorAll('[data-home]').forEach(function(link) {
+    link.addEventListener('click', function(event) {
+      event.preventDefault();
+      go(0);
+    });
+  });
+
+  document.querySelectorAll('[data-news-open]').forEach(function(link) {
+    link.addEventListener('click', function(event) {
+      event.preventDefault();
+      closePR(false);
+      document.body.classList.remove('is-cv-open', 'is-dark', 'is-pr-dark', 'is-slide-meta-white', 'is-slide-all-white', 'is-search-open');
+      document.body.classList.add('is-news-open');
+      document.getElementById('joNewsPage').scrollTop = 0;
+    });
+  });
+
+  document.querySelectorAll('[data-cv-open]').forEach(function(link) {
+    link.addEventListener('click', function(event) {
+      event.preventDefault();
+      closePR(false);
+      document.body.classList.remove('is-news-open', 'is-dark', 'is-pr-dark', 'is-slide-meta-white', 'is-slide-all-white', 'is-search-open');
+      document.body.classList.add('is-cv-open');
+      document.getElementById('joCvPage').scrollTop = 0;
+    });
+  });
+
+  function openPR(id) {
+    const pr = document.getElementById(id);
+    if (!pr) return;
+
+    document.querySelectorAll('.jo-pr').forEach(function(item) {
+      item.classList.remove('open');
+    });
+
+    document.body.classList.remove('is-news-open', 'is-cv-open', 'is-slide-meta-white', 'is-slide-all-white');
+    document.body.classList.add('is-pr-open');
+    document.body.classList.toggle('is-pr-dark', pr.classList.contains('jo-dark'));
+    document.body.classList.toggle('is-dark', pr.classList.contains('jo-dark'));
+    pr.classList.add('open');
+    pr.scrollTop = 0;
+  }
+
+  function closePR(restoreTone) {
+    document.querySelectorAll('.jo-pr').forEach(function(item) {
+      item.classList.remove('open');
+    });
+
+    document.body.classList.remove('is-pr-open');
+    document.body.classList.remove('is-pr-dark');
+
+    if (restoreTone !== false) {
+      setTone(sections[activeIndex]);
+    }
+  }
+
+  document.querySelectorAll('[data-pr]').forEach(function(link) {
+    link.addEventListener('click', function(event) {
+      event.preventDefault();
+      openPR(link.dataset.pr);
+    });
+  });
+
+  document.querySelectorAll('.jo-pr-back-zone').forEach(function(button) {
+    button.addEventListener('click', function() {
+      closePR(true);
+    });
+  });
+
+  window.addEventListener('resize', function() {
+    stage.style.transform = 'translate3d(0,' + (-activeIndex * 100) + 'svh,0)';
+  });
+
+  setTone(sections[0]);
+})();
 
