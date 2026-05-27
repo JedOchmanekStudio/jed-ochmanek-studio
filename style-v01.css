@@ -1655,3 +1655,39 @@ body.is-search-open .jo-nav .jo-search-row .jo-search-form {
   color: transparent !important;
   opacity: 0 !important;
 }
+/* =========================================================
+   MOBILE IMAGE RESET V01
+   Desktop protect-left/right rules must not survive on mobile.
+========================================================= */
+
+@media (max-width: 900px) {
+  .jo-slide.jo-protect-left img,
+  .jo-slide.jo-protect-left iframe,
+  .jo-mode-full .jo-slide.jo-protect-left img,
+  .jo-mode-full .jo-slide.jo-protect-left iframe,
+  .jo-mode-protected .jo-slide.jo-protect-left img,
+  .jo-mode-protected .jo-slide.jo-protect-left iframe,
+  .jo-slide.jo-fit-right img,
+  .jo-slide.jo-fit-right iframe,
+  .jo-mode-full .jo-slide.jo-fit-right img,
+  .jo-mode-full .jo-slide.jo-fit-right iframe,
+  .jo-mode-protected .jo-slide.jo-fit-right img,
+  .jo-mode-protected .jo-slide.jo-fit-right iframe {
+    position: absolute !important;
+    top: 0 !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100% !important;
+    max-width: none !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+  }
+
+  .jo-section.has-vertical-mobile .jo-slide img,
+  .jo-section.has-vertical-mobile .jo-slide iframe {
+    object-fit: cover !important;
+    object-position: center center !important;
+  }
+}
