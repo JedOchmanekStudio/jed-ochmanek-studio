@@ -584,8 +584,8 @@ function joRenderNewsItem(item) {
     : '';
 
   return '<article class="jo-news-entry' + (item.image ? '' : ' jo-news-minor') + '">' +
-    '<div class="jo-news-date">' + item.date + '</div>' +
     '<div class="jo-news-info">' +
+      '<p class="jo-news-date">' + item.date + '</p>' +
       '<p class="jo-news-title">' + item.title + '</p>' +
       (item.meta ? '<p class="jo-news-meta">' + item.meta + '</p>' : '') +
       '<p class="jo-news-body">' + item.body + '</p>' +
