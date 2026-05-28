@@ -24,7 +24,116 @@
     }
   }
 
+  function joRenderProject(project) {
+    var darkClass = project.dark ? ' jo-dark' : '';
+    var modeClass = 'jo-mode-full';
+
+    if (project.mode === 'right') modeClass = 'jo-mode-right';
+    if (project.mode === 'protected') modeClass = 'jo-mode-protected';
+
+    var title = (project.title || []).map(function(line, index) {
+      if (index === 0) return '<p class="jo-section-title">' + line + '</p>';
+      return '<p class="jo-meta-line">' + line + '</p>';
+    }).join('');
+
+    var meta = (project.meta || []).map(function(line) {
+      return '<p class="jo-meta-line">' + line + '</p>';
+    }).join('');
+
+    var prLink = project.pr
+      ? '<div class="jo-document-links"><a class="jo-document-link" href="#" data-pr="' + project.pr.id + '">Press Release</a></div>'
+      : '';
+
+    var slides = (project.slides || []).map(function(slide, index) {
+      var active = index === 0 ? ' active' : '';
+      var cls = slide.cls ? ' ' + slide.cls : '';
+      var tone = slide.tone ? ' data-text-tone="' + slide.tone + '"' : '';
+      var cap = slide.cap ? String(slide.cap).replace(/"/g, '&quot;') : '';
+
+      if (slide.video) {
+        return '<div class="jo-slide' + active + cls + '" data-slide data-caption="' + cap + '"' + tone + '><iframe src="' + slide.url + '"></iframe></div>';
+      }
+
+      return '<div class="jo-slide' + active + cls + '" data-slide data-caption="' + cap + '"' + tone + '><img src="' + slide.url + '" alt=""></div>';
+    }).join('');
+
+    return (
+      '<section class="jo-section ' + modeClass + darkClass + '" data-search="' + (project.search || '') + '">' +
+        '<div class="jo-gallery" data-gallery="' + project.gallery + '">' +
+          slides +
+        '</div>' +
+        '<div class="jo-meta">' +
+          title +
+          '<div class="jo-spacer"></div>' +
+          meta +
+          prLink +
+        '</div>' +
+        '<div class="jo-caption"></div>' +
+      '</section>'
+    );
+  }
+
+  function joRenderProjectPr(project) {
+    if (!project.pr) return '';
+
+    var pr = project.pr;
+    var darkClass = pr.dark ? ' jo-dark' : '';
+    var noImageClass = pr.noimg ? ' jo-pr-no-image' : '';
+    var wideClass = pr.wide ? ' jo-pr-wide' : '';
+    var imgs = '';
+
+    if (!pr.noimg && pr.imgs && pr.imgs.length) {
+      imgs = '<div class="jo-pr-image">' + pr.imgs.map(function(url) {
+        return '<img src="' + url + '" alt="">';
+      }).join('') + '</div>';
+    }
+
+    var title = (project.title || []).map(function(line, index) {
+      if (index === 0) return '<p class="jo-section-title">' + line + '</p>';
+      return '<p class="jo-meta-line">' + line + '</p>';
+    }).join('');
+
+    var meta = (project.meta || []).map(function(line) {
+      return '<p class="jo-meta-line">' + line + '</p>';
+    }).join('');
+
+    return (
+      '<section class="jo-pr jo-pr-document' + darkClass + noImageClass + '" id="' + pr.id + '">' +
+        '<button class="jo-pr-back-zone" type="button" aria-label="Back"></button>' +
+        '<div class="jo-pr-document-wrap">' +
+          '<div class="jo-pr-meta">' +
+            title +
+            '<div class="jo-spacer"></div>' +
+            meta +
+            '<div class="jo-document-links jo-pr-meta-reserve"><span class="jo-document-link">Press Release</span></div>' +
+          '</div>' +
+          '<div class="jo-pr-text' + wideClass + '">' + (pr.text || '') + '</div>' +
+          imgs +
+        '</div>' +
+      '</section>'
+    );
+  }
+
+  function joReplaceProjectsFromData() {
+    if (!window.JO_PROJECTS || !window.JO_PROJECTS.length) return;
+
+    var stage = document.getElementById('joStage');
+    if (!stage) return;
+
+    stage.innerHTML = window.JO_PROJECTS.map(joRenderProject).join('');
+
+    document.querySelectorAll('.jo-pr').forEach(function(item) {
+      item.remove();
+    });
+
+    document.body.insertAdjacentHTML(
+      'beforeend',
+      window.JO_PROJECTS.map(joRenderProjectPr).join('')
+    );
+  }
+
   joReplaceNewsCvFromData();
+  joReplaceProjectsFromData();
 
   const stage = document.getElementById('joStage');
   const sections = Array.from(document.querySelectorAll('.jo-stage .jo-section'));
