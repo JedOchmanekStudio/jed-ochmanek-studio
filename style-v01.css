@@ -1227,3 +1227,40 @@ body.is-cv-open .jo-cv-page {
     grid-template-columns: 58px minmax(0, 1fr);
   }
 }
+/* =========================================================
+   FINAL LOCKS
+   Do not remove.
+   Keeps title weight and document captions correct.
+========================================================= */
+
+.jo-title,
+.jo-nav .jo-title,
+body .jo-nav .jo-title {
+  font-family: aktiv-grotesk, "Aktiv Grotesk", aktiv-grotesk-thin, "Aktiv Grotesk Thin", Arial, sans-serif !important;
+  font-weight: 300 !important;
+}
+
+.jo-pr-document .jo-pr-image,
+.jo-pr-document .jo-pr-image figure,
+.jo-pr-document .jo-pr-image figcaption,
+body .jo-pr-document .jo-pr-image figcaption {
+  text-align: left !important;
+}
+
+.jo-pr-document .jo-pr-image figcaption,
+body .jo-pr-document .jo-pr-image figcaption {
+  display: block !important;
+  width: 100% !important;
+  margin: 1em 0 0 0 !important;
+  padding: 0 !important;
+  color: rgba(0,0,0,.45) !important;
+  font-family: aktiv-grotesk-thin, "Aktiv Grotesk Thin", aktiv-grotesk, Arial, sans-serif !important;
+  font-size: var(--body-size) !important;
+  font-weight: 200 !important;
+  line-height: normal !important;
+}
+
+.jo-pr-document.jo-dark .jo-pr-image figcaption,
+body .jo-pr-document.jo-dark .jo-pr-image figcaption {
+  color: rgba(255,255,255,.55) !important;
+}
