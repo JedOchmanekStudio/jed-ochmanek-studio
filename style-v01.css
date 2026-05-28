@@ -2547,3 +2547,251 @@ body .jo-news-page .jo-news-minor .jo-news-info {
     object-position: center top !important;
   }
 } 
+/*
+REPLACE style-v01.css WITH YOUR CURRENT FULL CSS, THEN PASTE THIS BLOCK AT THE VERY BOTTOM.
+
+This is not a Webflow override.  This belongs at the absolute bottom of GitHub file:
+style-v01.css
+
+After committing, use this in Webflow head:
+<link rel="stylesheet" href="https://jedochmanekstudio.github.io/jed-ochmanek-studio/style-v01.css?v=5000">
+
+Then publish Webflow staging and hard refresh.
+*/
+
+/* =========================================================
+   ABSOLUTE NEWS FIX V04
+   GitHub style-v01.css bottom override.
+   News uses the same two-column field logic as PR document pages.
+   Date lives in the text column, not its own column.
+   Links are gray/no underline.
+   Mobile background is white.
+========================================================= */
+
+html body .jo-news-page,
+html body.is-news-open .jo-news-page {
+  background: #fff !important;
+  color: #000 !important;
+}
+
+html body .jo-news-wrap,
+html body.is-news-open .jo-news-wrap {
+  width: calc(100vw - var(--content-left) - var(--gutter)) !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  margin-left: var(--content-left) !important;
+  margin-right: var(--gutter) !important;
+  padding-top: 42px !important;
+  padding-bottom: 180px !important;
+}
+
+html body .jo-news-entry,
+html body .jo-news-minor,
+html body.is-news-open .jo-news-entry,
+html body.is-news-open .jo-news-minor {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+  grid-template-rows: auto auto !important;
+  column-gap: var(--gutter) !important;
+  row-gap: 0 !important;
+  align-items: start !important;
+  margin: 0 0 120px 0 !important;
+  padding: 0 !important;
+}
+
+html body .jo-news-date,
+html body.is-news-open .jo-news-date {
+  grid-column: 1 !important;
+  grid-row: 1 !important;
+  width: auto !important;
+  margin: 0 0 4em 0 !important;
+  padding: 0 !important;
+  color: rgba(0,0,0,.45) !important;
+  font-family: aktiv-grotesk-thin, "Aktiv Grotesk Thin", Arial, sans-serif !important;
+  font-size: var(--body-size) !important;
+  font-weight: 200 !important;
+  line-height: normal !important;
+  letter-spacing: normal !important;
+}
+
+html body .jo-news-info,
+html body.is-news-open .jo-news-info {
+  grid-column: 1 !important;
+  grid-row: 2 !important;
+  width: auto !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  color: #000 !important;
+  font-family: aktiv-grotesk-thin, "Aktiv Grotesk Thin", Arial, sans-serif !important;
+  font-size: var(--body-size) !important;
+  font-weight: 200 !important;
+  line-height: normal !important;
+  letter-spacing: normal !important;
+}
+
+html body .jo-news-image-wrap,
+html body .jo-news-slideshow,
+html body.is-news-open .jo-news-image-wrap,
+html body.is-news-open .jo-news-slideshow {
+  grid-column: 2 !important;
+  grid-row: 1 / span 2 !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: block !important;
+}
+
+html body .jo-news-image-button,
+html body.is-news-open .jo-news-image-button {
+  display: block !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  cursor: pointer !important;
+}
+
+html body .jo-news-image,
+html body.is-news-open .jo-news-image {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  max-height: calc(100svh - 84px) !important;
+  object-fit: contain !important;
+  object-position: left top !important;
+}
+
+html body .jo-news-title,
+html body .jo-news-meta,
+html body .jo-news-body,
+html body.is-news-open .jo-news-title,
+html body.is-news-open .jo-news-meta,
+html body.is-news-open .jo-news-body {
+  margin: 0 0 1em 0 !important;
+  padding: 0 !important;
+  font-family: aktiv-grotesk-thin, "Aktiv Grotesk Thin", Arial, sans-serif !important;
+  font-size: var(--body-size) !important;
+  font-weight: 200 !important;
+  line-height: normal !important;
+  letter-spacing: normal !important;
+}
+
+html body .jo-news-title,
+html body.is-news-open .jo-news-title {
+  font-family: aktiv-grotesk, "Aktiv Grotesk", aktiv-grotesk-thin, "Aktiv Grotesk Thin", Arial, sans-serif !important;
+  font-weight: 300 !important;
+}
+
+html body .jo-news-info p:last-child,
+html body .jo-news-body:last-child,
+html body.is-news-open .jo-news-info p:last-child,
+html body.is-news-open .jo-news-body:last-child {
+  margin-bottom: 0 !important;
+}
+
+html body .jo-news-page a,
+html body .jo-news-page a:link,
+html body .jo-news-page a:visited,
+html body.is-news-open .jo-news-page a,
+html body.is-news-open .jo-news-page a:link,
+html body.is-news-open .jo-news-page a:visited {
+  color: rgba(0,0,0,.45) !important;
+  text-decoration: none !important;
+  border-bottom: 0 !important;
+  box-shadow: none !important;
+}
+
+html body .jo-news-page a:hover,
+html body.is-news-open .jo-news-page a:hover {
+  color: #000 !important;
+  text-decoration: none !important;
+  border-bottom: 0 !important;
+  box-shadow: none !important;
+}
+
+html body .jo-news-separator,
+html body.is-news-open .jo-news-separator {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+html body .jo-news-minor .jo-news-image-wrap,
+html body .jo-news-entry.no-image .jo-news-image-wrap,
+html body.is-news-open .jo-news-minor .jo-news-image-wrap,
+html body.is-news-open .jo-news-entry.no-image .jo-news-image-wrap {
+  display: none !important;
+}
+
+html body .jo-news-minor .jo-news-info,
+html body .jo-news-entry.no-image .jo-news-info,
+html body.is-news-open .jo-news-minor .jo-news-info,
+html body.is-news-open .jo-news-entry.no-image .jo-news-info {
+  grid-column: 1 !important;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  html body .jo-news-page,
+  html body.is-news-open .jo-news-page {
+    background: #fff !important;
+    color: #000 !important;
+  }
+
+  html body .jo-news-wrap,
+  html body.is-news-open .jo-news-wrap {
+    width: calc(100vw - 56px) !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    margin-left: var(--gutter) !important;
+    margin-right: var(--gutter) !important;
+    padding-top: 195px !important;
+    padding-bottom: 120px !important;
+  }
+
+  html body .jo-news-entry,
+  html body .jo-news-minor,
+  html body.is-news-open .jo-news-entry,
+  html body.is-news-open .jo-news-minor {
+    display: block !important;
+    margin: 0 0 72px 0 !important;
+    padding: 0 !important;
+  }
+
+  html body .jo-news-date,
+  html body.is-news-open .jo-news-date {
+    margin: 0 0 2em 0 !important;
+  }
+
+  html body .jo-news-title,
+  html body .jo-news-meta,
+  html body .jo-news-body,
+  html body.is-news-open .jo-news-title,
+  html body.is-news-open .jo-news-meta,
+  html body.is-news-open .jo-news-body {
+    margin: 0 0 1em 0 !important;
+  }
+
+  html body .jo-news-image-wrap,
+  html body .jo-news-slideshow,
+  html body.is-news-open .jo-news-image-wrap,
+  html body.is-news-open .jo-news-slideshow {
+    width: 100% !important;
+    margin: 2em 0 0 0 !important;
+    display: block !important;
+  }
+
+  html body .jo-news-image,
+  html body.is-news-open .jo-news-image {
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    object-position: center top !important;
+  }
+}
