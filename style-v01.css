@@ -1881,3 +1881,193 @@ body.is-search-open .jo-nav .jo-search-row .jo-search-form {
     margin: 64px 0 !important;
   }
 }
+/* =========================================================
+   NEWS / PR LAYOUT MATCH V09
+   News uses the same document architecture as PR:
+   content starts at --content-left, then two equal columns.
+   Left column = date + text. Right column = image.
+========================================================= */
+
+.jo-news-page,
+.jo-news-page * {
+  font-family: aktiv-grotesk-thin, "Aktiv Grotesk Thin", aktiv-grotesk, Arial, sans-serif !important;
+  font-size: var(--body-size) !important;
+  line-height: 20px !important;
+  font-weight: 200 !important;
+  letter-spacing: normal !important;
+  word-spacing: normal !important;
+  text-decoration: none !important;
+  color: #000 !important;
+}
+
+.jo-news-page {
+  background: #efefef !important;
+  color: #000 !important;
+}
+
+.jo-news-page a,
+.jo-news-page a:link,
+.jo-news-page a:visited,
+.jo-news-page a:active {
+  color: rgba(0,0,0,.45) !important;
+  text-decoration: none !important;
+  border: 0 !important;
+  outline: 0 !important;
+}
+
+.jo-news-page a:hover {
+  color: #000 !important;
+  text-decoration: none !important;
+}
+
+/* Same horizontal footprint as PR document pages */
+.jo-news-wrap {
+  width: calc(100vw - var(--content-left) - var(--gutter)) !important;
+  min-width: 0 !important;
+  margin-left: var(--content-left) !important;
+  padding-top: 42px !important;
+  padding-bottom: 180px !important;
+}
+
+/* Same equal-column logic as PR */
+.jo-news-entry,
+.jo-news-entry.jo-news-minor {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+  column-gap: var(--gutter) !important;
+  align-items: start !important;
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+/* Date belongs to the text column */
+.jo-news-date {
+  grid-column: 1 !important;
+  grid-row: 1 !important;
+  width: auto !important;
+  margin: 0 0 1em 0 !important;
+  padding: 0 !important;
+  color: rgba(0,0,0,.45) !important;
+}
+
+/* Text column */
+.jo-news-info {
+  grid-column: 1 !important;
+  grid-row: 2 !important;
+  width: auto !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Image column */
+.jo-news-image-wrap {
+  grid-column: 2 !important;
+  grid-row: 1 / span 2 !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.jo-news-image-button {
+  display: block !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+
+.jo-news-image {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* No image: text stays in left PR column, right column empty */
+.jo-news-minor .jo-news-image-wrap {
+  display: none !important;
+}
+
+/* Text rhythm */
+.jo-news-title {
+  margin: 0 0 1em 0 !important;
+  padding: 0 !important;
+  font-family: aktiv-grotesk, "Aktiv Grotesk", aktiv-grotesk-thin, "Aktiv Grotesk Thin", Arial, sans-serif !important;
+  font-weight: 300 !important;
+  color: #000 !important;
+}
+
+.jo-news-meta {
+  margin: 0 0 1em 0 !important;
+  padding: 0 !important;
+  color: #000 !important;
+}
+
+.jo-news-body {
+  margin: 0 !important;
+  padding: 0 !important;
+  color: #000 !important;
+}
+
+/* Preserve the copy-paste paragraph breaks inside long news bodies */
+.jo-news-body br {
+  display: block !important;
+}
+
+.jo-news-body br + br {
+  margin-top: 1em !important;
+}
+
+/* Entry spacing */
+.jo-news-separator {
+  visibility: hidden !important;
+  height: 0 !important;
+  margin: 72px 0 !important;
+  padding: 0 !important;
+}
+
+/* Mobile: same PR-like stack */
+@media (max-width: 900px) {
+  .jo-news-wrap {
+    width: calc(100vw - 56px) !important;
+    min-width: 0 !important;
+    margin-left: var(--gutter) !important;
+    padding-top: 195px !important;
+    padding-bottom: 120px !important;
+  }
+
+  .jo-news-entry,
+  .jo-news-entry.jo-news-minor {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+
+  .jo-news-date {
+    order: 1 !important;
+    width: 100% !important;
+    margin: 0 0 1em 0 !important;
+  }
+
+  .jo-news-info {
+    order: 2 !important;
+    width: 100% !important;
+  }
+
+  .jo-news-image-wrap {
+    order: 3 !important;
+    width: 100% !important;
+    margin: 2em 0 0 0 !important;
+  }
+
+  .jo-news-separator {
+    visibility: hidden !important;
+    height: 0 !important;
+    margin: 64px 0 !important;
+  }
+}
