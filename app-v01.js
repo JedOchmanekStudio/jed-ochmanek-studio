@@ -136,6 +136,7 @@
     document.querySelectorAll('.jo-news-entry').forEach(function(entry) {
       var date = entry.querySelector(':scope > .jo-news-date');
       var info = entry.querySelector(':scope > .jo-news-info');
+
       if (date && info) {
         info.insertBefore(date, info.firstChild);
       }
