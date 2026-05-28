@@ -387,8 +387,11 @@ body.is-news-open .jo-news-page {
 .jo-news-minor {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  grid-template-areas: "text image";
+  grid-template-areas:
+    "date image"
+    "text image";
   column-gap: var(--gutter);
+  row-gap: 0;
   align-items: start;
   margin: 0 0 120px 0;
   padding: 0;
@@ -407,6 +410,7 @@ body.is-news-open .jo-news-page {
 }
 
 .jo-news-date {
+  grid-area: date;
   display: block;
   margin: 0 0 4em 0;
   padding: 0;
@@ -486,7 +490,9 @@ body.is-news-open .jo-news-page {
 
 .jo-news-minor,
 .jo-news-entry.no-image {
-  grid-template-areas: "text .";
+  grid-template-areas:
+    "date ."
+    "text .";
 }
 
 .jo-news-minor .jo-news-image-wrap,
