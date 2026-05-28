@@ -2211,9 +2211,9 @@ body.is-search-open .jo-nav .jo-search-row .jo-search-form {
   }
 }
 /* =========================================================
-   NEWS FINAL LAYOUT OVERRIDE V01
-   News matches PR logic: date belongs inside the text column.
-   Text and image share the content field.
+   NEWS FINAL LAYOUT OVERRIDE V02
+   News matches PR logic: text column and image column align top.
+   Date is part of the text stack, not its own visual column.
 ========================================================= */
 
 .jo-news-page {
@@ -2241,17 +2241,36 @@ body.is-search-open .jo-nav .jo-search-row .jo-search-form {
   display: none !important;
 }
 
-.jo-news-date {
+/* reset old 3-column structure */
+.jo-news-date,
+.jo-news-info {
   grid-column: 1 !important;
   width: auto !important;
-  margin: 0 0 4em 0 !important;
+}
+
+/* force date + text into one normal vertical stack */
+.jo-news-date {
+  margin: 0 0 1em 0 !important;
   color: rgba(0,0,0,.45) !important;
 }
 
 .jo-news-info {
-  grid-column: 1 !important;
-  width: auto !important;
   margin: 0 !important;
+}
+
+.jo-news-title,
+.jo-news-meta,
+.jo-news-body,
+.jo-news-info p {
+  margin-top: 0 !important;
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+  margin-bottom: 1em !important;
+}
+
+.jo-news-info p:last-child,
+.jo-news-body:last-child {
+  margin-bottom: 0 !important;
 }
 
 .jo-news-image-wrap,
@@ -2275,19 +2294,10 @@ body.is-search-open .jo-nav .jo-search-row .jo-search-form {
   object-position: left top !important;
 }
 
-.jo-news-title,
-.jo-news-meta,
-.jo-news-body {
-  margin: 0 0 1em 0 !important;
-}
-
-.jo-news-info p:last-child,
-.jo-news-body:last-child {
-  margin-bottom: 0 !important;
-}
-
+/* links should behave like site text, not default browser garbage */
 .jo-news-page a,
-.jo-news-page a:visited {
+.jo-news-page a:visited,
+.jo-news-page a:active {
   color: inherit !important;
   text-decoration: none !important;
 }
@@ -2346,13 +2356,17 @@ body.is-search-open .jo-nav .jo-search-row .jo-search-form {
   }
 
   .jo-news-date {
-    margin: 0 0 2em 0 !important;
+    margin: 0 0 1em 0 !important;
   }
 
   .jo-news-title,
   .jo-news-meta,
-  .jo-news-body {
-    margin: 0 0 1em 0 !important;
+  .jo-news-body,
+  .jo-news-info p {
+    margin-top: 0 !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    margin-bottom: 1em !important;
   }
 
   .jo-news-image-wrap,
