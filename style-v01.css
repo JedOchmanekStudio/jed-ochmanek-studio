@@ -2383,3 +2383,167 @@ body.is-search-open .jo-nav .jo-search-row .jo-search-form {
     object-position: center top !important;
   }
 }
+/* =========================================================
+   ABSOLUTE NEWS FIX V03
+   Put this at the very bottom of style-v01.css
+========================================================= */
+
+body .jo-news-page {
+  background: #fff !important;
+}
+
+body .jo-news-page .jo-news-wrap {
+  width: calc(100vw - var(--content-left) - var(--gutter)) !important;
+  min-width: 0 !important;
+  margin-left: var(--content-left) !important;
+  padding-top: 42px !important;
+  padding-bottom: 180px !important;
+}
+
+body .jo-news-page .jo-news-entry,
+body .jo-news-page .jo-news-minor {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+  grid-template-rows: auto !important;
+  column-gap: var(--gutter) !important;
+  row-gap: 0 !important;
+  align-items: start !important;
+  margin: 0 0 120px 0 !important;
+}
+
+body .jo-news-page .jo-news-separator {
+  display: none !important;
+}
+
+/* force date and info into the SAME LEFT STACK */
+body .jo-news-page .jo-news-date {
+  grid-column: 1 !important;
+  grid-row: 1 !important;
+  width: auto !important;
+  margin: 0 0 1em 0 !important;
+  padding: 0 !important;
+  color: rgba(0,0,0,.45) !important;
+}
+
+body .jo-news-page .jo-news-info {
+  grid-column: 1 !important;
+  grid-row: 2 !important;
+  width: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* image starts at the same top as the date */
+body .jo-news-page .jo-news-image-wrap,
+body .jo-news-page .jo-news-slideshow {
+  grid-column: 2 !important;
+  grid-row: 1 / span 2 !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+body .jo-news-page .jo-news-image-button {
+  display: block !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  cursor: pointer !important;
+}
+
+body .jo-news-page .jo-news-image {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  max-height: calc(100svh - 84px) !important;
+  object-fit: contain !important;
+  object-position: left top !important;
+}
+
+/* restore paragraph rhythm */
+body .jo-news-page .jo-news-title,
+body .jo-news-page .jo-news-meta,
+body .jo-news-page .jo-news-body,
+body .jo-news-page .jo-news-info p {
+  display: block !important;
+  margin: 0 0 1em 0 !important;
+  padding: 0 !important;
+}
+
+body .jo-news-page .jo-news-info p:last-child,
+body .jo-news-page .jo-news-body:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* links: no blue underline */
+body .jo-news-page a,
+body .jo-news-page a:visited,
+body .jo-news-page a:active {
+  color: rgba(0,0,0,.45) !important;
+  text-decoration: none !important;
+}
+
+body .jo-news-page a:hover {
+  color: #000 !important;
+  text-decoration: none !important;
+}
+
+/* no image entries */
+body .jo-news-page .jo-news-entry.no-image .jo-news-image-wrap,
+body .jo-news-page .jo-news-minor .jo-news-image-wrap {
+  display: none !important;
+}
+
+body .jo-news-page .jo-news-entry.no-image .jo-news-info,
+body .jo-news-page .jo-news-minor .jo-news-info {
+  grid-column: 1 !important;
+  grid-row: 2 !important;
+}
+
+/* mobile */
+@media (max-width: 900px) {
+  body .jo-news-page {
+    background: #fff !important;
+  }
+
+  body .jo-news-page .jo-news-wrap {
+    width: calc(100vw - 56px) !important;
+    min-width: 0 !important;
+    margin-left: var(--gutter) !important;
+    padding-top: 195px !important;
+    padding-bottom: 120px !important;
+  }
+
+  body .jo-news-page .jo-news-entry,
+  body .jo-news-page .jo-news-minor {
+    display: block !important;
+    margin: 0 0 72px 0 !important;
+  }
+
+  body .jo-news-page .jo-news-date {
+    margin: 0 0 1em 0 !important;
+  }
+
+  body .jo-news-page .jo-news-title,
+  body .jo-news-page .jo-news-meta,
+  body .jo-news-page .jo-news-body,
+  body .jo-news-page .jo-news-info p {
+    margin: 0 0 1em 0 !important;
+  }
+
+  body .jo-news-page .jo-news-image-wrap,
+  body .jo-news-page .jo-news-slideshow {
+    width: 100% !important;
+    margin: 2em 0 0 0 !important;
+  }
+
+  body .jo-news-page .jo-news-image {
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    object-position: center top !important;
+  }
+}
