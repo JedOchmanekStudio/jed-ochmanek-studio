@@ -1264,3 +1264,34 @@ body .jo-pr-document .jo-pr-image figcaption {
 body .jo-pr-document.jo-dark .jo-pr-image figcaption {
   color: rgba(255,255,255,.55) !important;
 }
+/* =========================================================
+   PR META HEIGHT LOCK
+   Keeps homepage meta and PR/interview meta from jumping.
+   Must stay at bottom.
+========================================================= */
+
+.jo-document-links,
+.jo-pr-document .jo-pr-meta .jo-document-links,
+.jo-pr-document .jo-pr-meta .jo-pr-meta-reserve {
+  display: block !important;
+  margin-top: 1em !important;
+  padding: 0 !important;
+  line-height: normal !important;
+}
+
+.jo-document-link,
+.jo-pr-document .jo-pr-meta .jo-document-link,
+.jo-pr-document .jo-pr-meta .jo-pr-meta-reserve .jo-document-link {
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-family: aktiv-grotesk-thin, "Aktiv Grotesk Thin", aktiv-grotesk, Arial, sans-serif !important;
+  font-size: var(--body-size) !important;
+  font-weight: 200 !important;
+  line-height: normal !important;
+}
+
+.jo-pr-document .jo-pr-meta .jo-pr-meta-reserve {
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
