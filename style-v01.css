@@ -1024,3 +1024,50 @@ body.is-cv-open .jo-cv-page {
   font-family: aktiv-grotesk-thin, "Aktiv Grotesk Thin", aktiv-grotesk, Arial, sans-serif !important;
   font-weight: 200 !important;
 }
+/* =========================================================
+   NEWS TOP ALIGN + DATE SPACING FIX
+   Text column starts at top. Date is normal text above title.
+========================================================= */
+
+.jo-news-entry,
+.jo-news-minor,
+body .jo-news-page .jo-news-entry,
+body .jo-news-page .jo-news-minor {
+  align-items: start !important;
+}
+
+.jo-news-info,
+body .jo-news-page .jo-news-info {
+  align-self: start !important;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.jo-news-date,
+body .jo-news-page .jo-news-date {
+  margin: 0 0 1em 0 !important;
+}
+
+.jo-news-title,
+body .jo-news-page .jo-news-title {
+  margin: 0 0 1em 0 !important;
+}
+
+.jo-news-meta,
+body .jo-news-page .jo-news-meta {
+  margin: 0 0 1em 0 !important;
+}
+
+.jo-news-body,
+body .jo-news-page .jo-news-body {
+  margin: 0 0 1em 0 !important;
+}
+
+.jo-news-image-wrap,
+.jo-news-slideshow,
+body .jo-news-page .jo-news-image-wrap,
+body .jo-news-page .jo-news-slideshow {
+  align-self: start !important;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
