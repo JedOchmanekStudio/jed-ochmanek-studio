@@ -132,8 +132,19 @@
     document.body.insertAdjacentHTML('beforeend', window.JO_PROJECTS.map(joRenderProjectPr).join(''));
   }
 
+  function joMoveNewsDatesIntoText() {
+    document.querySelectorAll('.jo-news-entry').forEach(function(entry) {
+      var date = entry.querySelector(':scope > .jo-news-date');
+      var info = entry.querySelector(':scope > .jo-news-info');
+      if (date && info) {
+        info.insertBefore(date, info.firstChild);
+      }
+    });
+  }
+
   joReplaceNewsCvFromData();
   joReplaceProjectsFromData();
+  joMoveNewsDatesIntoText();
 
   const stage = document.getElementById('joStage');
   const sections = Array.from(document.querySelectorAll('.jo-stage .jo-section'));
