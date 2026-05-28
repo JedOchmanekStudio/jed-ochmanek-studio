@@ -2071,3 +2071,142 @@ body.is-search-open .jo-nav .jo-search-row .jo-search-form {
     margin: 64px 0 !important;
   }
 }
+/* =========================================================
+   NEWS ALIGNMENT / MOBILE WHITE FIX V10
+   Date + text become one top-aligned left stack.
+   Mobile news returns to white.
+========================================================= */
+
+/* Desktop: same PR two-column structure, but left column stacks date + text */
+@media (min-width: 901px) {
+  .jo-news-entry,
+  .jo-news-entry.jo-news-minor {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+    grid-template-rows: auto auto !important;
+    column-gap: var(--gutter) !important;
+    align-items: start !important;
+    width: 100% !important;
+  }
+
+  .jo-news-date {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    align-self: start !important;
+    margin: 0 0 1em 0 !important;
+    padding: 0 !important;
+  }
+
+  .jo-news-info {
+    grid-column: 1 !important;
+    grid-row: 2 !important;
+    align-self: start !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .jo-news-image-wrap {
+    grid-column: 2 !important;
+    grid-row: 1 / span 2 !important;
+    align-self: start !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .jo-news-minor .jo-news-image-wrap {
+    display: none !important;
+  }
+}
+
+/* Clean paragraph rhythm inside News */
+.jo-news-date,
+.jo-news-title,
+.jo-news-meta,
+.jo-news-body,
+.jo-news-body p {
+  line-height: 20px !important;
+}
+
+.jo-news-title,
+.jo-news-meta,
+.jo-news-body p {
+  margin: 0 0 1em 0 !important;
+}
+
+.jo-news-body p:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Links should look like site text, not browser default links */
+.jo-news-page a,
+.jo-news-page a:link,
+.jo-news-page a:visited,
+.jo-news-page a:active {
+  color: rgba(0,0,0,.45) !important;
+  text-decoration: none !important;
+}
+
+.jo-news-page a:hover {
+  color: #000 !important;
+  text-decoration: none !important;
+}
+
+/* Mobile: force white like CV / mobile PR */
+@media (max-width: 900px) {
+  body.is-news-open,
+  body.is-news-open html,
+  body.is-news-open .jo-news-page,
+  body.is-news-open .jo-news-wrap,
+  body.is-news-open .jo-news-entry,
+  body.is-news-open .jo-news-info,
+  body.is-news-open .jo-news-image-wrap {
+    background: #fff !important;
+  }
+
+  .jo-news-page {
+    background: #fff !important;
+  }
+
+  .jo-news-wrap {
+    background: #fff !important;
+    padding-top: 195px !important;
+  }
+
+  .jo-news-entry,
+  .jo-news-entry.jo-news-minor {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    background: #fff !important;
+  }
+
+  .jo-news-date {
+    order: 1 !important;
+    margin: 0 0 1em 0 !important;
+    color: rgba(0,0,0,.45) !important;
+  }
+
+  .jo-news-info {
+    order: 2 !important;
+    margin: 0 !important;
+  }
+
+  .jo-news-image-wrap {
+    order: 3 !important;
+    width: 100% !important;
+    margin: 2em 0 0 0 !important;
+    background: #fff !important;
+  }
+
+  .jo-news-image {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .jo-news-separator {
+    margin: 64px 0 !important;
+    height: 0 !important;
+    visibility: hidden !important;
+  }
+}
