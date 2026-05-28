@@ -282,17 +282,17 @@ window.JO_PROJECTS = [
     }
   },
   {
-    "id": "daylight-paintings",
+    "id": "daylight",
     "gallery": "daylight-paintings",
     "title": ["Daylight Paintings"],
     "meta": ["Young Art", "Los Angeles, CA", "2009"],
     "dark": 0,
-    "search": "daylight paintings young art los angeles 2009 jed ochmanek turnstile acrylic fiberglass canvas window screen fluorescent daylight fluorescent utility lamps black white painting optical perception subjectivity photomechanical reproduction lvl3 artist of the week interview mountain school of arts penny ante synchronicity space",
+    "search": "daylight paintings young art los angeles 2009 jed ochmanek turnstile acrylic fiberglass canvas black white window screen fluorescent daylight lamps optical perceptual painting",
     "slides": [
       {
         "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a189ab12ec42718874127ec_TURNSTILE%20DETAIL.jpg",
         "cls": "jo-protect-left",
-        "cap": "<em>Turnstile</em> (detail), 2009<br>acrylic and fiberglass on canvas<br>48 × 72\""
+        "cap": "<em>Turnstile</em> (detail), 2009<br>acrylic and fiberglass on canvas<br>48 × 72&quot;"
       }
     ],
     "docs": [
@@ -300,22 +300,23 @@ window.JO_PROJECTS = [
         "id": "daylight-paintings-pr",
         "label": "Press Release",
         "dark": 0,
-        "text": "<p>Young Art is pleased to present <em>Daylight Paintings</em>, an exhibit of new work by Jed Ochmanek. The show consists of two 4 × 6' paintings and their light source. Both paintings are composed of black acrylic on canvas and are veiled with a single layer of window-screen sprayed with white acrylic. In some areas, Ochmanek has stripped the matte black paint to reveal fragments of white primer underneath, creating passages of rough gradation behind the screen. This flicker of information registers Ochmanek’s engagement with and resistance to photomechanical means of reproduction.</p><p>Ochmanek has replaced the gallery's normal light source with “Daylight” fluorescent utility lamps. The scale and optical effect of the paintings maximize the experience of the particularities of fluorescent light. By highlighting the paintings’ roles as passive sensitizing agents within a fixed environment, Ochmanek seeks to situate the viewer in a particular perceptual and bodily self-awareness. In this sense, Ochmanek begins to explore the window screen as analogous to the limits of the human perceptual mechanism and the confines of personal subjectivity.</p><p>Jed Ochmanek received his BFA from Rhode Island School of Design. He currently lives and works in Los Angeles. <em>Daylight Paintings</em> will be Jed Ochmanek's first solo exhibition with Young Art.</p>",
-        "imgs": [
-          "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a189c418dcce984985058ae_547e3573a5f5b1b871b0befb_Daylight%20Paintings%20(Not%20print%20file)-1.jpg"
-        ]
+        "text": "<p>Young Art is pleased to present <em>Daylight Paintings</em>, an exhibit of new work by Jed Ochmanek. The show consists of two 4x6' paintings and their light source. Both paintings are composed of black acrylic on canvas and are veiled with a single layer of window-screen sprayed with white acrylic. In some areas, Ochmanek has stripped the matte black paint to reveal fragments of white primer underneath, creating passages of rough gradation behind the screen. This flicker of information registers Ochmanek’s engagement with and resistance to photomechanical means of reproduction.</p><p>Ochmanek has replaced the gallery's normal light source with “Daylight” florescent utility lamps. The scale and optical effect of the paintings maximize the experience of the particularities of fluorescent light. By highlighting the paintings’ roles as passive sensitizing agents within a fixed environment, Ochmanek seeks to situate the viewer in a particular perceptual and bodily self-awareness. In this sense, Ochmanek begins to explore the window screen as analogous to the limits of the human perceptual mechanism and the confines of personal subjectivity.</p><p>Jed Ochmanek received his BFA from Rhode Island School of Design. He currently lives and works in Los Angeles. <em>Daylight Paintings</em> will be Jed Ochmanek's first solo exhibition with Young Art.</p>",
+        "imgs": ["https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a189c418dcce984985058ae_547e3573a5f5b1b871b0befb_Daylight%20Paintings%20(Not%20print%20file)-1.jpg"]
       },
       {
-        "id": "daylight-paintings-lvl3",
+        "id": "daylight-lvl3-interview",
         "label": "LVL3 Interview",
         "dark": 0,
-        "wide": 1,
-        "text": "<p class=\"jo-pr-title\">Artist of the Week: Jed Ochmanek</p><p><em>Jed Ochmanek received his BFA from the Rhode Island School of Design in 2005 and attended the Mountain School of Arts in 2010. He currently lives and works in Los Angeles. We recently met Jed and his work at Synchronicity Space for the opening of <em>Independent Presents</em> closing June 6th, as he was the chosen artist for the independent publishing company Penny Ante.</em></p><p class=\"jo-pr-question\">What kinds of things are influencing your work right now?</p><p>Accepting the condition that art provides analogies to lived experience, I wanted to start small. I’ve been influenced by back pain, poor eyesight, the walls in my room, the fluorescent lighting in my studio. Walking through a door, inhaling, exhaling.</p><p class=\"jo-pr-question\">What materials do you use in your work and what is your process like?</p><p>The most recent pieces were made by spray painting a section of window screen and affixing it to a sheet of painted, cold-pressed cotton paper. I then raked a mixture of sand and latex paint across the surface with a trowel and spray-painted that from different angles. The pieces were then mounted on beveled MDF supports and hung at average human head height.</p><p class=\"jo-pr-question\">What artists are you interested in right now?</p><p>Recently I’ve been thinking about Gordon Matta-Clark, Fred Sandback, Agnes Martin, Bruce Nauman, Jack Whitten, Christopher Williams, On Kawara, Santiago Sierra, Blinky Palermo and Simon Hantaï a good deal. I’ve been looking at Richard Serra’s <em>Weight and Measure</em> drawings and <em>Out of Rounds</em>, Morris Louis’ <em>Veil Cycle</em>, Warhol’s <em>Oxidation Paintings</em>, and Lee Friedlander’s <em>Architectural America</em> as well. I finally saw Giacometti’s <em>Hands Holding the Void</em> in Saint Louis a few months ago. Lots of music: Miles Davis, Captain Beefheart, Stars of the Lid.</p><p class=\"jo-pr-question\">What's your favorite thing about Los Angeles?</p><p>This past January I attended the Mountain School of Arts, which was excellent. We visited Andrea Zittel’s compound in Joshua Tree, and I’m typing this reply from the geodesic dome of Fritz Haeg’s Sundown Salon, which I’m house sitting. Both artists approach living in the Southern California landscape with incredible ingenuity and care. I’m in love with the flora here. I’m a cactus collector and I garden for Mike Kelley. For the past three years I’ve lived and worked in Skid Row, so gardening there, though it feels like swimming upstream, has been a way to humanize my environment. I suppose the proximity of natural diversity to a cultural metropolis is my favorite thing about L.A.</p><p class=\"jo-pr-question\">What was your best recent art experience?</p><p>I toured Louis Kahn’s <em>Salk Institute for Biological Studies</em> in La Jolla, coincidentally on the day Sunn O)))’s album <em>Monoliths and Dimensions</em> came out. Both deal with this overwhelming weight and mass, so I was surprised by how ethereal my experience of the two has been. They both have this minimal, absolute nature that I associate with some notion of the futuristic, but they also bare a sense of primacy and permanence that dredges up feelings of an almost geological timescale.</p><p>L.A. is profoundly transitory. Environmental change is palpable here. “History” is a cardboard cut out. Coming from D.C. I have a certain immunity to monumentality, but both works struck me as poignant in this context. David Byrne described Sunn’s sound as a soundtrack to global warming. I think abstraction is a good tool right now to try to feel something analogous to the sheer scale, complexity and indifference of the forces we have set in motion.</p><p class=\"jo-pr-question\">How has your work developed within the past year?</p><p>I've reached a tipping point where I want to approach some of the concerns I’ve been addressing in painting through different media. For example, the Daylight Paintings are intended to complicate an awareness of time as experienced in space. They engage the viewer differently from various distances. I’m looking forward to examining issues like this more explicitly with the use of, say, sculpture or video.</p>",
+        "text": "<p class=\"jo-interview-title\">Artist of the Week: Jed Ochmanek</p><p class=\"jo-interview-intro\">Jed Ochmanek received his BFA from the Rhode Island School of Design in 2005 and attended the Mountain School of Arts in 2010. He currently lives and works in Los Angeles. We recently met Jed and his work at Synchronicity Space for the opening of Independent Presents closing June 6th, as he was the chosen artist for the independent publishing company Penny Ante.</p><p class=\"jo-interview-question\">What kinds of things are influencing your work right now?</p><p>Accepting the condition that art provides analogies to lived experience, I wanted to start small. I’ve been influenced by back pain, poor eyesight, the walls in my room, the fluorescent lighting in my studio. Walking through a door, inhaling, exhaling.</p><p class=\"jo-interview-question\">What materials do you use in your work and what is your process like?</p><p>The most recent pieces were made by spray painting a section of window screen and affixing it to a sheet of painted, cold-pressed cotton paper. I then raked a mixture of sand and latex paint across the surface with a trowel and spray-painted that from different angles. The pieces were then mounted on beveled MDF supports and hung at average human head height.</p><p class=\"jo-interview-question\">What artists are you interested in right now?</p><p>Recently I’ve been thinking about Gordon Matta-Clark, Fred Sandback, Agnes Martin, Bruce Nauman, Jack Whitten, Christopher Williams, On Kawara, Santiago Sierra, Blinky Palermo and Simon Hantaï a good deal. I’ve been looking at Richard Serra’s <em>Weight and Measure</em> drawings and <em>Out of Rounds</em>, Morris Louis’ <em>Veil Cycle</em>, Warhol’s <em>Oxidation Paintings</em>, and Lee Friedlander’s <em>Architectural America</em> as well. I finally saw Giacometti’s <em>Hands Holding the Void</em> in Saint Louis a few months ago. Lots of music - Miles Davis, Captain Beefheart, Stars of the Lid.</p><p class=\"jo-interview-question\">What's your favorite thing about Los Angeles?</p><p>This past January I attended the Mountain School of Arts, which was excellent. We visited Andrea Zittel’s compound in Joshua Tree, and I’m typing this reply from the geodesic dome of Fritz Haeg’s Sundown Salon, which I’m house sitting. Both artists approach living in the Southern California’s landscape with incredible ingenuity and care. I’m in love with the flora here - I’m a cactus collector and I garden for Mike Kelley. For the past three years I’ve lived and worked in Skid Row, so gardening there, though it feels like swimming upstream, has been a way to humanize my environment. I suppose the proximity of natural diversity to a cultural metropolis is my favorite thing about L.A.</p><p class=\"jo-interview-question\">What was your best recent art experience?</p><p>I toured Louis Kahn’s Salk Institute for Biological Studies in La Jolla, coincidentally on the day Sunn O)))’s album <em>Monoliths and Dimensions</em> came out. Both deal with this overwhelming weight and mass, so I was surprised by how ethereal my experience of the two has been. They both have this minimal, absolute nature that I associate with some notion of the futuristic, but they also bare a sense of primacy and permanence that dredges up feelings of an almost geological timescale.</p><p>L.A. is profoundly transitory - environmental change is palpable here. “History” is a cardboard cut out. Coming from D.C. I have a certain immunity to monumentality, but both works struck me as poignant in this context. David Byrne described Sunn’s sound as a soundtrack to global warming. I think abstraction is a good tool right now to try to feel something analogous to the sheer scale, complexity and indifference of the forces we have set in motion.</p><p class=\"jo-interview-question\">How has your work developed within the past year?</p><p>I've reached a tipping point where I want to approach some of the concerns I’ve been addressing in painting through different media. For example, the Daylight Paintings are intended to complicate an awareness of time as experienced in space - they engage the viewer differently from various distances. I’m looking forward to examining issues like this more explicitly with the use of, say, sculpture or video.</p>",
         "imgs": [
-          "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a189c96ef5ccc9a6aafe26f_547e3772eda86cb60f59f0f7_lvl3line-1.jpg",
-          "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a189c960e67a0d121e3bd0c_547e3d3a2e7976b971b9b68b_lvl3-1.jpg",
-          "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a189c961d64350bcb9e0a93_547e3e6b2e7976b971b9b69a_new2-1.jpg",
-          "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a189c962f870b570e1351bf_547e401ea5f5b1b871b0c0b9_04%202-1.jpg"
+          {
+            "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a189c960e67a0d121e3bd0c_547e3d3a2e7976b971b9b68b_lvl3-1.jpg",
+            "caption": "photo: Dana Zielinsky, 2009"
+          },
+          {
+            "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a189c961d64350bcb9e0a93_547e3e6b2e7976b971b9b69a_new2-1.jpg",
+            "caption": "<em>Untitled</em>, 2010, enamel, latex, sand and fiberglass screen on cotton rag mounted on MDF, 12 × 16&quot;"
+          }
         ]
       }
     ]
@@ -468,7 +469,7 @@ const joNewsItems = [
     image: "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a175e552ff7f5b53db710eb_BENEFIT%20OF%20FRIENDS.jpg",
     title: "LA Art Book Fair<br>w/ X-tra Contemporary Art Quarterly",
     meta: "",
-    body: 'Book release at the LA Art Book Fair for <em>The Benefit of Friends Collected</em>, vol. 2.<br>Published by the Project X Foundation for Art and Criticism.<br>45 artists writing about each others’ work.<br><br>With writing and work by: Kellly Akashi, Animal Charm, David Berezin, Simon Bill, Sergio Bromberg, Kathrin Burmester, John Burtle, Jedediah Caesar, Joshua Callaghan, Anthony Carfello, Rachel Foullon, Joey Frank, Liz Glynn, Patrick Goddard, Patrick Hill, John Houck, Bettina Hubby, Jamie Isenstein, Vishal Jugdeo, Stanya Kahn, William Kaminski, Nicholas Kersulis, Alice Könitz, Jason Kunke, Gabriel Kuri, Lisa Lapinski, Caitlin Lonegan, Marie Lorenz, Molly Lowe, Brian Mann, Emily Mast, Nicole Miller, Joshua Nathanson, Jed Ochmanek, Virginia Poundstone, Sarah Rara, Elise Rasmussen, Isaac Resnikoff, Matt Rich, Amanda Ross-Ho, Miljohn Ruperto, Asha Schechter, Alex Slade, Jill Spector, Clarissa Tossin<br><br>Organized by Shana Lutker<br>Edited by Jesse Benson and Shana Lutker<br><br>Opening Reception:<br>Friday, January 30th, 5-7pm<br><br>MoCA Geffen Contemporary<br>Booth U 04<br>1201 S. Figueroa St., West Hall<br>Los Angeles, CA 90015<br><br><a href="https://secure.x-traonline.org/store/product/302" target="_blank" rel="noopener">x-tra online store</a>'
+    body: 'Book release at the LA Art Book Fair for <em>The Benefit of Friends Collected</em>, vol. 2.<br>Published by the Project X Foundation for Art and Criticism.<br>45 artists writing about each others’ work.<br><br>With writing and work by: Kellly Akashi, Animal Charm, David Berezin, Simon Bill, Sergio Bromberg, Kathrin Burmester, John Burtle, Jedediah Caesar, Joshua Callaghan, Anthony Carfello, Rachel Foullon, Joey Frank, Liz Glynn, Patrick Goddard, Patrick Hill, John Houck, Bettina Hubby, Jamie Isenstein, Vishal Jugdeo, Stanya Kahn, William Kaminski, Nicholas Kersulis, Alice Könitz, Gabriel Kuri, Lisa Lapinski, Caitlin Lonegan, Marie Lorenz, Molly Lowe, Brian Mann, Emily Mast, Nicole Miller, Joshua Nathanson, Jed Ochmanek, Virginia Poundstone, Sarah Rara, Elise Rasmussen, Isaac Resnikoff, Matt Rich, Amanda Ross-Ho, Miljohn Ruperto, Asha Schechter, Alex Slade, Jill Spector, Clarissa Tossin<br><br>Organized by Shana Lutker<br>Edited by Jesse Benson and Shana Lutker<br><br>Opening Reception:<br>Friday, January 30th, 5-7pm<br><br>MoCA Geffen Contemporary<br>Booth U 04<br>1201 S. Figueroa St., West Hall<br>Los Angeles, CA 90015<br><br><a href="https://secure.x-traonline.org/store/product/302" target="_blank" rel="noopener">x-tra online store</a>'
   },
   {
     date: "12/4/14",
@@ -651,13 +652,11 @@ var joCvHtml =
         '<p class="jo-cv-row"><span class="jo-cv-full">b. 1982, Frankfurt, Germany</span></p>' +
         '<p class="jo-cv-row"><span class="jo-cv-full">Lives and works in Yucca Valley and Los Angeles, California</span></p>' +
       '</div>' +
-
       '<div class="jo-cv-block">' +
         '<p class="jo-cv-section">Education</p>' +
         '<p class="jo-cv-row"><span>2010</span><span>Mountain School of Arts, Los Angeles</span></p>' +
         '<p class="jo-cv-row"><span>2005</span><span>BFA Painting, Rhode Island School of Design</span></p>' +
       '</div>' +
-
       '<div class="jo-cv-block">' +
         '<p class="jo-cv-section">Solo Exhibitions</p>' +
         '<p class="jo-cv-row"><span>2024</span><span><em>Gatefolds</em>, Compound, Yucca Valley, CA</span></p>' +
@@ -670,7 +669,6 @@ var joCvHtml =
         '<p class="jo-cv-row"><span>2009</span><span><em>Daylight Paintings</em>, Young Art, Los Angeles</span></p>' +
         '<p class="jo-cv-row"><span>2005</span><span><em>Paintings, Lightboxes, Video</em>, Benson Hall Gallery, Providence, Rhode Island</span></p>' +
       '</div>' +
-
       '<div class="jo-cv-block">' +
         '<p class="jo-cv-section">Selected Group Exhibitions</p>' +
         '<p class="jo-cv-row"><span>2023</span><span><em>Points for Clouds, Dreams Aroused</em>, Projekt Blank, Los Angeles</span></p>' +
@@ -698,7 +696,6 @@ var joCvHtml =
         '<p class="jo-cv-row"><span></span><span><em>Shitty Hippy</em>, Tiny Creatures, Los Angeles</span></p>' +
         '<p class="jo-cv-row"><span>2007</span><span><em>Slow Burn</em>, Phantom Galleries, Los Angeles</span></p>' +
       '</div>' +
-
       '<div class="jo-cv-block">' +
         '<p class="jo-cv-section">Performances / Screenings</p>' +
         '<p class="jo-cv-row"><span>2025</span><span><em>Deros Oscillator</em> (with Brian Butler), All Summer’s Eve Desert Rendezvous, Wonder Valley, CA</span></p>' +
@@ -709,29 +706,24 @@ var joCvHtml =
         '<p class="jo-cv-row"><span></span><span><em>Dropping a Pin in Time</em> (with Merz), FURSTWURLD, Joshua Tree, CA</span></p>' +
         '<p class="jo-cv-row"><span></span><span><em>A Monastic Gig</em> (with Laraaji, Merz, and Shahzad Ismaily), FURSTWURLD, Joshua Tree, CA</span></p>' +
       '</div>' +
-
       '<div class="jo-cv-block">' +
         '<p class="jo-cv-section">Architecture</p>' +
         '<p class="jo-cv-row"><span>2025</span><span><em>Desert Shelter Project</em>, New American Design, Joshua Tree, CA</span></p>' +
       '</div>' +
-
       '<div class="jo-cv-block">' +
         '<p class="jo-cv-section">Special Projects</p>' +
         '<p class="jo-cv-row"><span>2019</span><span><em>Dreams of Sleep and Wakes of Sound</em>, Artwork for Double LP for Laraaji : Merz : Shahzad Ismaily, Dampfzentrale Bern, Switzerland</span></p>' +
         '<p class="jo-cv-row"><span></span><span><em>Rent a New Place, Everything Could Change</em>, Official Music Video for Laraaji : Merz from <em>A Monastic Gig</em>, Dampfzentrale Bern, Switzerland</span></p>' +
         '<p class="jo-cv-row"><span>2015</span><span><em>1299 Ocean Ave.</em>, Permanent Public Installation, Blackstone Mortgage Trust, Santa Monica, CA</span></p>' +
       '</div>' +
-
       '<div class="jo-cv-block">' +
         '<p class="jo-cv-section">Residencies</p>' +
         '<p class="jo-cv-row"><span>2014</span><span>Joshua Tree Highlands Artist Residency, Joshua Tree, CA</span></p>' +
       '</div>' +
-
       '<div class="jo-cv-block">' +
         '<p class="jo-cv-section">Public Collections</p>' +
         '<p class="jo-cv-row"><span></span><span>Beth Rudin DeWoody Collection</span></p>' +
       '</div>' +
-
       '<div class="jo-cv-block">' +
         '<p class="jo-cv-section">Publications</p>' +
         '<p class="jo-cv-row"><span>2015</span><span>Benson, Jesse. “The Benefit of Friends Collected.” Project X Foundation for Art &amp; Criticism, Los Angeles, CA</span></p>' +
@@ -740,7 +732,6 @@ var joCvHtml =
         '<p class="jo-cv-row"><span>2012</span><span>Kholti, Hedi El. “Animal Shelter Issue 2: Art, Sex, Literature.” Semiotext(e), Los Angeles, CA</span></p>' +
         '<p class="jo-cv-row"><span></span><span>Dard, Jeanroch. “Close Encounters.” Galerie Jeanroch Dard, Paris</span></p>' +
       '</div>' +
-
       '<div class="jo-cv-block">' +
         '<p class="jo-cv-section">Press</p>' +
         '<p class="jo-cv-row"><span>2017</span><span>Thaddeus-Johns, Josie. “Holy Shit!” <em>Frieze</em>, May 26.</span></p>' +
