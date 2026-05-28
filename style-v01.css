@@ -1011,3 +1011,16 @@ body.is-cv-open .jo-cv-page {
     grid-template-columns: 58px minmax(0, 1fr);
   }
 }
+/* MENU WEIGHT FIX */
+.jo-title,
+.jo-nav .jo-title,
+.jo-nav [data-home] {
+  font-family: aktiv-grotesk, "Aktiv Grotesk", Arial, sans-serif !important;
+  font-weight: 400 !important;
+}
+
+.jo-nav a:not(.jo-title):not([data-home]),
+.jo-search-input {
+  font-family: aktiv-grotesk-thin, "Aktiv Grotesk Thin", aktiv-grotesk, Arial, sans-serif !important;
+  font-weight: 200 !important;
+}
