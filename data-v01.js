@@ -717,4 +717,4 @@ var joCvHtml =
     '</div>' +
   '</section>';
 
-window.JO_NEWS_CV = joNewsHtml + joCvHtml;
+window.JO_NEWS_CV = joNewsHtml + joCvHtml; 
