@@ -145,7 +145,7 @@ window.JO_PROJECTS = [
       ]
     }
   },
-    {
+  {
     "id": "monastic",
     "gallery": "monastic-gig",
     "title": ["A Monastic Gig", "w/ Laraaji and Merz"],
@@ -280,8 +280,48 @@ window.JO_PROJECTS = [
       "text": "<p>ltd los angeles is pleased to announce Los Angeles-based artist Jed Ochmanek’s <em>Sundials</em>. For his first solo exhibition with the gallery, Ochmanek will present new works from his on-going series of oil-based enamel paintings on metal sheets as well as new urethane and steel sculptures.</p><p>To create the wall-based works on view in <em>Sundials</em>, Ochmanek moved his painting practice from Los Angeles to Joshua Tree, California. The site was chosen for its aridity and extreme heat, factors necessary to enable particular behavior and rapid drying cycles of the poured solvent and paint solutions across the works steel and aluminum supports. The plates are tilted to allow material to pour off, adjusted to catch or deflect the wind, and baked in full exposure sun. The rich, unrepeatable diversity of tonal and textural dispersions achieved through their successive layers synthetically registers not only the local atmospheric conditions where the paintings were produced, but the more universal forces of the earth’s gravitational pull and orbit around the sun. Beyond the paintings indexical relationship to their environment, Ochmanek’s work resonates deeply with the bareness of the desert’s features: as the paintings draw the viewer to experience the duration and conditions of their making, so too does the dimension of geological time make itself apparent throughout the sparse expanse of the Mojave.</p><p>Ochmanek’s urethane sculptures are cast from a discontinued model of incandescent bulb previously used for theater spotlights. Like the paintings, the bulbs are a result of pouring color. Solid and tinted, the bulbs act as concentrated orbs of pigment, whereas the serial installation of the paintings posits the bulb’s wall-based counterparts as dispersions of pigment across theoretical planes. The bulbs bend and emit light; the paintings absorb it. The bulb’s translucency fluctuates with the ambient lighting conditions, and they become optically active when circumnavigated, as they invert and magnify their environment, encouraging a fluid, time-based read. The planar geometry of their steel supports, however, suggests that one can conceptually reduce the bulbs to three views.</p><p>Frontally, the bulbs recall the pure geometry of Helen Pashgian’s 1970’s spherical sculptures. The side view reveals the form’s industrial origins, as the technology associated with the Light and Space Movement was tied to California’s burgeoning aerospace industry from its inception. In the advent of CFL and LED technology, the bulb’s iconic form is lapsing into obsolescence. The nostalgia evoked by the bulb’s form is echoed in the arc produced as the bulb touches down to a single point, recalling the aesthetics of early automotive luxury.</p><p>The bulbs are, of course, hermetically sealed from any literal engagement with a larger power structure, a notion re-enforced by the screw base of the rear view’s phallic form. As such, the bulbs are open to assume associative, psychologically charged topologies. Their spheres recall eyeballs; their threads nerve endings. In-as-much as the bulb has come to symbolize an interior, personal illumination, these represent a head (or consciousness) in repose, Brancusi’s <em>Sleeping Muse</em> by way of Picabia’s <em>Portrait of a Young American Girl in the State of Nudity</em>. While the particulate detail and tonal shifts of the paintings induce a waking dream-state, the bulbs suggest, through examining outmoded forms of production and sublimation, that our perceptual mechanisms and subconscious ultimately comingle in an endless play of illuminated reflections.</p><p>Jed Ochmanek received his BFA from the Rhode Island School of Design in 2005, and attended the Mountain School of Arts in 2010. Recent exhibitions include <em>Veils</em> at the Underground Museum, and <em>Near Dark</em> at Young Art. Ochmanek was awarded the 2014 Joshua Tree Highlands Artist Residency, and his work can currently be seen in <em>Life Transmissions</em> at Chapman University’s Guggenheim Gallery through November 2nd. <em>Sundials</em> is his fourth solo exhibition in Los Angeles since 2009.</p>",
       "imgs": ["https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a06491bcfa0301cc3d969c3_SUNDIALS-13.jpg"]
     }
+  },
+  {
+    "id": "daylight-paintings",
+    "gallery": "daylight-paintings",
+    "title": ["Daylight Paintings"],
+    "meta": ["Young Art", "Los Angeles, CA", "2009"],
+    "dark": 0,
+    "search": "daylight paintings young art los angeles 2009 jed ochmanek turnstile acrylic fiberglass canvas window screen fluorescent daylight fluorescent utility lamps black white painting optical perception subjectivity photomechanical reproduction lvl3 artist of the week interview mountain school of arts penny ante synchronicity space",
+    "slides": [
+      {
+        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a189ab12ec42718874127ec_TURNSTILE%20DETAIL.jpg",
+        "cls": "jo-protect-left",
+        "cap": "<em>Turnstile</em> (detail), 2009<br>acrylic and fiberglass on canvas<br>48 × 72\""
+      }
+    ],
+    "docs": [
+      {
+        "id": "daylight-paintings-pr",
+        "label": "Press Release",
+        "dark": 0,
+        "text": "<p>Young Art is pleased to present <em>Daylight Paintings</em>, an exhibit of new work by Jed Ochmanek. The show consists of two 4 × 6' paintings and their light source. Both paintings are composed of black acrylic on canvas and are veiled with a single layer of window-screen sprayed with white acrylic. In some areas, Ochmanek has stripped the matte black paint to reveal fragments of white primer underneath, creating passages of rough gradation behind the screen. This flicker of information registers Ochmanek’s engagement with and resistance to photomechanical means of reproduction.</p><p>Ochmanek has replaced the gallery's normal light source with “Daylight” fluorescent utility lamps. The scale and optical effect of the paintings maximize the experience of the particularities of fluorescent light. By highlighting the paintings’ roles as passive sensitizing agents within a fixed environment, Ochmanek seeks to situate the viewer in a particular perceptual and bodily self-awareness. In this sense, Ochmanek begins to explore the window screen as analogous to the limits of the human perceptual mechanism and the confines of personal subjectivity.</p><p>Jed Ochmanek received his BFA from Rhode Island School of Design. He currently lives and works in Los Angeles. <em>Daylight Paintings</em> will be Jed Ochmanek's first solo exhibition with Young Art.</p>",
+        "imgs": [
+          "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a189c418dcce984985058ae_547e3573a5f5b1b871b0befb_Daylight%20Paintings%20(Not%20print%20file)-1.jpg"
+        ]
+      },
+      {
+        "id": "daylight-paintings-lvl3",
+        "label": "LVL3 Interview",
+        "dark": 0,
+        "wide": 1,
+        "text": "<p class=\"jo-pr-title\">Artist of the Week: Jed Ochmanek</p><p><em>Jed Ochmanek received his BFA from the Rhode Island School of Design in 2005 and attended the Mountain School of Arts in 2010. He currently lives and works in Los Angeles. We recently met Jed and his work at Synchronicity Space for the opening of <em>Independent Presents</em> closing June 6th, as he was the chosen artist for the independent publishing company Penny Ante.</em></p><p class=\"jo-pr-question\">What kinds of things are influencing your work right now?</p><p>Accepting the condition that art provides analogies to lived experience, I wanted to start small. I’ve been influenced by back pain, poor eyesight, the walls in my room, the fluorescent lighting in my studio. Walking through a door, inhaling, exhaling.</p><p class=\"jo-pr-question\">What materials do you use in your work and what is your process like?</p><p>The most recent pieces were made by spray painting a section of window screen and affixing it to a sheet of painted, cold-pressed cotton paper. I then raked a mixture of sand and latex paint across the surface with a trowel and spray-painted that from different angles. The pieces were then mounted on beveled MDF supports and hung at average human head height.</p><p class=\"jo-pr-question\">What artists are you interested in right now?</p><p>Recently I’ve been thinking about Gordon Matta-Clark, Fred Sandback, Agnes Martin, Bruce Nauman, Jack Whitten, Christopher Williams, On Kawara, Santiago Sierra, Blinky Palermo and Simon Hantaï a good deal. I’ve been looking at Richard Serra’s <em>Weight and Measure</em> drawings and <em>Out of Rounds</em>, Morris Louis’ <em>Veil Cycle</em>, Warhol’s <em>Oxidation Paintings</em>, and Lee Friedlander’s <em>Architectural America</em> as well. I finally saw Giacometti’s <em>Hands Holding the Void</em> in Saint Louis a few months ago. Lots of music: Miles Davis, Captain Beefheart, Stars of the Lid.</p><p class=\"jo-pr-question\">What's your favorite thing about Los Angeles?</p><p>This past January I attended the Mountain School of Arts, which was excellent. We visited Andrea Zittel’s compound in Joshua Tree, and I’m typing this reply from the geodesic dome of Fritz Haeg’s Sundown Salon, which I’m house sitting. Both artists approach living in the Southern California landscape with incredible ingenuity and care. I’m in love with the flora here. I’m a cactus collector and I garden for Mike Kelley. For the past three years I’ve lived and worked in Skid Row, so gardening there, though it feels like swimming upstream, has been a way to humanize my environment. I suppose the proximity of natural diversity to a cultural metropolis is my favorite thing about L.A.</p><p class=\"jo-pr-question\">What was your best recent art experience?</p><p>I toured Louis Kahn’s <em>Salk Institute for Biological Studies</em> in La Jolla, coincidentally on the day Sunn O)))’s album <em>Monoliths and Dimensions</em> came out. Both deal with this overwhelming weight and mass, so I was surprised by how ethereal my experience of the two has been. They both have this minimal, absolute nature that I associate with some notion of the futuristic, but they also bare a sense of primacy and permanence that dredges up feelings of an almost geological timescale.</p><p>L.A. is profoundly transitory. Environmental change is palpable here. “History” is a cardboard cut out. Coming from D.C. I have a certain immunity to monumentality, but both works struck me as poignant in this context. David Byrne described Sunn’s sound as a soundtrack to global warming. I think abstraction is a good tool right now to try to feel something analogous to the sheer scale, complexity and indifference of the forces we have set in motion.</p><p class=\"jo-pr-question\">How has your work developed within the past year?</p><p>I've reached a tipping point where I want to approach some of the concerns I’ve been addressing in painting through different media. For example, the Daylight Paintings are intended to complicate an awareness of time as experienced in space. They engage the viewer differently from various distances. I’m looking forward to examining issues like this more explicitly with the use of, say, sculpture or video.</p>",
+        "imgs": [
+          "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a189c96ef5ccc9a6aafe26f_547e3772eda86cb60f59f0f7_lvl3line-1.jpg",
+          "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a189c960e67a0d121e3bd0c_547e3d3a2e7976b971b9b68b_lvl3-1.jpg",
+          "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a189c961d64350bcb9e0a93_547e3e6b2e7976b971b9b69a_new2-1.jpg",
+          "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a189c962f870b570e1351bf_547e401ea5f5b1b871b0c0b9_04%202-1.jpg"
+        ]
+      }
+    ]
   }
 ];
+
 const joNewsItems = [
   {
     date: "11/12/25",
@@ -367,7 +407,7 @@ const joNewsItems = [
     meta: "",
     body: '"Dreams of Sleep and Wakes of Sound," the new collaborative album by Laraaji, Merz, and Shahzad Ismaily, is out today from Dampfzentrale Bern on double vinyl and download. Gatefold artwork by Jed Ochmanek and graphic design by Maison Standard.<br><br>From The Guardian’s "Contemporary Music Album of the Month" 4/5 star review:<br><br>"The album unfolds like a film soundtrack, complete with dramatic drones and suspended chords that take an age to resolve. The central tension is between Merz’s guitar (a rough assemblage of Duane Eddy twangs and Black Sabbath growls) and Laraaji’s “cosmic zither” (an electrified autoharp which he bows, plucks and strums). It is a sonic battle between the profane and sacred, between industrial squalor and holy minimalism. Playing in between the gaps is Ismaily, on an assortment of other instruments, which often blur into each other to create a seamless mesh of sounds."<br><br>Stream and Purchase:<br><a href="https://dampfzentrale.bandcamp.com/album/dreams-of-sleep-and-wakes-of-sound" target="_blank" rel="noopener">Dampfzentrale Bandcamp</a><br><a href="https://merzandise.com/" target="_blank" rel="noopener">Merzandise</a><br><a href="https://open.spotify.com/album/203n39LZt0ktgcQ6mLWLoa?si=xXZ7Iyj-Rtmh4O9xLWyqaQ" target="_blank" rel="noopener">Spotify</a><br><br>Reviews:<br><a href="https://www.theguardian.com/music/2019/jun/21/merzlaraajiismaily-dreams-of-sleep-and-wakes-of-sound-review" target="_blank" rel="noopener">The Guardian</a><br><a href="https://thevinylfactory.com/news/laraaji-merz-shahzad-ismaily-dreams-of-sleep-and-wakes-of-sound/" target="_blank" rel="noopener">The Vinyl Factory</a>'
   },
-    {
+  {
     date: "4/30/19",
     image: "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a175e56d2fd6310dfd8a82c_RENT%20A%20NEW%20PLACE.jpg",
     title: 'Laraaji : Merz - "Rent A New Place, Everything Could Change" Video Premier',
@@ -430,7 +470,7 @@ const joNewsItems = [
     meta: "",
     body: 'Book release at the LA Art Book Fair for <em>The Benefit of Friends Collected</em>, vol. 2.<br>Published by the Project X Foundation for Art and Criticism.<br>45 artists writing about each others’ work.<br><br>With writing and work by: Kellly Akashi, Animal Charm, David Berezin, Simon Bill, Sergio Bromberg, Kathrin Burmester, John Burtle, Jedediah Caesar, Joshua Callaghan, Anthony Carfello, Rachel Foullon, Joey Frank, Liz Glynn, Patrick Goddard, Patrick Hill, John Houck, Bettina Hubby, Jamie Isenstein, Vishal Jugdeo, Stanya Kahn, William Kaminski, Nicholas Kersulis, Alice Könitz, Jason Kunke, Gabriel Kuri, Lisa Lapinski, Caitlin Lonegan, Marie Lorenz, Molly Lowe, Brian Mann, Emily Mast, Nicole Miller, Joshua Nathanson, Jed Ochmanek, Virginia Poundstone, Sarah Rara, Elise Rasmussen, Isaac Resnikoff, Matt Rich, Amanda Ross-Ho, Miljohn Ruperto, Asha Schechter, Alex Slade, Jill Spector, Clarissa Tossin<br><br>Organized by Shana Lutker<br>Edited by Jesse Benson and Shana Lutker<br><br>Opening Reception:<br>Friday, January 30th, 5-7pm<br><br>MoCA Geffen Contemporary<br>Booth U 04<br>1201 S. Figueroa St., West Hall<br>Los Angeles, CA 90015<br><br><a href="https://secure.x-traonline.org/store/product/302" target="_blank" rel="noopener">x-tra online store</a>'
   },
-    {
+  {
     date: "12/4/14",
     image: "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a06445ef9f0db0f16000f9a_SUNDIALS-8-2.jpg",
     title: "New Art Dealer's Alliance<br>Miami Beach<br>w/ ltd Los Angeles",
@@ -500,7 +540,7 @@ const joNewsItems = [
     meta: "",
     body: "Nathan Antolik<br>Milano Chow<br>Zoe Ghertner<br>Jed Ochmanek<br>Pilar Wiley<br><br>Exhibition Dates:<br>November 9th - December 28th, 2013<br>Opening Reception:<br>November 9th, 6- 8pm<br><br>Young Art<br>418 Bamboo Lane, Unit B<br>Los Angeles, CA 90012"
   },
-    {
+  {
     date: "11/6/13",
     image: "",
     title: "LA><ART",
@@ -571,6 +611,7 @@ const joNewsItems = [
     body: "John Armleder<br>Steffen Bunte<br>Claire Decet<br>Luke Dowd<br>Samuel François<br>Oliver Kosta-Théfaine<br>Andrew Laumann<br>Renato Leotta<br>Keegan McHargue<br>Justin Morin<br>Morgan-Richard Murphey<br>Jed Ochmanek<br><br>Exhibition Dates:<br>September 6th - October 13th, 2013<br><br>Galerie Jeanroch Dard<br>13 Rue des Arquebusiers<br>75003 Paris, France"
   }
 ];
+
 function joSocialHtml() {
   return '<div class="jo-utility-social">' +
     '<a href="mailto:jedochmanekstudio@gmail.com" aria-label="Email Jed Ochmanek Studio"><svg viewBox="0 0 24 18" aria-hidden="true"><path d="M1 1h22v16H1z"></path><path d="M1 1l11 9L23 1"></path></svg></a>' +
@@ -717,4 +758,4 @@ var joCvHtml =
     '</div>' +
   '</section>';
 
-window.JO_NEWS_CV = joNewsHtml + joCvHtml; 
+window.JO_NEWS_CV = joNewsHtml + joCvHtml;
