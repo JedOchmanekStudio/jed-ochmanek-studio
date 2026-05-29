@@ -282,6 +282,276 @@ window.JO_PROJECTS = [
     }
   },
   {
+    "id": "breed-st",
+    "gallery": "breed-st",
+    "title": [
+      "Breed St."
+    ],
+    "meta": [
+      "Young Art",
+      "Los Angeles, CA",
+      "2012"
+    ],
+    "dark": 0,
+    "search": "breed st breed street young art los angeles 2013 2012 jed ochmanek flats plateaux beekeeper dead flag blues solid rain exotherm oil enamel mirror polished stainless steel cast cement concrete installation view danielle sommer art in america matt fishbeck fixe interview review",
+    "slides": [
+      {
+        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a1910a26de372b2489ffd62_BREED%20ST-4.jpg",
+        "cap": "<em>Plateaux</em>, 2012<br>oil on mirror-polished stainless steel<br>48 × 96&quot;"
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a1910a588253b878b736328_BREED%20ST-18.jpg",
+        "cls": "jo-cover-bottom",
+        "cap": "<em>Plateaux</em> (detail), 2012<br>oil on mirror-polished stainless steel<br>48 × 96&quot;"
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a1910a46de372b2489ffdab_BREED%20ST-10.jpg",
+        "cls": "jo-cover-bottom",
+        "cap": "<em>Plateaux</em> (detail), 2012<br>oil on mirror-polished stainless steel<br>48 × 96&quot;"
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a1910a38e89f3b118d0431c_BREED%20ST-15.jpg",
+        "cap": "<em>Beekeeper</em>, 2012<br>oil on mirror-polished stainless steel<br>48 × 96&quot;"
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a1910a41ef50c7624d7f841_BREED%20ST-17.jpg",
+        "cap": "<em>Beekeeper</em> (detail), 2012<br>oil on mirror-polished stainless steel<br>48 × 96&quot;"
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a1910a38e89f3b118d0431c_BREED%20ST-15.jpg",
+        "cls": "jo-fit-right",
+        "cap": "installation view"
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a1910a34e31974a75054878_BREED%20ST-5.jpg",
+        "cap": "installation view"
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a1910a380d46fc269e237c2_BREED%20ST-16.jpg",
+        "cap": "installation view"
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a1910a2ac9a21b7c590e098_BREED%20ST-13.jpg",
+        "cap": "<em>Dead Flag Blues</em>, 2012<br>oil on mirror-polished stainless steel<br>48 × 96&quot;"
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a1910a36b78d3ee6868d8dc_BREED%20ST-12.jpg",
+        "cap": "installation view"
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a1910a4d503d973ad214861_BREED%20ST-19.jpg",
+        "cap": "<em>Solid Rain</em> (detail), 2012<br>cement<br>16 × 24&quot;"
+      }
+    ],
+    "docs": [
+      {
+        "id": "breed-st-pr",
+        "label": "Press Release",
+        "dark": 0,
+        "text": "<p>Young Art is pleased to present <em>Breed St.</em>, an exhibition of new work by Jed Ochmanek. The opening reception will be held Saturday, December 15th from 6-9pm and the show will remain on view through January 26, 2013.</p><p>The exhibition will consist of three architecturally-scaled, floor-to-ceiling “flats” - paintings produced by pouring highly-thinned, oil-based enamels onto mirror-polished, stainless steel plates – and two works made of cast cement. In referring to the paintings as “flats,” Ochmanek alludes to their support, presentation, and process, in which the flatbed picture plane is interpreted as a sheer surface, tilted along an axis until nearly all of the “information” spills off of a given side.</p><p>Dust settles on the plates between coats, acting as thousands of points at which pigment may be retained as it separates from its binder. Assuming shifting tonal colorations though progressive pours, they visually advance or recede like cones and rods in a biomorphic play-act of perception. Continuous exposure to air-borne elements “develops” the plates as such, rendering a composition literally out of thin air. Conversely, the cement pieces are cast in foil molds lined with window screen material, which buckles under the weight and mass of the cement. Their surfaces, articulated by the distorted screen’s impression, confront notions of the grid and transparency with an obdurate physicality.</p><p>Transposed to the gallery and hung flush with the walls but decidedly not inset, the paintings contingency on the surrounding architecture is explicit, yet their scale threatens to subsume it. The verticality of the flats mimics the ceiling-high doorways Ochmanek sliced from the walls of the disused ballroom that he uses as a studio. A squeegee made of door-sweepers is used to clear a given pour and allows the artist to “step out” of one color and into another.</p><p>Harmonic shifts, particulate detail, and the weave of the grid invite visual scrutiny in the metal paintings and cement works respectively, yet both are understood as results of the decidedly physical processes of dispersion, gravitational pull, and evaporation. The attendant awareness of the steel and cements’ ponderous weight complicates a viewing experience of disembodied opticality, catching the viewer in a split perception and stranding him between two ways of knowing.</p><p><em>Breed St.</em> will be Ochmanek’s third solo show at Young Art. Jed Ochmanek received his BFA from the Rhode Island School of Design in 2005, and attended The Mountain School of Arts in 2010. Recent exhibitions include <em>Bogs</em> at Steve Turner Contemporary, <em>Close Encounters</em> at Galerie Jeanroch Dard, Paris, and <em>The Delta</em> at Alexys Schwartz Projects, Los Angeles. His work was recently featured in Semiotext(e)’s <em>Animal Shelter</em>.</p>",
+        "imgs": [
+          "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a175e569f26e0be248d6a9a_BREED%20ST.jpg"
+        ]
+      },
+      {
+        "id": "breed-st-art-in-america",
+        "label": "Art in America",
+        "dark": 0,
+        "text": "<p>Jed Ochmanek may call his newest series of paintings “flats,” but “depth” more accurately captures what was on display in “<em>Breed St.</em>,” the artist’s third solo exhibition at Young Art. When viewed from the center of the small gallery, Ochmanek’s work—a trio of colorful rectangular panels (all 2012) hung flush with the walls and stretching nearly from floor to ceiling—evoked reflected light, fabric and blown-up photographic negatives; up close, each was seen to feature masses of information in the form of paint pigment and dust, resulting in endless strata of texture and detail.</p><p>For the last few years, Ochmanek, who graduated from the Rhode Island School of Design in 2005 and is currently living in Los Angeles, has experimented with a technique that involves pouring multiple layers of very thin, oil-based enamel paint onto slim plates of industrial metal, such as mirror-polished stainless steel. During the process, the pigments tend to separate from their binder, drying in unique and unrepeatable patterns, which Ochmanek amplifies by letting dust from the environment settle where it will, layering different colors atop each other and allowing the paint to dry in between pours.</p><p>For “<em>Breed St.</em>,” Ochmanek used the gallery’s architecture as the only limit for his 8-foot-tall, rectangular paintings. Never one to clutter a room, Ochmanek chose one panel in gold (<em>Beekeeper</em>), another in soft pink (<em>Plateaux</em>) and a third a dark denim blue (<em>Dead Flag Blues</em>). Over the gallerist’s desk hung two reliefs in cast concrete. Neutral in color but still full of captured texture, these two pieces represented a new type of material process for the artist, which he plans to explore further.</p><p>The surfaces of Ochmanek’s panels reward attention. With <em>Beekeeper</em> and <em>Plateaux</em>, this crust registers as a grainy quality from a distance; with <em>Dead Flag Blues</em>, on which Ochmanek used a squeegee, it looks more like a tight weave. Traces of Ochmanek’s process can also be perceived in the works’ gentle gradient shifts, or in the sudden disruption of color within a panel, where the liquid from one pour has obviously obscured the previous pour, producing what looks like a water stain. All in all, the paintings turn on the tension between the layers of detail they contain and their status as “flats”—a word that brings to mind surfaces devoid of any texture. Ochmanek exacerbates the tension by using metal thin as canvas, as well as by relying on devices like Velcro or magnets to hang the panels so snugly against the gallery wall that they often look like they’ve been painted on. What results is a weighty dialogue with time: while you can try to grasp one of Ochmanek’s pieces in an instant, the piece fights back, insisting that you experience to no small degree the duration of its making.</p><p>* Danielle Sommer, April 2013</p>",
+        "imgs": [
+          "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a18e078cbf740622cb41cb1_547d3e48d0db3b8058aca5a6_img-april-2013-cover_115354719897.jpg_x_275x353_c.jpg"
+        ]
+      },
+      {
+        "id": "breed-st-fixe-interview",
+        "label": "Fixe Interview",
+        "dark": 0,
+        "text": "<p class=\"jo-interview-title\">Jed Ochmanek: Breed St.<br>with Matt Fishbeck</p><p class=\"jo-interview-intro\">When rock + roll was going through puberty, lots of bands felt it was necessary to cover “Louie Louie.” I don’t know why. Maybe I should try it sometime and I’ll understand. Have you ever seen a painting in a museum and thought “I could do that.” Yeah? Has it ever occurred to you that you did do that? That you, like Vermeer, have burped, have told lies, have coveted thy neighbor’s wife, etc. You just didn’t paint it, maybe. There’s thought and there’s expression, and as the man sang, “A LIFETIME” lies between the two. The black canvas might be rock and roll’s “Louie Louie.” I was Philistine once. I’m still an idiot, but now I have a little experience. I saw my first black canvas, and I thought, “Ok, clever.’ I saw my second, and thought, ‘But.’ By the time I saw my third I thought, ‘That joke isn’t funny anymore;’ It’d erased whatever I’d previously ‘understood’ about the ‘idea’ in the first place. Then I saw a black canvas by Jed Ochmanek and everything made sense.<br><br>—MF</p><p class=\"jo-interview-question\">MF: Who's gonna die first and why?</p><p>JO: Me—anxiety. Or lets flip a coin.</p><p class=\"jo-interview-question\">Iridescence. Where do you stand?</p><p>Exactly—encountering iridescence is proof of optical simultaneity that physically implicates the viewer. This contingency of one’s position vis-à-vis where light enters the perceived surface is an issue of wavelength interference - like sound in space. I use iridescence to highlight philosophical problems of painting as experienced in time.</p><p class=\"jo-interview-question\">Poverty and the arts. Indulge me.</p><p>I've always wanted to live and work in places that could house the greatest possibility, so in terms of intersecting poverty I’ve played the traditional artists’ role of canary in the coal-mine of gentrification. The life of an artist as a vow of poverty isn’t any more interesting to me than art as a brilliant marketing scheme.</p><p class=\"jo-interview-question\">How much of your work sells?</p><p>It sells acceptably but the problem is keeping up - selling has less to do with a given work’s quality than it does with the artist establishing and maintaining “market presence.” They want a horse that will run. This unfortunately often results in an arms race - a sort of “might is right” situation that strikes me as the antithesis of art’s appeal.</p><p>For the most part, successful young painters have had to find a way to make their originals into, essentially, minutely differentiated editions by way of photochemical processes, hyper-pared-down procedural approaches, and hired help. Arguing the value of artisanal labor isn’t my prerogative, as I’ve dabbled in all of the aforementioned production models, but I have yet to find a particularly rewarding solution within the “business-art” paradigm. There are of course successful artists who refuse to produce at the rate of this collective consumption, and it’s no coincidence that the “slow read” is often central to their work.</p><p class=\"jo-interview-question\">Do you care where a painting of yours goes?</p><p>A good painting should be able to hold its own in a number of situations, though my work’s close relationship to architecture makes this a bit more delicate. I’ve always envied music’s ability to occupy, punctuate, and inform a plethora of unforeseen circumstances. I love that story of someone going into labor in a car careening through San Francisco streets with Holy Shit coincidentally on the tape deck. What a context in which to enter the world!</p><p class=\"jo-interview-question\">When and why did artists become so social?</p><p>I'd imagine the reasons were largely geo-political and socio-economic. It’s easy to be jealous of past bohemian cradles or centers of culture – what was your quote? “London in the 60’s, Soho in the 70’s, Manchester in the 80’s, Berlin in the 90’s, LA in a heartbeat?” I think we could safely add the Weimar Republic in the 20’s and Florence in the 1500’s as fun places to be if you knew a good crowd.</p><p class=\"jo-interview-question\">Your work is so masculine. Is it because you have long hair?</p><p>I think that it has more to do with my having had a shaved head in adolescence.</p><p class=\"jo-interview-question\">We both just watched Derek Jarman's <em>Caravaggio</em>, but separately. Talk to me.</p><p>It felt amply off – though Caravaggio didn’t achieve his velvety blacks or pitch-perfect, luminous flesh-tones by hacking away at the canvas, I think the film was enriched by the slips that caused it to exist out-of-time - car horns in the background, the calculator, etc. Caravaggio’s fascination is largely his disjuncture – while his tumultuous life could yield any number of screenplays, a realistic portrayal of his painting process would have likely been unwatchable.</p><p class=\"jo-interview-question\">Have you read Jarman's death-bed book <em>Chroma</em>?</p><p>Yes – I liked that. I especially liked the chapter on grey – his description of it as a place of no return. He called art critic’s love of grey an allowance to describe color without getting into “the bordello of the spectrum,” but in my experience grey has an incredible capacity to stir. I immediately wept walking into Dia’s room containing Richter’s <em>Six Gray Mirrors</em>, for instance. Jarman points out that Matisse’s studio walls were grey, but he re-imagined them as scarlet for <em>Red Studio</em> (one of Rothko’s favorites.) Grey is without this flight of fantasy; its honesty is disarming.</p><p class=\"jo-interview-question\">Tell me about <em>Breed St.</em></p><p>Breed St. was named after the cross-street of my home and studio, where I share a disused 1920’s ballroom and banquet hall with Marinna Wagner and our cat. I made the paintings outdoors in the shadow of the Breed Street Shul - a commanding brick building that was home to the West Coast’s largest orthodox Jewish community from the 1910’s through the fifties and has been in disrepair since the 80’s.</p><p>The show consisted of three floor-to-ceiling paintings made of oil-based enamel poured across mirror-polished stainless steel sheets, as well as two smaller wall-works made of cast cement. Both types had a palpable weight. The sheets were mounted nearly flush with the wall - hovering about a quarter of an inch off as planes. It was about articulating the feeling of my studio environment and achieving a balance specific to the gallery’s architecture. They were looming, empty pieces but had, I hope, a strange sense of sweetness.</p><p class=\"jo-interview-question\">One thing I particularly like about your work is that it's classical. Classical in the sense that its pre-postmodern. It's not about other art. It's not idea-art. It bears, instead, the practice of art...</p><p>I've pursued something like this in recent paintings, but a programmatic restructuring of classicism is not an immediate goal. In fact the sculpture and video in <em>Palladium</em> could be judged especially well in relation to other art. The best art confounds false dichotomies: from Vermeer to Sandback, one cannot say “this art has no ideas in it” or “this art is solely the product of an idea.”</p><p class=\"jo-interview-question\">But there's a sense of the eternal. It's neither in nor out of vogue. Light's still light, dark's still dark...</p><p>One can hope to have absolutes in play, however impossible that may be at this point for the socially inscribed construct of painting, but yes – no overt gimmicks. I can’t claim to have escaped the fashion system - the gauge of the steel might seem too thin or too thick in a decade or so. The ingrained obsolescence of the desperately vogue, however, has only ever served as a plea for solvency within existing power structures.</p><p>In terms of painting I’m obviously intoxicated by the concept of the eternal. Painting as mental object commands an incredible indifference, it’s “always on” by virtue of its basic presence. This stasis of painting is primary and also total lunacy. Standing against the eternity of the tomb, the Terracotta Army constitutes a triumph over reality.</p><p class=\"jo-interview-question\">Also I'd say your work is 'traditional' inasmuch as it, as often as not, will depict things we observe in the world, or have observed - things physical, things ambient, things experienced: gloss, the blacked-out windows in a desperate room, a mackerel sky, the spectrum of color that overlaid grids can produce, smog. Beckett might call these portraits, or landscapes, and that wouldn't be stretching it. Or would it?</p><p>Not at all, I started out painting landscapes. Then I spent a few years experimenting, trying to figure a way into abstraction. During that time I worked primarily in squares, 1x1’, 2x2’ or 4x4’, and in black and white, quite literally because there were too many problems to afford having dimensions and color confuse things. The first real breaks were vertically oriented colorful abstractions that were specifically the size and proportion of my head. They almost comically begged the comparison to portraits while behaving like serial, architectural interventions.</p><p class=\"jo-interview-question\">It's elemental stuff. You play with ontology a lot. Your tonal paintings - which I see as both studies and complete works - are intentionally evocative. By virtue of what's 'in the painting,' it will jog a memory, or stir an emotional state, say. You know this... you aim for this... right?</p><p>My interest in particulate detail lies in examining the limits of knowledge - how can one claim to know a square inch of a stream? This turns painting into a daily lesson in humility, a reminder of my incapacity as author, a form of self-preservation. A friend walked in on <em>Beekeeper</em> prior to my titling it and immediately said it looked like pollen, which I hadn’t thought of at the time. Beekeeping is an apt metaphor of the painting’s toxic process - donning a mask and gloves and “going in” to this other situation that one is not totally in control of. Associations cross-pollinate.</p><p class=\"jo-interview-question\">Psychic still-lives, I'd say. Cézanne paints onions and you paint ennui. Both might make a viewer tear up, but in the case of Cézanne it's not the onions. What's depicted is less the point than what's going on. So the physical gets meta. It's still life...</p><p>Eli Langer’s review of <em>Palladium</em> put a fine point on it: the physics that produced the work - evaporation, dispersion, etc. – are working on everything around the painting as well, so this meta characteristic enters in. The same gravity pulling enamel down the steel causes glaciers to calve.</p><p class=\"jo-interview-question\">And this dictates the materials you use?</p><p>Absolutely. Enamel retains an intensity of color after being extremely thinned out, foil remembers touch so specifically, and no canvas is as flat and non-absorbent as polished steel, so there’s incredible fidelity with which to index all the elements at play. Were the sheets to be left blank, <em>Breed St.</em> would have been a hall of mirrors. In theory this should add to their luminosity, but in this case it’s more the concept that’s attractive to me.</p><p class=\"jo-interview-question\">I look at a painting of yours - say <em>Dead Flag Blues</em> or <em>Breaking</em> - and its primordial and entropic at the same time. Things are forming, things are eroding. What time is it?</p><p>It's an artistic cliché, but those two in particular were produced at unique points of crisis both inside and outside of their material process. That those pieces faithfully reflected my “falling apart” was central to their being generative.</p><p class=\"jo-interview-question\">Why is the shit so unwieldy?</p><p>If one's to articulate the tides, it’s not so outlandish.</p><p class=\"jo-interview-question\">Surely we have different cognitive color-registers, no? What do you think about this?</p><p>We're stranded within ourselves. I try to create evocative dynamics regardless of their chromatic specificity, but this is why image correcting drives me crazy – at what point is it a profound philosophical problem and at what point do you press print? Context of course also changes everything.</p><p class=\"jo-interview-question\">What about colorblindness?</p><p>My uncle is color-blind, and while looking at <em>Plateaux</em> he asked Marinna at what points the red shifted to purple and out to blue. For him, the transitions translated to an either/or. He’s an incredibly eloquent and incisive investigative reporter - society looks to him to pursue human truths amongst often-opaque lines of fact. In that sense I’d imagine their linguistic scrutinizing of shared yet dissimilar cognitions produced a rich area of ambiguity. I’d love to see the pieces in his mind’s eye.</p><p class=\"jo-interview-question\">Your last show of paintings at YOUNG, the room of smaller chromatic moments. At first I thought, jail-cell, the delineation of interior and exterior getting reinforced. I'm trapped. Then I thought, portholes: light is admitted (and possibly air). I can see. I can breathe. Then I thought, a zoetrope's flickering. I'm dizzy and I like it. What were you thinking?</p><p>I was thinking those things in that exact order - “I used to be sort of blind, now I can sort of see.”</p><p class=\"jo-interview-question\">What do you think about the optics of flicker?</p><p>Artists have a bad habit of citing science that they’re not suited to substantially address. I’ll be no exception in bringing up the quantum physics discussion of consciousness as a by-product of wave function collapse (a phenomenon which occurs at measurable intervals.) This is an unpopular view as I understand it, but the concept of consciousness as having a “frame rate,” which by definition betrays dead zones between frames, is of great interest. The optics of flicker could carry some crude similarity.</p><p class=\"jo-interview-question\">I want to make a painting that is heavier than any wall could possibly support. Didn't I therefore just do it? Or does there need to be footage in order for the KLF to have burned a million quid?</p><p>I don’t know, though I would like to disagree with [Lawrence] Weiner and say that footage is necessary for a shift in reality to occur. You should, I’ll help. I’m just glad the KLF burnt the million quid so that I don’t have to.</p><p>- 2012</p>",
+        "imgs": [
+          "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a18e1892be2ae7151963059_547bd33dd971d02f7a8d788f_fixegrey_zps9b090cd8.jpg",
+          "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a18e189cbf740622cb43d3e_547e6245a5f5b1b871b0c38a_viseul.jpg",
+          {
+            "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a175e567e01cbae8bae111a_HUFFINGTON.jpg",
+            "caption": "photo: Quinn Tivey"
+          },
+          "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a18c46ce0c9073d8ecb756e_PALLADIUM-4.jpg",
+          {
+            "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a18e204a0aff33bf2c3c0dd_547d2dfdd0db3b8058aca2fe_front.jpg",
+            "caption": "<em>Exotherm</em>, 2012, oil on stainless steel, 16 × 24&quot;"
+          },
+          {
+            "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a1910a38e89f3b118d0431c_BREED%20ST-15.jpg",
+            "caption": "<em>Breed St.</em>, 2012, installation view, Young Art"
+          },
+          {
+            "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a1910a380d46fc269e237c2_BREED%20ST-16.jpg",
+            "caption": "<em>Breed St.</em>, 2012, installation view, Young Art"
+          },
+          {
+            "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a1910a46de372b2489ffdab_BREED%20ST-10.jpg",
+            "caption": "<em>Plateaux</em> (detail), 2012, oil on mirror-polished stainless steel, 48 × 96&quot;"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "palladium",
+    "gallery": "palladium",
+    "title": [
+      "Palladium"
+    ],
+    "meta": [
+      "Young Art",
+      "Los Angeles, CA",
+      "2011"
+    ],
+    "dark": 0,
+    "search": "palladium young art los angeles 2011 jed ochmanek painting sculpture video vernon burnt out fluorescent tubes pack everything applause ppppp oil lid breaking filament shore phosphor socketed candle harsh patel kyle parker infinite body eli langer artslant elemental outcroppings james oliver post new mirage review interview enamel steel mirror polished brass nickel plated",
+    "slides": [
+      {
+        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a18c46c2bf04d67c290d6cb_PALLADIUM-2.jpg",
+        "cls": "jo-protect-left",
+        "cap": "installation view"
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a18c46c51d287b8842b9293_PALLADIUM-3.jpg",
+        "cls": "jo-protect-left",
+        "cap": "installation view"
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a18c46c2bf04d67c290d6c8_PALLADIUM-22.jpg",
+        "cls": "jo-protect-left",
+        "cap": "installation view"
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a18c7666cd965d935e17fe8_547f62e9ec28303b217ab24a_JO11_01.jpg",
+        "cls": "jo-fit-right",
+        "cap": "<em>Pack Everything</em>, 2011<br>oil on mirror-polished brass<br>8 × 12&quot;"
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a18c7ce09bbdf4db71ad0e9_547f4ba103c3a0a10e890079_applause.jpg",
+        "cls": "jo-fit-right",
+        "cap": "<em>Applause</em>, 2011<br>oil on steel, magnet mounted<br>8 × 12&quot;"
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a18c81ea0aff33bf2be8499_547f4851f45bd2fc1e676c5e_ppppp.jpg",
+        "cls": "jo-fit-right",
+        "cap": "<em>PPPPP</em>, 2011<br>oil on steel, magnet mounted<br>8 × 12&quot;"
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a18c875d503d973ad135b58_547d67a2f644ca7f589c2354_06cropped.jpg",
+        "cls": "jo-protect-left",
+        "cap": "installation view"
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a18c46a2bf04d67c290d689_PALLADIUM-13.jpg",
+        "cls": "jo-fit-right",
+        "cap": "<em>Oil</em>, 2011<br>oil on steel, magnet mounted<br>8 × 12&quot;"
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a18c46c40cd582a05fa0c6b_PALLADIUM-10.jpg",
+        "cls": "jo-fit-right",
+        "cap": "<em>Lid</em>, 2011<br>oil on steel, magnet mounted<br>8 × 12&quot;"
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a18c46c6c0dc2b32f0c5970_PALLADIUM-5.jpg",
+        "cls": "jo-fit-right",
+        "cap": "<em>Breaking</em>, 2011<br>oil on steel, magnet mounted<br>8 × 12&quot;"
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a18c46ce0c9073d8ecb756e_PALLADIUM-4.jpg",
+        "cls": "jo-fit-right",
+        "cap": "<em>Vernon</em>, 2011<br>12 burnt-out fluorescent tubes<br>chrome-plated mirror-polished brass<br>hardware<br>7.5 × 10 × 94&quot;"
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a18c46d88301fbc426f4115_PALLADIUM-16.jpg",
+        "cls": "jo-fit-right",
+        "cap": "<em>Vernon</em> (detail), 2011<br>12 burnt-out fluorescent tubes<br>chrome-plated mirror-polished brass<br>hardware<br>7.5 × 10 × 94&quot;"
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a18cb41d8b4f7bc7cb72116_547d6e12d0db3b8058aca962_20.jpg",
+        "cap": "<em>Socketed</em>, 2011<br>HD video and sound on blu-ray disc<br>6 minutes, 25 seconds"
+      },
+      {
+        "url": "https://player.vimeo.com/video/85052386?h=e83114cc9a&autoplay=1&muted=1&loop=1&playsinline=1&dnt=1",
+        "video": 1,
+        "cap": "<em>Socketed</em>, 2011<br>HD video and sound on blu-ray disc<br>6 minutes, 25 seconds"
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a18c46ccf2d3a2813bb72f6_PALLADIUM-27.jpg",
+        "cap": "installation view"
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a18cc41cbf740622cb0683f_547f6c61c982383c215ec929_JO11_10.jpg",
+        "cls": "jo-fit-right",
+        "cap": "<em>Filament</em>, 2011<br>oil on steel, magnet mounted<br>8 × 12&quot;"
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a18cc836c0dc2b32f0dfed2_547f6cf540693e05136cf3c8_JO11_11.jpg",
+        "cls": "jo-fit-right",
+        "cap": "<em>Shore</em>, 2011<br>oil on black nickel-plated<br>mirror-polished brass<br>magnet and steel mounted<br>8 × 12&quot;"
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a18c46de90e7b39736d34b4_PALLADIUM-6.jpg",
+        "cls": "jo-fit-right",
+        "cap": "<em>Phosphor</em>, 2011<br>enamel on chrome-plated<br>mirror-polished brass<br>magnet and steel mounted<br>8 × 12&quot;"
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a18c46cd24b431c284d2a84_PALLADIUM-17.jpg",
+        "cap": "<em>Vernon</em> (detail), 2011<br>12 burnt-out fluorescent tubes<br>chrome-plated mirror-polished brass<br>hardware<br>7.5 × 10 × 94&quot;"
+      }
+    ],
+    "docs": [
+      {
+        "id": "palladium-pr",
+        "label": "Press Release",
+        "dark": 0,
+        "text": "<p>Disruptions - this time like holes in the wall, roughly the size of my head. Regular intervals like some affirmation but really on autopilot. No driver at the wheel- instead socketed frequencies oscillating between agoraphobia and claustrophobia. Dust-breeders gathering a low collection of particles. Information disseminated irreparably across a plane, like a last vestige of content before the big exhale. Incendiary carcinogens, mechanized light and a blind spinning- out of sync and dead into the lens. Exhausted lights from Vernon - burnt filaments, dispersions of mercury. Somewhere there’s an exchange- 5am and the diesel rigs are trudging through and the thinner evaporates and I keep breathing.</p><p>-Jed Ochmanek, 2011</p><p>Young Art presents <em>PALLADIUM</em>, an exhibition of new painting, sculpture and video by Jed Ochmanek. The opening reception will be held Saturday July 9, from 7 to 10pm, and the exhibition will remain on view through August 7, 2011. <em>PALLADIUM</em> constitutes a circular system in which Ochmanek furthers his engagement with structured space, material presence, and optical potentiality.</p><p>The sculpture, <em>Vernon</em>, consisting in part of 12 burnt-out fluorescent tubes taken from Ochmanek’s studio (located in the east Los Angeles city of the same name), provides an immediate thematic link to his previous solo exhibition, <em>Daylight Paintings</em>. Here the light source has run its course, its apparatus rendered obsolete and returned “in-the-round” as architectural intervention-cum-sculpture.</p><p>13 paintings on metal are mounted in serial order and hung flush with the gallery walls by magnets. The metal provides a non-absorbent and in some cases highly reflective ground upon which pours of thinned enamel separate into granulated eddies and dispersions, recalling bio-chemical processes as much as atmospheric topographies. Their color complicates notions of presence, as tonal passages slide in and out of visibility. An intimacy in scale calls for the pieces to be viewed both as singular meditations and as notes in a larger harmonic whole.</p><p>On occasion of the 3rd annual Perform! Now- Chinatown Performance Art Festival scheduled for Saturday, July 30th, Ochmanek has invited Los Angeles-based artist and musician Kyle Parker to perform at the gallery. Parker, currently working under the name Infinite Body, has collaborated and performed with many artists including No Age, Haircut Mountain Transit, Gator Surprise, and Men Who Can't Love.</p><p><em>PALLADIUM</em> is Ochmanek’s second solo exhibition with Young Art. He has recently participated in numerous group exhibitions including <em>Like Death, New Mexico Will Catch Up with You in the End</em>, at The Fisher Press in Santa Fe, New Mexico, <em>What the Dust Brings Together</em> at New Gallery, London, <em>Big Deal Tiny Creatures</em> at DIY Gallery, Los Angeles, and <em>The Delta</em> at Alexys Schwartz Projects, Los Angeles. Ochmanek lives and works in Los Angeles.</p>",
+        "imgs": [
+          {
+            "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a18cd5709bbdf4db71bea3d_547d37a2f644ca7f589c2153_PALLADIUM%20POSTER%20SCAN.jpg",
+            "caption": "<em>PALLADIUM</em>, 2011, collaboration with Harsh Patel, metallic pigment and stamp on vellum, ed. of 50, 16 × 20&quot;"
+          },
+          {
+            "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a18cd1c41e0a2e2679232bb_547e70dd151027887b40d0c9_070911.jpg",
+            "caption": "Palladium invitation image, 2011"
+          }
+        ]
+      },
+      {
+        "id": "palladium-artslant-review",
+        "label": "ArtSlant Review",
+        "dark": 0,
+        "text": "<p class=\"jo-interview-title\">Elemental Outcroppings<br>by Eli Langer</p><p>Of his recent exhibition at Young Art in Chinatown, Los Angeles, Jed Ochmanek describes his interest in considering and, if possible, articulating theoretical rates of cognition as found in our response to phenomena.</p><p>From his studio ceiling lamps in the “exclusively industrial” enclave of Vernon, California, Jed created a vertical column of twelve eight-foot-long, expended fluorescent light tubes. A fixture of two horizontal chromed plates, like those the paintings are made on but perforated for the bulbs to pass through in one, and the merest notches for the bulbs brass nipples to rest in the bottom plate, manage to just keep the bulbs from toppling.</p><p>Initially I had a feeling of dread upon viewing these spent vessels of glass and gas, now inert and useless. Confronted with the dead bulbs, one could readily ask, what are these doing here? Jed is prompting our cognizance of the art in the show. The bulbs were nodes to which agitated electrons flowed and whose contents, affected by the arriving energy, produced the light by which Ochmanek attended to the business of making art. The lighting tubes were as a candle, a finite measure of energy and duration. They are placed here to be considered as a record of those expenditures.</p><p>Paint, assumed to have come pre-mixed to a specific consistency as per the ratio of pigment particles to binder/carrier has here been altered for solvency over density, mobility over adherence. Tampering with the factory settings of the paint, Ochmanek has all but nearly freed the pigment particles from their binder, causing them to behave more like sediments carried in a current rather than bonded subjects of the uniform and obedient body of modeling by hand, which paint is. The artist has exchanged a certain visible and pre-present control for the potentialities to be discovered in phenomena that will make themselves known in the behavior of the emancipated paint particles.</p><p>Mounted flush within the walls adjacent to the sculpture, the paintings are made on rectangular chrome metal plates. These dedicated surfaces provide an unyielding and inflexible, non-porous substrate upon which the artist stages his painting experiments. Ochmanek applied a pellucid paint alloy to the hard surface, conducting the flowing binder and sediments across the planar surface. Furthermore, some of the paintings have been buffed by a chrome polishing tool to a highly mirrored finish while still somehow maintaining a transparent wash of color. The surfaces while varied in brightness and color are generally organic feeling, evoking drifting primordial liquid, sea smoke and such insoluble presences.</p><p>Despite the thin surfaces and lack of manual traces in the work, I sensed the hands that had held the rigid plates, intuitively finding up and down, the inconstant vertical, horizontal and diagonal bias of the flat and its accordance with the gravitational force pulling upon the contents. We see the artist positioning himself between the attracting gravity and the freed paint particles as they slip towards the planetary mass. Ochmanek is mediating again, here as the variable and unstable element of force, acting in the short interim before inertia stills the phenomenon of motion.</p><p>The video projected on the back wall of a narrow space is a close-cropped view of a candle with a flaming wick, occasionally neatly snipped off as it emerges blackened and spent from the flame's body which blows about violently, being subject to a strong current of air. The wind is force feeding the flame an oxygen-rich mixture and consequently the candle, a simple solid fuel stick whose string wick conducts the warmed, liquefied fuel to the event of combustion, is consuming a correspondingly higher measure of itself.</p><p>The candle is not alight to illuminate a place or thing and even seems to be serving another purpose besides the allegorical possibilities in its expedited burn rate. The candle is a finite measure of fuel and in most circumstances will burn at a generally regular rate until more or less completely consumed. This is the case with every candle of this volume. The candle is as an hourglass, an instrument whose operation provides a visual model correlating the principle of duration. In the case of the candle in the video, Ochmanek has accelerated the clock speed of the candle.</p><p>The exhibition deftly demonstrates principles of phenomena such as time, force, gravity and resistance whose presence can only be known to us, through their appearance in the behavior of objects and matter, including not least, our own.</p><p>* Eli Langer</p>",
+        "imgs": [
+          "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a18cf37d7e9f8e09854113f_547fca4393a8eb22265b19d7_20140217183202-ArtSlant-logo-mailer-top.jpg",
+          "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a18cf3a6cd965d935e36083_547e19b69e4d1e7609d4cd0e_04artslant.jpg",
+          {
+            "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a18c7ce09bbdf4db71ad0e9_547f4ba103c3a0a10e890079_applause.jpg",
+            "caption": "<em>Applause</em>, 2011, enamel on steel, magnet mounted, 8 × 12 inches"
+          },
+          {
+            "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a18c46d88301fbc426f410c_PALLADIUM.jpg",
+            "caption": "still from <em>Socketed</em>, 2011, HD video and sound on blu-ray disc, 6 minutes, 25 seconds"
+          }
+        ]
+      },
+      {
+        "id": "palladium-postnew-interview",
+        "label": "POST NEW Interview",
+        "dark": 0,
+        "text": "<p class=\"jo-interview-title\">Jed Ochmanek: Mirage</p><p class=\"jo-interview-intro\">originally published Oct. 1, 2011</p><p class=\"jo-interview-question\">POST NEW: Can you talk a bit about your background and what inspired you to become an artist?</p><p>I was born in Frankfurt, Germany and grew up in Washington, DC. As a kid I aspired firstly to be a UPS man, then an archeologist, and then an artist. I think the turning point came when I repeated the 1st grade and was allowed to work on my own in the back for the year. I made two books, one on deep sea anglers and the other on mummies. To solitarily ponder the abyss while everyone else goes through the motions, and then to report back, was a privilege that artists seemed to be afforded. It probably permanently spoiled me, but it felt like a revelation at the time - the only way to work.</p><p class=\"jo-interview-question\">PN: Can you tell us what you like about L.A.?</p><p>For a relatively young city Los Angeles’ obsolescence is remarkable. That affords it an impossibility that’s perfect for someone looking to get lost. Bas Jan Ader said that you could be five different people here, and I think he meant that like our microclimates, you'll find pockets of interests and private lives tucked away in plain view. The concept of a sunshine noir appeals perhaps as the fantasy branch of this unique paradox of isolation.</p><p class=\"jo-interview-question\">PN: How does your workspace define you and your work?</p><p>Directly – <em>Palladium</em> at Young Art was largely a summation of the years I spent working in a studio that I was very lucky to have in Vernon, California. Vernon by day is perfectly rendered in <em>Zabriskie Point</em>’s opening driving scene - an unreadable situation of noise, glaring sun and diesel fumes – but at night it empties out and you’re totally alone. The silence allows you to appreciate its industrial scale vis-à-vis your own.</p><p>The whole art-making process there was permeated with experiences of inertia, expenditure, toxicity, and finitude: driving to the studio, turning on the lights, pouring the paint, breathing it all in. The show centered on a sculpture made from 12 of the studio's burnt-out fluorescent tubes. It was partially a way of quantifying that time - the wattage and man-hours spent in their artificial light.</p><p>I’m currently living and working out of a disused, cavernous, 1920’s ballroom and banquet hall in Boyle Heights. My parents are into renovation of Victorian homes and I think that love of altering built environments carried over. I constructed a minimal bedroom with Japanese sliding walls. I collect cacti and paint in the garden. I've been throwing events as well. It feels schizophrenic having 600 some people here one night and the next day to be painting with the pigeons, but it’s a push toward something kaleidoscopic.</p><p class=\"jo-interview-question\">PN: What mediums interest you at present and what materials do you see yourself working with in the future?</p><p>Painting-wise I've been working with enamels and solvents on various metals – mirror polished stainless steel, black nickel-plated brass. By thinning the paint until it’s separated from its binder, and exposing it on a completely un-absorbent plane, I’m after a state where the material exists almost despite itself. There’s something moving about that which can flourish with complexity under very harsh or strained conditions. Creating those sorts of situations necessitates experimental investigation often in a literal sense - there are test subjects and control groups - so the specifics of what that will demand materially are difficult to predict.</p><p class=\"jo-interview-question\">PN: How has your work evolved over the years?</p><p>In order for it to continue to be rewarding and to allow for an intimacy in the work, I’ve increasingly had to include my own vulnerabilities and doubts. That may just be a part of growing up. Overall I don’t know if I could categorize it as an evolution so much as a certain kind of ongoing activity, something critical and exploratory. It’s followed me; it’s continued along a strain of criteria that give a better understanding of a kind of seeing that I’m after. It’s a mirage, but it’s my own.</p><p class=\"jo-interview-intro\">Jed Ochmanek’s work can be seen in Close Encounters at Galerie Jeanroch Dard, Paris, through October 13th.</p><p>Interview – James Oliver<br>Photographer – Clément Pascal</p>",
+        "imgs": [
+          "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a18cecd39df80166a85b813_547e206cf644ca7f589c306a_404679_286716801382685_1720826444_n.jpg",
+          "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a18cecdb5e0a785065dc1ae_547e28edf644ca7f589c30f9_tumblr_mahyejYzp01qd1orwo1_1280.jpg",
+          "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a18cecd7ec60f5606cb825b_547e28c5d0db3b8058acbf7b_76_jedochmanek8.jpg",
+          "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a18cecd9170e9a39f8432e0_547e27489e4d1e7609d4ce33_tumblr_mahxo9oJGl1qd1orwo1_1280-1.jpg"
+        ]
+      }
+    ]
+  },
+  {
     "id": "daylight",
     "gallery": "daylight-paintings",
     "title": ["Daylight Paintings"],
