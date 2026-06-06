@@ -1233,3 +1233,190 @@ body.is-lightbox-open .jo-lightbox {
     cursor: default;
   }
 }
+/* =========================================================
+   BATCH 2 — UNIFORM SQUARE CURSORS
+   All glyphs occupy a 28px square (10..38) in a 48 canvas.
+   prev/next/up/down point at their tip; + and X center.
+========================================================= */
+.jo-gallery.cursor-prev,
+.jo-pr-image.cursor-prev {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M38 10 L10 24 L38 38' fill='none' stroke='black' stroke-width='1.05' stroke-linecap='square' stroke-linejoin='miter'/%3E%3C/svg%3E") 10 24, w-resize;
+}
+.jo-gallery.cursor-next,
+.jo-pr-image.cursor-next {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M10 10 L38 24 L10 38' fill='none' stroke='black' stroke-width='1.05' stroke-linecap='square' stroke-linejoin='miter'/%3E%3C/svg%3E") 38 24, e-resize;
+}
+.jo-dark .jo-gallery.cursor-prev {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M38 10 L10 24 L38 38' fill='none' stroke='white' stroke-width='1.05' stroke-linecap='square' stroke-linejoin='miter'/%3E%3C/svg%3E") 10 24, w-resize;
+}
+.jo-dark .jo-gallery.cursor-next {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M10 10 L38 24 L10 38' fill='none' stroke='white' stroke-width='1.05' stroke-linecap='square' stroke-linejoin='miter'/%3E%3C/svg%3E") 38 24, e-resize;
+}
+.jo-pr-back-zone,
+.jo-utility-back {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M38 10 L10 24 L38 38' fill='none' stroke='black' stroke-width='1.05' stroke-linecap='square' stroke-linejoin='miter'/%3E%3C/svg%3E") 10 24, w-resize;
+}
+.jo-pr.jo-dark .jo-pr-back-zone {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M38 10 L10 24 L38 38' fill='none' stroke='white' stroke-width='1.05' stroke-linecap='square' stroke-linejoin='miter'/%3E%3C/svg%3E") 10 24, w-resize;
+}
+.jo-pr-document .jo-pr-image img,
+.jo-pr-document .jo-pr-image figure img,
+.jo-news-image-button {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M24 10 L24 38 M10 24 L38 24' fill='none' stroke='black' stroke-width='1.05' stroke-linecap='square'/%3E%3C/svg%3E") 24 24, zoom-in;
+}
+.jo-pr-document.jo-dark .jo-pr-image img,
+.jo-pr-document.jo-dark .jo-pr-image figure img {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M24 10 L24 38 M10 24 L38 24' fill='none' stroke='white' stroke-width='1.05' stroke-linecap='square'/%3E%3C/svg%3E") 24 24, zoom-in;
+}
+.jo-lightbox-close {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M10 10 L38 38 M38 10 L10 38' fill='none' stroke='black' stroke-width='1.05' stroke-linecap='square'/%3E%3C/svg%3E") 24 24, zoom-out;
+}
+.jo-lightbox.jo-dark .jo-lightbox-close {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M10 10 L38 38 M38 10 L10 38' fill='none' stroke='white' stroke-width='1.05' stroke-linecap='square'/%3E%3C/svg%3E") 24 24, zoom-out;
+}
+/* =========================================================
+   BATCH 2 — HOMEPAGE UP / DOWN SNAP ZONES
+========================================================= */
+.jo-nav-vert {
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 42px;
+  z-index: 850;
+  background: transparent;
+}
+.jo-nav-up { top: 0; }
+.jo-nav-down { bottom: 0; }
+.jo-nav-up {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M10 38 L24 10 L38 38' fill='none' stroke='black' stroke-width='1.05' stroke-linecap='square' stroke-linejoin='miter'/%3E%3C/svg%3E") 24 10, n-resize;
+}
+.jo-nav-down {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M10 10 L24 38 L38 10' fill='none' stroke='black' stroke-width='1.05' stroke-linecap='square' stroke-linejoin='miter'/%3E%3C/svg%3E") 24 38, s-resize;
+}
+body.is-dark .jo-nav-up {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M10 38 L24 10 L38 38' fill='none' stroke='white' stroke-width='1.05' stroke-linecap='square' stroke-linejoin='miter'/%3E%3C/svg%3E") 24 10, n-resize;
+}
+body.is-dark .jo-nav-down {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M10 10 L24 38 L38 10' fill='none' stroke='white' stroke-width='1.05' stroke-linecap='square' stroke-linejoin='miter'/%3E%3C/svg%3E") 24 38, s-resize;
+}
+.jo-nav-vert.jo-hidden,
+body.is-pr-open .jo-nav-vert,
+body.is-news-open .jo-nav-vert,
+body.is-cv-open .jo-nav-vert,
+body.is-search-open .jo-nav-vert,
+body.is-lightbox-open .jo-nav-vert {
+  display: none;
+}
+/* =========================================================
+   BATCH 2 — NEWS / CV BACK ZONE
+========================================================= */
+.jo-utility-back {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 320px;
+  z-index: 610;
+  display: none;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+body.is-news-open .jo-utility-back,
+body.is-cv-open .jo-utility-back {
+  display: block;
+}
+/* =========================================================
+   BATCH 2 — FULL-SCREEN VIDEO COVER (desktop)
+   Fills the viewport, no letterbox. .jo-video-bl pins the
+   lower-left corner (crops from top/right only).
+========================================================= */
+@media (min-width: 901px) {
+  .jo-slide iframe {
+    top: 50% !important;
+    left: 50% !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 100vw !important;
+    height: 56.25vw !important;
+    min-width: 177.78svh !important;
+    min-height: 100svh !important;
+    max-width: none !important;
+    transform: translate(-50%, -50%) !important;
+    object-fit: cover !important;
+  }
+  .jo-slide.jo-video-bl iframe {
+    top: auto !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    transform: none !important;
+  }
+}
+/* =========================================================
+   BATCH 2 — SLIDE FADE (quick)
+========================================================= */
+@keyframes joFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.jo-slide.active {
+  animation: joFade .18s ease both;
+}
+/* =========================================================
+   BATCH 2 — SELECTION / DRAG FLASH FIX
+========================================================= */
+.jo-nav,
+.jo-nav *,
+.jo-stage,
+.jo-stage *,
+.jo-lightbox,
+.jo-lightbox *,
+.jo-nav-vert {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+.jo-slide img,
+.jo-pr-image img,
+.jo-news-image,
+.jo-lightbox-frame img {
+  -webkit-user-drag: none;
+  user-select: none;
+}
+/* =========================================================
+   BATCH 2 — NEWS DATES BLACK, SOCIAL ICONS, CV SPACING
+========================================================= */
+.jo-news-date {
+  color: var(--black) !important;
+}
+.jo-utility-social a {
+  width: auto;
+  height: 30px;
+}
+.jo-utility-social svg {
+  width: auto;
+  height: 30px;
+}
+.jo-cv-block {
+  margin-bottom: 2.5em;
+}
+/* =========================================================
+   BATCH 2 — FONT-FLASH GUARD
+   Text is hidden until Aktiv Grotesk is ready, so it never
+   paints in faux-bold/italic fallback. JS removes the class
+   on document.fonts.ready (with a timeout fallback).
+========================================================= */
+html.jo-fonts-loading .jo-nav,
+html.jo-fonts-loading .jo-meta,
+html.jo-fonts-loading .jo-caption,
+html.jo-fonts-loading .jo-pr,
+html.jo-fonts-loading .jo-news-page,
+html.jo-fonts-loading .jo-cv-page {
+  opacity: 0 !important;
+}
+.jo-nav,
+.jo-meta,
+.jo-caption {
+  transition: opacity .25s ease;
+}
