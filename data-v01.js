@@ -54,7 +54,7 @@ window.JO_PROJECTS = [
     "id": "solstice",
     "gallery": "solstice-sounding",
     "title": ["Solstice Sounding: Dusk Till Dawn", "with Seth Olinsky", "curated by Wild Up"],
-    "meta": ["Human Resources", "Los Angeles, CA", "12.21.19"],
+    "meta": ["Human Resources", "Los Angeles, CA", "12.22.19"],
     "dark": 1,
     "search": "solstice sounding dusk till dawn seth olinsky wild up human resources los angeles 2019",
     "slides": [
@@ -86,21 +86,6 @@ window.JO_PROJECTS = [
       "A 20th Anniversary Concert Series"
     ],
     "meta": [
-      "FurstWurld",
-      "Joshua Tree, CA",
-      "&nbsp;",
-      "Perpetual Dune Festival",
-      "Wonder Valley, CA",
-      "&nbsp;",
-      "Coaxial Arts",
-      "Los Angeles, CA",
-      "&nbsp;",
-      "Saint Ghetto Festival",
-      "Bern, Switzerland",
-      "&nbsp;",
-      "Bush Hall",
-      "London, UK",
-      "&nbsp;",
       "10.26.19 - 11.26.19"
     ],
     "dark": 1,
@@ -109,12 +94,12 @@ window.JO_PROJECTS = [
       {
         "url": "https://www.youtube.com/embed/qpX2UIi1OA8?autoplay=1&mute=1&loop=1&playlist=qpX2UIi1OA8&controls=0&playsinline=1&modestbranding=1&rel=0",
         "video": 1,
-        "cap": "The Starlight Night (excerpt)<br>Video: Jed Ochmanek"
+        "cap": "<em>The Starlight Night</em> (excerpt)"
       },
       {
         "url": "https://www.youtube.com/embed/c7tbeuQNaGU?autoplay=1&mute=1&loop=1&playlist=c7tbeuQNaGU&controls=0&playsinline=1&modestbranding=1&rel=0",
         "video": 1,
-        "cap": "Dropping A Pin in Time (excerpt)<br>Video: Jed Ochmanek"
+        "cap": "<em>Dropping A Pin in Time</em> (excerpt)"
       }
     ],
     "pr": {
@@ -407,6 +392,7 @@ window.JO_PROJECTS = [
         "id": "breed-st-art-in-america",
         "label": "Art in America",
         "dark": 0,
+        "noimg": 1,
         "text": "<p>Art in America</p><p>Jed Ochmanek may call his newest series of paintings “flats,” but “depth” more accurately captures what was on display in “<em>Breed St.</em>,” the artist’s third solo exhibition at Young Art. When viewed from the center of the small gallery, Ochmanek’s work—a trio of colorful rectangular panels (all 2012) hung flush with the walls and stretching nearly from floor to ceiling—evoked reflected light, fabric and blown-up photographic negatives; up close, each was seen to feature masses of information in the form of paint pigment and dust, resulting in endless strata of texture and detail.</p><p>For the last few years, Ochmanek, who graduated from the Rhode Island School of Design in 2005 and is currently living in Los Angeles, has experimented with a technique that involves pouring multiple layers of very thin, oil-based enamel paint onto slim plates of industrial metal, such as mirror-polished stainless steel. During the process, the pigments tend to separate from their binder, drying in unique and unrepeatable patterns, which Ochmanek amplifies by letting dust from the environment settle where it will, layering different colors atop each other and allowing the paint to dry in between pours.</p><p>For “<em>Breed St.</em>,” Ochmanek used the gallery’s architecture as the only limit for his 8-foot-tall, rectangular paintings. Never one to clutter a room, Ochmanek chose one panel in gold (<em>Beekeeper</em>), another in soft pink (<em>Plateaux</em>) and a third a dark denim blue (<em>Dead Flag Blues</em>). Over the gallerist’s desk hung two reliefs in cast concrete. Neutral in color but still full of captured texture, these two pieces represented a new type of material process for the artist, which he plans to explore further.</p><p>The surfaces of Ochmanek’s panels reward attention. With <em>Beekeeper</em> and <em>Plateaux</em>, this crust registers as a grainy quality from a distance; with <em>Dead Flag Blues</em>, on which Ochmanek used a squeegee, it looks more like a tight weave. Traces of Ochmanek’s process can also be perceived in the works’ gentle gradient shifts, or in the sudden disruption of color within a panel, where the liquid from one pour has obviously obscured the previous pour, producing what looks like a water stain. All in all, the paintings turn on the tension between the layers of detail they contain and their status as “flats”—a word that brings to mind surfaces devoid of any texture. Ochmanek exacerbates the tension by using metal thin as canvas, as well as by relying on devices like Velcro or magnets to hang the panels so snugly against the gallery wall that they often look like they’ve been painted on. What results is a weighty dialogue with time: while you can try to grasp one of Ochmanek’s pieces in an instant, the piece fights back, insisting that you experience to no small degree the duration of its making.</p><p>* Danielle Sommer, April 2013</p>",
         "imgs": []
       },
@@ -520,8 +506,9 @@ window.JO_PROJECTS = [
         "cap": "<em>Socketed</em>, 2011<br>HD video and sound on blu-ray disc<br>6 minutes, 25 seconds"
       },
       {
-        "url": "https://player.vimeo.com/video/85052386?h=e83114cc9a&autoplay=1&muted=1&loop=1&playsinline=1&dnt=1",
+        "url": "https://player.vimeo.com/video/85052386?h=e83114cc9a&background=1&autoplay=1&loop=1&muted=1&controls=0&playsinline=1&dnt=1",
         "video": 1,
+        "cls": "jo-video-bl",
         "cap": "<em>Socketed</em>, 2011<br>HD video and sound on blu-ray disc<br>6 minutes, 25 seconds"
       },
       {
@@ -571,10 +558,6 @@ window.JO_PROJECTS = [
         "dark": 0,
         "text": "<p>ArtSlant Review</p><p class=\"jo-interview-title\">Elemental Outcroppings<br>by Eli Langer</p><p>Of his recent exhibition at Young Art in Chinatown, Los Angeles, Jed Ochmanek describes his interest in considering and, if possible, articulating theoretical rates of cognition as found in our response to phenomena.</p><p>From his studio ceiling lamps in the “exclusively industrial” enclave of Vernon, California, Jed created a vertical column of twelve eight-foot-long, expended fluorescent light tubes. A fixture of two horizontal chromed plates, like those the paintings are made on but perforated for the bulbs to pass through in one, and the merest notches for the bulbs brass nipples to rest in the bottom plate, manage to just keep the bulbs from toppling.</p><p>Initially I had a feeling of dread upon viewing these spent vessels of glass and gas, now inert and useless. Confronted with the dead bulbs, one could readily ask, what are these doing here? Jed is prompting our cognizance of the art in the show. The bulbs were nodes to which agitated electrons flowed and whose contents, affected by the arriving energy, produced the light by which Ochmanek attended to the business of making art. The lighting tubes were as a candle, a finite measure of energy and duration. They are placed here to be considered as a record of those expenditures.</p><p>Paint, assumed to have come pre-mixed to a specific consistency as per the ratio of pigment particles to binder/carrier has here been altered for solvency over density, mobility over adherence. Tampering with the factory settings of the paint, Ochmanek has all but nearly freed the pigment particles from their binder, causing them to behave more like sediments carried in a current rather than bonded subjects of the uniform and obedient body of modeling by hand, which paint is. The artist has exchanged a certain visible and pre-present control for the potentialities to be discovered in phenomena that will make themselves known in the behavior of the emancipated paint particles.</p><p>Mounted flush within the walls adjacent to the sculpture, the paintings are made on rectangular chrome metal plates. These dedicated surfaces provide an unyielding and inflexible, non-porous substrate upon which the artist stages his painting experiments. Ochmanek applied a pellucid paint alloy to the hard surface, conducting the flowing binder and sediments across the planar surface. Furthermore, some of the paintings have been buffed by a chrome polishing tool to a highly mirrored finish while still somehow maintaining a transparent wash of color. The surfaces while varied in brightness and color are generally organic feeling, evoking drifting primordial liquid, sea smoke and such insoluble presences.</p><p>Despite the thin surfaces and lack of manual traces in the work, I sensed the hands that had held the rigid plates, intuitively finding up and down, the inconstant vertical, horizontal and diagonal bias of the flat and its accordance with the gravitational force pulling upon the contents. We see the artist positioning himself between the attracting gravity and the freed paint particles as they slip towards the planetary mass. Ochmanek is mediating again, here as the variable and unstable element of force, acting in the short interim before inertia stills the phenomenon of motion.</p><p>The video projected on the back wall of a narrow space is a close-cropped view of a candle with a flaming wick, occasionally neatly snipped off as it emerges blackened and spent from the flame's body which blows about violently, being subject to a strong current of air. The wind is force feeding the flame an oxygen-rich mixture and consequently the candle, a simple solid fuel stick whose string wick conducts the warmed, liquefied fuel to the event of combustion, is consuming a correspondingly higher measure of itself.</p><p>The candle is not alight to illuminate a place or thing and even seems to be serving another purpose besides the allegorical possibilities in its expedited burn rate. The candle is a finite measure of fuel and in most circumstances will burn at a generally regular rate until more or less completely consumed. This is the case with every candle of this volume. The candle is as an hourglass, an instrument whose operation provides a visual model correlating the principle of duration. In the case of the candle in the video, Ochmanek has accelerated the clock speed of the candle.</p><p>The exhibition deftly demonstrates principles of phenomena such as time, force, gravity and resistance whose presence can only be known to us, through their appearance in the behavior of objects and matter, including not least, our own.</p><p>* Eli Langer</p>",
         "imgs": [
-          {
-            "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a18c7ce09bbdf4db71ad0e9_547f4ba103c3a0a10e890079_applause.jpg",
-            "caption": "<em>Applause</em>, 2011, enamel on steel, magnet mounted, 8 × 12 inches"
-          },
           {
             "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a18c46d88301fbc426f410c_PALLADIUM.jpg",
             "caption": "still from <em>Socketed</em>, 2011, HD video and sound on blu-ray disc, 6 minutes, 25 seconds"
