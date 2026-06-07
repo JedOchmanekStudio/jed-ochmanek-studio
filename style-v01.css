@@ -842,8 +842,8 @@ body.is-cv-open .jo-cv-page {
     left: 0;
     right: 0;
     width: 100vw;
-    height: 142px;
-    padding: 26px var(--gutter) 0 var(--gutter);
+    height: 148px;
+    padding: 30px var(--gutter) 0 var(--gutter);
     background: #fff;
     color: #000 !important;
     z-index: 1000;
@@ -878,15 +878,15 @@ body.is-cv-open .jo-cv-page {
     right: auto;
     top: auto;
     width: 100vw;
-    height: 44svh;
-    margin-top: 142px;
+    height: 47svh;
+    margin-top: 148px;
     flex: 0 0 100%;
     background: #fff;
     overflow: hidden;
   }
   .jo-mode-right .jo-gallery,
   .jo-section.has-vertical-mobile .jo-gallery {
-    height: 44svh;
+    height: 47svh;
   }
   .jo-slide,
   .jo-slide.active {
@@ -925,8 +925,8 @@ body.is-cv-open .jo-cv-page {
     bottom: auto !important;
     width: 100vw !important;
     height: 56.25vw !important;
-    min-width: calc(44svh * 1.7778) !important;
-    min-height: 44svh !important;
+    min-width: calc(47svh * 1.7778) !important;
+    min-height: 47svh !important;
     max-width: none !important;
     transform: translate(-50%, -50%) !important;
     object-fit: cover !important;
@@ -936,8 +936,8 @@ body.is-cv-open .jo-cv-page {
   .jo-mode-protected .jo-slide.jo-video-yt iframe {
     width: calc(100vw * 1.4) !important;
     height: calc(56.25vw * 1.4) !important;
-    min-width: calc(44svh * 1.7778 * 1.4) !important;
-    min-height: calc(44svh * 1.4) !important;
+    min-width: calc(47svh * 1.7778 * 1.4) !important;
+    min-height: calc(47svh * 1.4) !important;
   }
   .jo-mode-full .jo-slide.jo-video-bl iframe,
   .jo-mode-right .jo-slide.jo-video-bl iframe,
@@ -983,6 +983,15 @@ body.is-cv-open .jo-cv-page {
     color: #000;
     font-size: var(--caption-size);
   }
+  /* captionless slides (e.g. Double LP, installation views): meta spans
+     full width as a single column so long titles don't break mid-phrase */
+  .jo-section.jo-no-cap .jo-meta {
+    flex: 1 1 100%;
+    margin: 18px var(--gutter) 24px var(--gutter);
+  }
+  .jo-section.jo-no-cap .jo-caption {
+    display: none;
+  }
   .jo-gallery.cursor-prev,
   .jo-gallery.cursor-next,
   .jo-dark .jo-gallery.cursor-prev,
@@ -999,7 +1008,7 @@ body.is-cv-open .jo-cv-page {
     min-width: 0;
     margin-left: var(--gutter);
     margin-right: var(--gutter);
-    padding-top: 168px;
+    padding-top: 172px;
     padding-bottom: 120px;
   }
   .jo-news-entry,
@@ -1041,7 +1050,7 @@ body.is-cv-open .jo-cv-page {
   .jo-pr-text.jo-pr-wide {
     width: calc(100vw - 56px);
     margin-left: var(--gutter);
-    padding-top: 168px;
+    padding-top: 172px;
     padding-bottom: 120px;
     color: #000 !important;
     font-size: var(--body-size);
@@ -1056,7 +1065,7 @@ body.is-cv-open .jo-cv-page {
     width: calc(100vw - 56px);
     min-width: 0;
     margin-left: var(--gutter);
-    padding-top: 168px;
+    padding-top: 172px;
     padding-bottom: 120px;
   }
   .jo-pr-document .jo-pr-meta {
@@ -1184,7 +1193,7 @@ body.is-cv-open .jo-cv-page {
     display: flex;
     flex-direction: column;
   }
-  .jo-utility-social {
+  .jo-utility-contact {
     position: static;
     order: 10;
     left: auto;
@@ -1194,7 +1203,7 @@ body.is-cv-open .jo-cv-page {
   .jo-cv-content {
     width: calc(100vw - 56px);
     margin-left: var(--gutter);
-    padding-top: 168px;
+    padding-top: 172px;
     padding-bottom: 120px;
     font-size: var(--body-size);
   }
@@ -1592,12 +1601,84 @@ body.is-cv-open .jo-utility-back {
   width: auto !important;
   height: auto !important;
 }
-/* PNG icons: identical height, mail naturally wider */
+/* PNG icons: identical height, mail naturally wider, grey until hover */
 .jo-utility-social img {
   display: block !important;
-  height: 22px !important;
+  height: 24px !important;
   width: auto !important;
-  max-height: 22px !important;
+  max-height: 24px !important;
+  opacity: 0.45;
+  transition: opacity var(--transition) ease;
+}
+.jo-utility-social a:hover img {
+  opacity: 1;
+}
+/* contact block: icons on top, Subscribe below (anchored bottom-left) */
+.jo-utility-contact {
+  position: fixed;
+  left: var(--gutter);
+  bottom: 42px;
+  z-index: 900;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: flex-start;
+}
+.jo-utility-contact .jo-utility-social {
+  position: static;
+  left: auto;
+  bottom: auto;
+}
+.jo-utility-subscribe {
+  position: relative;
+  height: 1em;
+  font-family: aktiv-grotesk-thin, "Aktiv Grotesk Thin", aktiv-grotesk, Arial, sans-serif;
+  font-size: var(--body-size);
+  font-weight: 200;
+  line-height: 1;
+}
+.jo-subscribe-link {
+  display: block;
+  color: rgba(0,0,0,.45);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color var(--transition) ease;
+}
+.jo-subscribe-link:hover {
+  color: var(--black);
+}
+.is-subscribe-open .jo-subscribe-link {
+  visibility: hidden;
+}
+.jo-subscribe-form {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: none;
+  width: var(--menu-width);
+  height: 1em;
+}
+.is-subscribe-open .jo-subscribe-form {
+  display: block;
+}
+.jo-subscribe-input {
+  width: 100%;
+  height: 1em;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--black);
+  font-family: aktiv-grotesk-thin, "Aktiv Grotesk Thin", aktiv-grotesk, Arial, sans-serif;
+  font-size: var(--body-size);
+  font-weight: 200;
+  line-height: 1;
+  appearance: none;
+  -webkit-appearance: none;
+}
+.jo-subscribe-input::placeholder {
+  color: transparent;
 }
 .jo-cv-block {
   margin-bottom: 2.5em;
