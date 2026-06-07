@@ -1597,39 +1597,28 @@ body.is-cv-open .jo-utility-back {
 /* PNG icons: identical height, mail naturally wider, grey until hover */
 .jo-utility-social img {
   display: block !important;
-  height: 24px !important;
+  height: 20px !important;
   width: auto !important;
-  max-height: 24px !important;
+  max-height: 20px !important;
   opacity: 0.45;
   transition: opacity var(--transition) ease;
 }
 .jo-utility-social a:hover img {
   opacity: 1;
 }
-/* Subscribe: standalone, centered-left like an exhibition title,
-   same size + behavior as Search */
-.jo-utility-subscribe {
-  position: fixed;
-  left: var(--gutter);
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 900;
-  width: var(--menu-width);
-  height: 1em;
-  font-family: aktiv-grotesk-thin, "Aktiv Grotesk Thin", aktiv-grotesk, Arial, sans-serif;
-  font-size: var(--menu-size);
-  font-weight: 200;
-  line-height: 1;
+/* Subscribe: a menu item directly under CV, shown only on News / CV,
+   identical formatting to the other menu links, behaves like Search */
+.jo-subscribe-row {
+  position: relative;
+  display: none;
+}
+body.is-news-open .jo-subscribe-row,
+body.is-cv-open .jo-subscribe-row {
+  display: block;
 }
 .jo-subscribe-link {
   display: block;
-  color: rgba(0,0,0,.45);
-  text-decoration: none;
   cursor: pointer;
-  transition: color var(--transition) ease;
-}
-.jo-subscribe-link:hover {
-  color: var(--black);
 }
 .is-subscribe-open .jo-subscribe-link {
   visibility: hidden;
@@ -1638,8 +1627,8 @@ body.is-cv-open .jo-utility-back {
   position: absolute;
   left: 0;
   top: 0;
+  right: 0;
   display: none;
-  width: 100%;
   height: 1em;
 }
 .is-subscribe-open .jo-subscribe-form {
@@ -1653,7 +1642,7 @@ body.is-cv-open .jo-utility-back {
   border: 0;
   outline: 0;
   background: transparent;
-  color: var(--black);
+  color: inherit;
   font-family: aktiv-grotesk-thin, "Aktiv Grotesk Thin", aktiv-grotesk, Arial, sans-serif;
   font-size: var(--menu-size);
   font-weight: 200;
@@ -1779,8 +1768,7 @@ html.jo-fonts-loading .jo-cv-page {
    never fixed, never overlapping the text.
 ========================================================= */
 @media (max-width: 900px) {
-  .jo-utility-social,
-  .jo-utility-subscribe {
+  .jo-utility-social {
     position: static !important;
     left: auto !important;
     top: auto !important;
@@ -1788,16 +1776,7 @@ html.jo-fonts-loading .jo-cv-page {
     transform: none !important;
     width: auto !important;
     height: auto !important;
-  }
-  .jo-utility-social {
     order: 10;
-    margin: 32px var(--gutter) 0 var(--gutter);
-  }
-  .jo-utility-subscribe {
-    order: 11;
-    margin: 16px var(--gutter) 90px var(--gutter);
-  }
-  .jo-subscribe-form {
-    width: calc(100vw - 56px);
+    margin: 32px var(--gutter) 90px var(--gutter);
   }
 }
