@@ -220,6 +220,15 @@
     }
   }
 
+  function joMuteAllVideos() {
+    document.querySelectorAll('[data-slide][data-unmuted="1"]').forEach(function(slide) {
+      var f = slide.querySelector('iframe');
+      var base = f && f.getAttribute('data-src');
+      if (f && base) f.setAttribute('src', base);
+      slide.setAttribute('data-unmuted', '0');
+    });
+  }
+
   document.querySelectorAll('[data-gallery]').forEach(function(gallery) {
     const name = gallery.dataset.gallery;
     const slides = Array.from(gallery.querySelectorAll('[data-slide]'));
@@ -298,16 +307,19 @@
 
     const activeSlide = gallery.slides[gallery.index];
     const section = activeSlide.closest('.jo-section');
-    const caption = section ? section.querySelector('.jo-caption') : null;
+    const capText = activeSlide.dataset.caption || '';
+    if (section) section.classList.toggle('jo-no-cap', !capText.trim());
 
+    const caption = section ? section.querySelector('.jo-caption') : null;
     if (!caption) return;
 
-    caption.innerHTML = activeSlide.dataset.caption || '';
+    caption.innerHTML = capText;
   }
 
   function go(index) {
     if (!sections.length || !stage) return;
 
+    joMuteAllVideos();
     closeLightbox();
     closePR(false);
     closeUtility();
@@ -328,6 +340,8 @@
     const gallery = galleries[galleryName];
     if (!gallery) return;
     if (gallery.slides.length <= 1) return;
+
+    joMuteAllVideos();
 
     if (nextIndex < 0) nextIndex = gallery.slides.length - 1;
     if (nextIndex >= gallery.slides.length) nextIndex = 0;
@@ -905,6 +919,78 @@
   joUtilBack.className = 'jo-utility-back';
   document.body.appendChild(joUtilBack);
   joUtilBack.addEventListener('click', function() { closeUtility(); });
+
+  // ---------- SUBSCRIBE (below the contact icons, behaves like Search) ----------
+  var JO_SUBSCRIBE_ENDPOINT = ''; // set to your mailing-list form-action URL to capture addresses
+
+  document.querySelectorAll('.jo-utility-social').forEach(function(social) {
+    if (social.closest('.jo-utility-contact')) return;
+    var contact = document.createElement('div');
+    contact.className = 'jo-utility-contact';
+    social.parentNode.insertBefore(contact, social);
+    contact.appendChild(social);
+    var sub = document.createElement('div');
+    sub.className = 'jo-utility-subscribe';
+    sub.innerHTML =
+      '<a href="#" class="jo-subscribe-link" data-subscribe-open>Subscribe</a>' +
+      '<form class="jo-subscribe-form" data-subscribe-form>' +
+        '<input class="jo-subscribe-input" data-subscribe-input type="email" autocomplete="email" aria-label="Email address">' +
+      '</form>';
+    contact.appendChild(sub);
+  });
+
+  document.querySelectorAll('[data-subscribe-open]').forEach(function(link) {
+    link.addEventListener('click', function(event) {
+      event.preventDefault();
+      var contact = link.closest('.jo-utility-contact');
+      if (!contact) return;
+      contact.classList.add('is-subscribe-open');
+      var input = contact.querySelector('[data-subscribe-input]');
+      if (input) input.focus();
+    });
+  });
+
+  document.querySelectorAll('[data-subscribe-form]').forEach(function(form) {
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      var input = form.querySelector('[data-subscribe-input]');
+      var email = input ? input.value.trim() : '';
+      if (!email) return;
+      var contact = form.closest('.jo-utility-contact');
+      var link = contact ? contact.querySelector('.jo-subscribe-link') : null;
+
+      function done() {
+        if (input) input.value = '';
+        if (contact) contact.classList.remove('is-subscribe-open');
+        if (link) {
+          link.textContent = 'Thank you';
+          setTimeout(function() { link.textContent = 'Subscribe'; }, 2500);
+        }
+      }
+
+      if (JO_SUBSCRIBE_ENDPOINT) {
+        fetch(JO_SUBSCRIBE_ENDPOINT, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: 'email=' + encodeURIComponent(email)
+        }).then(done).catch(done);
+      } else {
+        done();
+      }
+    });
+  });
+
+  document.querySelectorAll('[data-subscribe-input]').forEach(function(input) {
+    input.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        var contact = input.closest('.jo-utility-contact');
+        if (contact) contact.classList.remove('is-subscribe-open');
+        input.value = '';
+      }
+    });
+  });
 
   // ---------- MOBILE DOCUMENT LAYOUT ----------
   // No columns on mobile. Press releases: one image on top, text below.
