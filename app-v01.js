@@ -204,6 +204,22 @@
     if (f && !f.getAttribute('src')) f.setAttribute('src', f.getAttribute('data-src'));
   }
 
+  function joToggleSound(slide) {
+    var f = slide.querySelector('iframe');
+    if (!f) return;
+    var base = f.getAttribute('data-src') || f.getAttribute('src') || '';
+    if (slide.getAttribute('data-unmuted') === '1') {
+      slide.setAttribute('data-unmuted', '0');
+      f.setAttribute('src', base);
+    } else {
+      slide.setAttribute('data-unmuted', '1');
+      f.setAttribute('src', base
+        .replace('background=1', 'background=0')
+        .replace('muted=1', 'muted=0')
+        .replace('mute=1', 'mute=0'));
+    }
+  }
+
   document.querySelectorAll('[data-gallery]').forEach(function(gallery) {
     const name = gallery.dataset.gallery;
     const slides = Array.from(gallery.querySelectorAll('[data-slide]'));
@@ -454,7 +470,7 @@
 
   document.addEventListener('mousemove', function(event) {
     document.querySelectorAll('[data-gallery]').forEach(function(gallery) {
-      gallery.classList.remove('cursor-prev', 'cursor-next');
+      gallery.classList.remove('cursor-prev', 'cursor-next', 'cursor-sound');
     });
 
     if (isMobile()) return;
@@ -463,12 +479,22 @@
     if (!gallery) return;
 
     const data = galleries[gallery.dataset.gallery];
-    if (!data || data.slides.length <= 1) return;
+    if (!data) return;
 
+    const activeSlide = data.slides[data.index];
+    const isVideo = !!(activeSlide && activeSlide.querySelector('iframe'));
     const rect = gallery.getBoundingClientRect();
-    const midpoint = rect.left + rect.width / 2;
+    const r = (event.clientX - rect.left) / rect.width;
 
-    gallery.classList.add(event.clientX < midpoint ? 'cursor-prev' : 'cursor-next');
+    if (isVideo) {
+      if (data.slides.length > 1 && r < 0.34) gallery.classList.add('cursor-prev');
+      else if (data.slides.length > 1 && r > 0.66) gallery.classList.add('cursor-next');
+      else gallery.classList.add('cursor-sound');
+      return;
+    }
+
+    if (data.slides.length <= 1) return;
+    gallery.classList.add(r < 0.5 ? 'cursor-prev' : 'cursor-next');
   });
 
   document.addEventListener('click', function(event) {
@@ -479,15 +505,24 @@
     if (!gallery) return;
 
     const data = galleries[gallery.dataset.gallery];
-    if (!data || data.slides.length <= 1) return;
+    if (!data) return;
 
-    event.preventDefault();
-
+    const activeSlide = data.slides[data.index];
+    const isVideo = !!(activeSlide && activeSlide.querySelector('iframe'));
     const rect = gallery.getBoundingClientRect();
-    const midpoint = rect.left + rect.width / 2;
-    const direction = event.clientX < midpoint ? -1 : 1;
+    const r = (event.clientX - rect.left) / rect.width;
 
-    showSlide(gallery.dataset.gallery, data.index + direction);
+    if (isVideo) {
+      event.preventDefault();
+      if (data.slides.length > 1 && r < 0.34) showSlide(gallery.dataset.gallery, data.index - 1);
+      else if (data.slides.length > 1 && r > 0.66) showSlide(gallery.dataset.gallery, data.index + 1);
+      else joToggleSound(activeSlide);
+      return;
+    }
+
+    if (data.slides.length <= 1) return;
+    event.preventDefault();
+    showSlide(gallery.dataset.gallery, data.index + (r < 0.5 ? -1 : 1));
   });
 
   function normalizeSearchText(value) {
