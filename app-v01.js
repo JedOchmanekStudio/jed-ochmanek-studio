@@ -985,7 +985,14 @@
         var contact = input.closest('.jo-subscribe-row');
         if (contact) contact.classList.remove('is-subscribe-open');
         input.value = '';
+        input.blur();
       }
+    });
+    // Click out with no text: collapse back to the "Subscribe" link.
+    input.addEventListener('blur', function() {
+      if (input.value.trim()) return;
+      var contact = input.closest('.jo-subscribe-row');
+      if (contact) contact.classList.remove('is-subscribe-open');
     });
   });
 
