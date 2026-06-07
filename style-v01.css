@@ -1172,9 +1172,11 @@ body.is-cv-open .jo-cv-page {
   .jo-nav-vert {
     display: none !important;
   }
-  /* contact icons flow at the end of News / CV, never overlap text */
-  .jo-news-page,
-  .jo-cv-page {
+  /* contact icons flow at the end of News / CV, never overlap text.
+     Only switch to flex when the page is actually open so the
+     display:none default is preserved. */
+  body.is-news-open .jo-news-page,
+  body.is-cv-open .jo-cv-page {
     display: flex;
     flex-direction: column;
   }
@@ -1312,13 +1314,29 @@ body .jo-pr-document.jo-dark .jo-pr-image figcaption {
   inset: 0;
   z-index: 950;
   display: none;
-  background: #fff;
+  background: transparent;
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M10 10 L38 38 M38 10 L10 38' fill='none' stroke='black' stroke-width='1.05' stroke-linecap='square'/%3E%3C/svg%3E") 24 24, zoom-out;
 }
 body.is-lightbox-open .jo-lightbox {
   display: block;
 }
+.jo-lightbox::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #fff;
+}
 .jo-lightbox.jo-dark {
+  background: transparent;
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M10 10 L38 38 M38 10 L10 38' fill='none' stroke='white' stroke-width='1.05' stroke-linecap='square'/%3E%3C/svg%3E") 24 24, zoom-out;
+}
+.jo-lightbox.jo-dark::before {
   background: #000;
+}
+/* for document images, leave the left meta zone uncovered so the
+   real (unmoving) title/venue/date shows through */
+.jo-lightbox.jo-lb-doc::before {
+  left: var(--content-left);
 }
 .jo-lightbox-frame {
   position: absolute;
@@ -1326,7 +1344,8 @@ body.is-lightbox-open .jo-lightbox {
   right: var(--gutter);
   bottom: 42px;
   left: var(--content-left);
-  cursor: default;
+  z-index: 1;
+  cursor: inherit;
 }
 .jo-lightbox-close {
   position: absolute;
@@ -1551,30 +1570,21 @@ body.is-cv-open .jo-utility-back {
   color: var(--black) !important;
 }
 .jo-utility-social {
-  align-items: flex-end;
-  gap: 14px;
+  align-items: center;
+  gap: 16px;
 }
 .jo-utility-social a {
   display: inline-flex !important;
   align-items: center;
   width: auto !important;
-  height: 30px !important;
+  height: auto !important;
 }
-.jo-utility-social svg {
+/* PNG icons: identical height, mail naturally wider */
+.jo-utility-social img {
   display: block !important;
-  width: auto !important;
-  height: 30px !important;
-  max-height: 30px !important;
-}
-/* the envelope glyph fills more of its viewBox than the IG square,
-   so give it a smaller box to match the visible height */
-.jo-utility-social a[href*="mailto"] svg {
   height: 22px !important;
+  width: auto !important;
   max-height: 22px !important;
-}
-.jo-utility-social a[href*="instagram"] svg {
-  height: 30px !important;
-  max-height: 30px !important;
 }
 .jo-cv-block {
   margin-bottom: 2.5em;
