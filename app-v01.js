@@ -924,11 +924,7 @@
   var JO_SUBSCRIBE_ENDPOINT = ''; // set to your mailing-list form-action URL to capture addresses
 
   document.querySelectorAll('.jo-utility-social').forEach(function(social) {
-    if (social.closest('.jo-utility-contact')) return;
-    var contact = document.createElement('div');
-    contact.className = 'jo-utility-contact';
-    social.parentNode.insertBefore(contact, social);
-    contact.appendChild(social);
+    if (!social.parentNode || social.parentNode.querySelector('.jo-utility-subscribe')) return;
     var sub = document.createElement('div');
     sub.className = 'jo-utility-subscribe';
     sub.innerHTML =
@@ -936,13 +932,13 @@
       '<form class="jo-subscribe-form" data-subscribe-form>' +
         '<input class="jo-subscribe-input" data-subscribe-input type="email" autocomplete="email" aria-label="Email address">' +
       '</form>';
-    contact.appendChild(sub);
+    social.parentNode.insertBefore(sub, social.nextSibling);
   });
 
   document.querySelectorAll('[data-subscribe-open]').forEach(function(link) {
     link.addEventListener('click', function(event) {
       event.preventDefault();
-      var contact = link.closest('.jo-utility-contact');
+      var contact = link.closest('.jo-utility-subscribe');
       if (!contact) return;
       contact.classList.add('is-subscribe-open');
       var input = contact.querySelector('[data-subscribe-input]');
@@ -956,7 +952,7 @@
       var input = form.querySelector('[data-subscribe-input]');
       var email = input ? input.value.trim() : '';
       if (!email) return;
-      var contact = form.closest('.jo-utility-contact');
+      var contact = form.closest('.jo-utility-subscribe');
       var link = contact ? contact.querySelector('.jo-subscribe-link') : null;
 
       function done() {
@@ -985,7 +981,7 @@
     input.addEventListener('keydown', function(event) {
       if (event.key === 'Escape') {
         event.preventDefault();
-        var contact = input.closest('.jo-utility-contact');
+        var contact = input.closest('.jo-utility-subscribe');
         if (contact) contact.classList.remove('is-subscribe-open');
         input.value = '';
       }
