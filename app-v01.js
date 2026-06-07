@@ -132,6 +132,7 @@
     var darkClass = doc.dark ? ' jo-dark' : '';
     var noImageClass = doc.noimg ? ' jo-pr-no-image' : '';
     var wideClass = doc.wide ? ' jo-pr-wide' : '';
+    var typeClass = (doc.label === 'Press Release') ? ' jo-doc-pr' : ' jo-doc-article';
     var imgs = '';
 
     if (!doc.noimg && doc.imgs && doc.imgs.length) {
@@ -148,13 +149,14 @@
     }).join('');
 
     return (
-      '<section class="jo-pr jo-pr-document' + darkClass + noImageClass + '" id="' + doc.id + '">' +
+      '<section class="jo-pr jo-pr-document' + darkClass + noImageClass + typeClass + '" id="' + doc.id + '">' +
         '<button class="jo-pr-back-zone" type="button" aria-label="Back"></button>' +
         '<div class="jo-pr-document-wrap">' +
           '<div class="jo-pr-meta">' +
             title +
             '<div class="jo-spacer"></div>' +
             meta +
+            '<a class="jo-pr-mobile-back" href="#" data-pr-back aria-label="Back">‹</a>' +
             '<div class="jo-document-links jo-pr-meta-reserve">' + joRenderProjectDocumentLinks(project, true) + '</div>' +
           '</div>' +
           '<div class="jo-pr-text' + wideClass + '">' + (doc.text || '') + '</div>' +
@@ -701,6 +703,13 @@
     });
   });
 
+  document.querySelectorAll('[data-pr-back]').forEach(function(link) {
+    link.addEventListener('click', function(event) {
+      event.preventDefault();
+      closePR(true);
+    });
+  });
+
   window.addEventListener('resize', function() {
     if (!stage) return;
     stage.style.transform = 'translate3d(0,' + (-activeIndex * 100) + 'svh,0)';
@@ -795,6 +804,40 @@
   joUtilBack.className = 'jo-utility-back';
   document.body.appendChild(joUtilBack);
   joUtilBack.addEventListener('click', function() { closeUtility(); });
+
+  // ---------- MOBILE DOCUMENT LAYOUT ----------
+  // No columns on mobile. Press releases: one image on top, text below.
+  // Interviews / reviews: images interleaved through the text.
+  function joMobileInterleaveDocs() {
+    if (!isMobile()) return;
+    document.querySelectorAll('.jo-pr-document').forEach(function(doc) {
+      if (doc.getAttribute('data-mobile-done')) return;
+      var imgWrap = doc.querySelector('.jo-pr-image');
+      var textEl = doc.querySelector('.jo-pr-text');
+      if (!textEl) return;
+      doc.setAttribute('data-mobile-done', '1');
+      if (!imgWrap) return;
+      var figures = Array.prototype.slice.call(imgWrap.children);
+      if (!figures.length) { if (imgWrap.parentNode) imgWrap.parentNode.removeChild(imgWrap); return; }
+      var paras = Array.prototype.slice.call(textEl.children);
+
+      if (doc.classList.contains('jo-doc-pr')) {
+        textEl.insertBefore(figures[0], paras[0] || null);
+        for (var i = 1; i < figures.length; i++) {
+          if (figures[i].parentNode) figures[i].parentNode.removeChild(figures[i]);
+        }
+      } else {
+        var step = Math.max(1, Math.floor(paras.length / figures.length));
+        for (var j = 0; j < figures.length; j++) {
+          var ref = paras[j * step] || null;
+          textEl.insertBefore(figures[j], ref);
+        }
+      }
+      if (imgWrap.parentNode) imgWrap.parentNode.removeChild(imgWrap);
+    });
+  }
+  joMobileInterleaveDocs();
+  window.addEventListener('resize', joMobileInterleaveDocs);
 
   // ---------- FONT-READY REVEAL ----------
   if (document.fonts && document.fonts.ready) {
