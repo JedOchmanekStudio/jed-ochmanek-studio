@@ -923,22 +923,23 @@
   // ---------- SUBSCRIBE (below the contact icons, behaves like Search) ----------
   var JO_SUBSCRIBE_ENDPOINT = ''; // set to your mailing-list form-action URL to capture addresses
 
-  document.querySelectorAll('.jo-utility-social').forEach(function(social) {
-    if (!social.parentNode || social.parentNode.querySelector('.jo-utility-subscribe')) return;
-    var sub = document.createElement('div');
-    sub.className = 'jo-utility-subscribe';
-    sub.innerHTML =
+  (function () {
+    var cv = document.querySelector('[data-cv-open]');
+    if (!cv || !cv.parentNode || document.querySelector('.jo-subscribe-row')) return;
+    var row = document.createElement('div');
+    row.className = 'jo-subscribe-row';
+    row.innerHTML =
       '<a href="#" class="jo-subscribe-link" data-subscribe-open>Subscribe</a>' +
       '<form class="jo-subscribe-form" data-subscribe-form>' +
         '<input class="jo-subscribe-input" data-subscribe-input type="email" autocomplete="email" aria-label="Email address">' +
       '</form>';
-    social.parentNode.insertBefore(sub, social.nextSibling);
-  });
+    cv.parentNode.insertBefore(row, cv.nextSibling);
+  })();
 
   document.querySelectorAll('[data-subscribe-open]').forEach(function(link) {
     link.addEventListener('click', function(event) {
       event.preventDefault();
-      var contact = link.closest('.jo-utility-subscribe');
+      var contact = link.closest('.jo-subscribe-row');
       if (!contact) return;
       contact.classList.add('is-subscribe-open');
       var input = contact.querySelector('[data-subscribe-input]');
@@ -952,7 +953,7 @@
       var input = form.querySelector('[data-subscribe-input]');
       var email = input ? input.value.trim() : '';
       if (!email) return;
-      var contact = form.closest('.jo-utility-subscribe');
+      var contact = form.closest('.jo-subscribe-row');
       var link = contact ? contact.querySelector('.jo-subscribe-link') : null;
 
       function done() {
@@ -981,7 +982,7 @@
     input.addEventListener('keydown', function(event) {
       if (event.key === 'Escape') {
         event.preventDefault();
-        var contact = input.closest('.jo-utility-subscribe');
+        var contact = input.closest('.jo-subscribe-row');
         if (contact) contact.classList.remove('is-subscribe-open');
         input.value = '';
       }
