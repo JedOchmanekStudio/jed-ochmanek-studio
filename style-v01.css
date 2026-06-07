@@ -1193,13 +1193,6 @@ body.is-cv-open .jo-cv-page {
     display: flex;
     flex-direction: column;
   }
-  .jo-utility-contact {
-    position: static;
-    order: 10;
-    left: auto;
-    bottom: auto;
-    margin: 28px var(--gutter) 90px var(--gutter);
-  }
   .jo-cv-content {
     width: calc(100vw - 56px);
     margin-left: var(--gutter);
@@ -1512,7 +1505,7 @@ body.is-lightbox-open .jo-nav-vert {
   position: fixed;
   left: 0;
   top: 0;
-  bottom: 80px;
+  bottom: 55%;
   width: 320px;
   z-index: 610;
   display: none;
@@ -1613,27 +1606,18 @@ body.is-cv-open .jo-utility-back {
 .jo-utility-social a:hover img {
   opacity: 1;
 }
-/* contact block: icons on top, Subscribe below (anchored bottom-left) */
-.jo-utility-contact {
+/* Subscribe: standalone, centered-left like an exhibition title,
+   same size + behavior as Search */
+.jo-utility-subscribe {
   position: fixed;
   left: var(--gutter);
-  bottom: 42px;
+  top: 50%;
+  transform: translateY(-50%);
   z-index: 900;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  align-items: flex-start;
-}
-.jo-utility-contact .jo-utility-social {
-  position: static;
-  left: auto;
-  bottom: auto;
-}
-.jo-utility-subscribe {
-  position: relative;
+  width: var(--menu-width);
   height: 1em;
   font-family: aktiv-grotesk-thin, "Aktiv Grotesk Thin", aktiv-grotesk, Arial, sans-serif;
-  font-size: var(--body-size);
+  font-size: var(--menu-size);
   font-weight: 200;
   line-height: 1;
 }
@@ -1655,7 +1639,7 @@ body.is-cv-open .jo-utility-back {
   left: 0;
   top: 0;
   display: none;
-  width: var(--menu-width);
+  width: 100%;
   height: 1em;
 }
 .is-subscribe-open .jo-subscribe-form {
@@ -1671,7 +1655,7 @@ body.is-cv-open .jo-utility-back {
   background: transparent;
   color: var(--black);
   font-family: aktiv-grotesk-thin, "Aktiv Grotesk Thin", aktiv-grotesk, Arial, sans-serif;
-  font-size: var(--body-size);
+  font-size: var(--menu-size);
   font-weight: 200;
   line-height: 1;
   appearance: none;
@@ -1788,4 +1772,32 @@ html.jo-fonts-loading .jo-cv-page {
 }
 .jo-lightbox-caption em {
   font-style: italic;
+}
+/* =========================================================
+   MOBILE CONTACT (last in file so it wins source order)
+   Email/IG icons + Subscribe flow at the end of News / CV,
+   never fixed, never overlapping the text.
+========================================================= */
+@media (max-width: 900px) {
+  .jo-utility-social,
+  .jo-utility-subscribe {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    width: auto !important;
+    height: auto !important;
+  }
+  .jo-utility-social {
+    order: 10;
+    margin: 32px var(--gutter) 0 var(--gutter);
+  }
+  .jo-utility-subscribe {
+    order: 11;
+    margin: 16px var(--gutter) 90px var(--gutter);
+  }
+  .jo-subscribe-form {
+    width: calc(100vw - 56px);
+  }
 }
