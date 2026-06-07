@@ -719,6 +719,9 @@ body.is-pr-dark .jo-pr-document .jo-pr-text a:hover {
 .jo-interview-intro {
   font-style: italic;
 }
+.jo-pr-mobile-back {
+  display: none;
+}
 /* =========================================================
    CV PAGE
 ========================================================= */
@@ -862,21 +865,27 @@ body.is-cv-open .jo-cv-page {
     width: 100vw;
     height: 100svh;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
     background: #fff !important;
     color: #000 !important;
   }
   .jo-gallery {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 165px;
-    height: 54svh;
+    position: relative;
+    order: 1;
+    left: auto;
+    right: auto;
+    top: auto;
+    width: 100vw;
+    height: 48svh;
+    margin-top: 165px;
+    flex: 0 0 auto;
     background: #fff;
     overflow: hidden;
   }
   .jo-mode-right .jo-gallery,
   .jo-section.has-vertical-mobile .jo-gallery {
-    height: 74svh;
+    height: 48svh;
   }
   .jo-slide,
   .jo-slide.active {
@@ -911,26 +920,60 @@ body.is-cv-open .jo-cv-page {
     width: 100vw !important;
     height: 100% !important;
     max-width: none !important;
-    object-fit: cover !important;
+    object-fit: contain !important;
     object-position: center center !important;
   }
   .jo-section.has-vertical-mobile .jo-slide img,
   .jo-section.has-vertical-mobile .jo-slide iframe {
-    object-fit: cover !important;
+    object-fit: contain !important;
     object-position: center center !important;
   }
+  /* video fills the gallery box on mobile (cover, no letterbox) */
+  .jo-mode-full .jo-slide iframe,
+  .jo-mode-right .jo-slide iframe,
+  .jo-mode-protected .jo-slide iframe {
+    top: 50% !important;
+    left: 50% !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 100vw !important;
+    height: 56.25vw !important;
+    min-width: calc(48svh * 1.7778) !important;
+    min-height: 48svh !important;
+    max-width: none !important;
+    transform: translate(-50%, -50%) !important;
+    object-fit: cover !important;
+  }
+  .jo-mode-full .jo-slide.jo-video-yt iframe,
+  .jo-mode-right .jo-slide.jo-video-yt iframe,
+  .jo-mode-protected .jo-slide.jo-video-yt iframe {
+    width: calc(100vw * 1.2) !important;
+    height: calc(56.25vw * 1.2) !important;
+    min-width: calc(48svh * 1.7778 * 1.2) !important;
+    min-height: calc(48svh * 1.2) !important;
+  }
+  .jo-mode-full .jo-slide.jo-video-bl iframe,
+  .jo-mode-right .jo-slide.jo-video-bl iframe,
+  .jo-mode-protected .jo-slide.jo-video-bl iframe {
+    top: auto !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    transform: none !important;
+  }
   .jo-meta {
-    position: absolute;
-    left: var(--gutter);
-    top: calc(165px + 54svh + 30px);
+    position: relative;
+    order: 3;
+    left: auto;
+    top: auto;
     transform: none;
     width: calc(100vw - 56px);
+    margin: 16px var(--gutter) 24px var(--gutter);
     color: #000 !important;
     font-size: var(--body-size);
   }
   .jo-mode-right .jo-meta,
   .jo-section.has-vertical-mobile .jo-meta {
-    top: calc(165px + 74svh + 24px);
+    top: auto;
   }
   .jo-section-title,
   .jo-meta-line,
@@ -939,7 +982,15 @@ body.is-cv-open .jo-cv-page {
     color: #000 !important;
   }
   .jo-caption {
-    display: none;
+    display: block;
+    position: relative;
+    order: 2;
+    left: auto;
+    bottom: auto;
+    width: calc(100vw - 56px);
+    margin: 12px var(--gutter) 0 var(--gutter);
+    color: #000;
+    font-size: var(--caption-size);
   }
   .jo-gallery.cursor-prev,
   .jo-gallery.cursor-next,
@@ -1049,7 +1100,81 @@ body.is-cv-open .jo-cv-page {
   .jo-pr-document .jo-pr-image figure + figure {
     margin-top: var(--gutter);
   }
+  /* interleaved figures inside the text on mobile */
+  .jo-pr-document .jo-pr-text figure {
+    display: block;
+    width: 100%;
+    margin: 1.75em 0;
+    padding: 0;
+  }
+  .jo-pr-document .jo-pr-text figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: none;
+  }
+  .jo-pr-document .jo-pr-text figcaption {
+    display: block;
+    margin: 1em 0 0 0;
+    padding: 0;
+    text-align: left;
+    color: var(--black);
+    font-size: var(--caption-size);
+    font-weight: 200;
+    line-height: normal;
+  }
+  .jo-pr-document.jo-dark .jo-pr-text figcaption {
+    color: var(--white);
+  }
   .jo-pr-back-zone {
+    display: none;
+  }
+  /* mobile back chevron after the date */
+  .jo-pr-mobile-back {
+    display: inline-block;
+    margin-top: 1.2em;
+    color: var(--black);
+    text-decoration: none;
+    font-family: aktiv-grotesk-thin, "Aktiv Grotesk Thin", aktiv-grotesk, Arial, sans-serif;
+    font-size: 24px;
+    line-height: 1;
+  }
+  .jo-pr-mobile-back:active {
+    color: var(--black-hover);
+  }
+  .jo-pr-document.jo-dark .jo-pr-mobile-back {
+    color: var(--white) !important;
+  }
+  /* news: image first, then text, with a slash between items */
+  .jo-news-entry,
+  .jo-news-minor,
+  .jo-news-entry.no-image {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 36px 0;
+  }
+  .jo-news-image-wrap,
+  .jo-news-slideshow {
+    order: 1;
+    margin: 0 0 1.5em 0;
+  }
+  .jo-news-info {
+    order: 2;
+  }
+  .jo-news-separator {
+    display: block;
+    visibility: visible;
+    height: auto;
+    margin: 0 0 36px 0;
+    color: var(--black);
+    font-size: 0;
+    line-height: normal;
+  }
+  .jo-news-separator::after {
+    content: "/";
+    font-size: var(--body-size);
+  }
+  .jo-news-separator:last-child {
     display: none;
   }
   .jo-cv-content {
