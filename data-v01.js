@@ -116,7 +116,7 @@ window.JO_PROJECTS = [
   {
     "id": "dreams",
     "gallery": "dreams-sleep-wakes-sound",
-    "title": ["Double LP Artwork", "Dreams of Sleep and Wakes of Sound", "Laraaji, Merz, and Shahzad Ismaily"],
+    "title": ["Laraaji, Merz, and Shahzad Ismaily", "Dreams of Sleep and Wakes of Sound", "Double LP album artwork"],
     "meta": ["Dampfzentrale Bern", "Bern, Switzerland", "6.28.19"],
     "dark": 0,
     "search": "dreams of sleep and wakes of sound double lp artwork laraaji merz shahzad ismaily dampfzentrale bern guardian vinyl factory bandcamp spotify",
