@@ -710,15 +710,19 @@
   var joLightbox = document.createElement('div');
   joLightbox.className = 'jo-lightbox';
   joLightbox.id = 'joLightbox';
-  joLightbox.innerHTML = '<div class="jo-lightbox-frame"><img src="" alt=""><button class="jo-lightbox-close" type="button" aria-label="Close"></button></div>';
+  joLightbox.innerHTML = '<div class="jo-lightbox-meta"></div><div class="jo-lightbox-frame"><img src="" alt=""><button class="jo-lightbox-close" type="button" aria-label="Close"></button></div><div class="jo-lightbox-caption"></div>';
   document.body.appendChild(joLightbox);
   var joLightboxImg = joLightbox.querySelector('img');
+  var joLightboxMeta = joLightbox.querySelector('.jo-lightbox-meta');
+  var joLightboxCap = joLightbox.querySelector('.jo-lightbox-caption');
 
-  function openLightbox(src, dark) {
+  function openLightbox(src, dark, caption, metaHTML) {
     if (isMobile()) return;
     if (!src) return;
     joLightboxImg.setAttribute('src', src);
     joLightbox.classList.toggle('jo-dark', !!dark);
+    joLightboxCap.innerHTML = caption || '';
+    joLightboxMeta.innerHTML = metaHTML || '';
     document.body.classList.add('is-lightbox-open');
   }
 
@@ -726,6 +730,8 @@
     if (!document.body.classList.contains('is-lightbox-open')) return;
     document.body.classList.remove('is-lightbox-open');
     joLightboxImg.setAttribute('src', '');
+    joLightboxCap.innerHTML = '';
+    joLightboxMeta.innerHTML = '';
   }
 
   joLightbox.addEventListener('click', function(event) {
@@ -743,7 +749,27 @@
 
     event.preventDefault();
     var darkDoc = !!event.target.closest('.jo-pr.jo-dark');
-    openLightbox(picture.currentSrc || picture.getAttribute('src'), darkDoc);
+
+    var caption = '';
+    var figure = picture.closest('figure');
+    if (figure) {
+      var fc = figure.querySelector('figcaption');
+      if (fc) caption = fc.innerHTML;
+    }
+
+    var metaHTML = '';
+    var openDoc = picture.closest('.jo-pr');
+    if (openDoc) {
+      var metaEl = openDoc.querySelector('.jo-pr-meta');
+      if (metaEl) {
+        var clone = metaEl.cloneNode(true);
+        var reserve = clone.querySelector('.jo-pr-meta-reserve');
+        if (reserve && reserve.parentNode) reserve.parentNode.removeChild(reserve);
+        metaHTML = clone.innerHTML;
+      }
+    }
+
+    openLightbox(picture.currentSrc || picture.getAttribute('src'), darkDoc, caption, metaHTML);
   });
 
   // ---------- HOMEPAGE UP / DOWN SNAP ZONES ----------
