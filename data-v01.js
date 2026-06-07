@@ -92,13 +92,15 @@ window.JO_PROJECTS = [
     "search": "dropping a pin in time 20th anniversary concert series merz laraaji shahzad ismaily furstwurld joshua tree perpetual dune festival wonder valley coaxial arts los angeles saint ghetto festival dampfzentrale bern switzerland bush hall london uk 2019 starlight night video jed ochmanek monastic gig dreams of sleep and wakes of sound epic records",
     "slides": [
       {
-        "url": "https://www.youtube.com/embed/qpX2UIi1OA8?autoplay=1&mute=1&loop=1&playlist=qpX2UIi1OA8&controls=0&playsinline=1&modestbranding=1&rel=0",
+        "url": "https://www.youtube.com/embed/qpX2UIi1OA8?autoplay=1&mute=1&loop=1&playlist=qpX2UIi1OA8&controls=0&playsinline=1&modestbranding=1&rel=0&iv_load_policy=3&fs=0&disablekb=1",
         "video": 1,
+        "cls": "jo-video-yt",
         "cap": "<em>The Starlight Night</em> (excerpt)"
       },
       {
-        "url": "https://www.youtube.com/embed/c7tbeuQNaGU?autoplay=1&mute=1&loop=1&playlist=c7tbeuQNaGU&controls=0&playsinline=1&modestbranding=1&rel=0",
+        "url": "https://www.youtube.com/embed/c7tbeuQNaGU?autoplay=1&mute=1&loop=1&playlist=c7tbeuQNaGU&controls=0&playsinline=1&modestbranding=1&rel=0&iv_load_policy=3&fs=0&disablekb=1",
         "video": 1,
+        "cls": "jo-video-yt",
         "cap": "<em>Dropping A Pin in Time</em> (excerpt)"
       }
     ],
