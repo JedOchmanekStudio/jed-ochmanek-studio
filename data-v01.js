@@ -914,7 +914,7 @@ const joNewsItems = [
 function joSocialHtml() {
   return '<div class="jo-utility-social">' +
     '<a href="mailto:jedochmanekstudio@gmail.com" aria-label="Email Jed Ochmanek Studio"><img src="https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a24e17699e19a404a6679e8_EMAIL.png" alt="Email"></a>' +
-    '<a href="https://www.instagram.com/jedochmanekstudio/" target="_blank" rel="noopener" aria-label="Instagram Jed Ochmanek Studio"><img src="https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a24e176096ce423ac136a24_INSTAGRAM.png" alt="Instagram"></a>' +
+    '<a href="https://www.instagram.com/jed_ochmanek_studio/" target="_blank" rel="noopener" aria-label="Instagram Jed Ochmanek Studio"><img src="https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a24e176096ce423ac136a24_INSTAGRAM.png" alt="Instagram"></a>' +
   '</div>';
 }
 
