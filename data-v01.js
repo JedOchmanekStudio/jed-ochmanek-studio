@@ -1,3 +1,12 @@
+window.JO_SPLASH = [
+  { "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a06bf13ff6143c879355f4d_GATEFOLDS-2-3.jpg", "dark": 0 },
+  { "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a06bf148f8efd5c42edc882_GATEFOLDS-6-2.jpg", "dark": 0 },
+  { "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a0661aeabff8a7e070a64ef_A%20MONASTIC%20GIG%203.jpg", "dark": 1 },
+  { "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a064234f1834decc93e3f0e_SUNDIALS.jpg", "dark": 0 },
+  { "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a06438484b8b72fa10e1e8b_SUNDIALS-9.jpg", "dark": 0 },
+  { "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a1910a26de372b2489ffd62_BREED%20ST-4.jpg", "dark": 0 }
+];
+
 window.JO_PROJECTS = [
   {
     "id": "gatefolds",
@@ -23,6 +32,11 @@ window.JO_PROJECTS = [
         "cap": "<em>Gatefold 005</em>, 2019-2024<br>UV inkjet print on metallic paper<br>mounted on dibond in cold rolled<br>steel artist's frame<br>24.75 x 48.75 x 1&quot;"
       },
       {
+        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a260177297b7ffd244135b8_GATEFOLD%20DETAIL%203.jpg",
+        "cls": "jo-protect-left",
+        "cap": "<em>Gatefold 005</em> (detail), 2019-2024<br>UV inkjet print on metallic paper<br>mounted on dibond in cold rolled<br>steel artist's frame<br>24.75 x 48.75 x 1&quot;"
+      },
+      {
         "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a06bf13e8f5bb5bf01bcbef_GATEFOLDS-6.jpg",
         "cls": "jo-fit-right",
         "cap": "<em>Gatefold 002</em>, 2019-2024<br>UV inkjet print on metallic paper<br>mounted on dibond in cold rolled<br>steel artist's frame<br>24.75 x 48.75 x 1&quot;"
@@ -38,9 +52,14 @@ window.JO_PROJECTS = [
         "cap": "Installation view"
       },
       {
-        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a06bf148f8efd5c42edc882_GATEFOLDS-6-2.jpg",
+        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a25f81702352cf869a2f6ff_GATEFOLD.jpg",
         "cls": "jo-protect-left",
         "cap": "<em>Gatefold 007</em>, 2019-2024<br>UV inkjet print on metallic paper<br>mounted on dibond in cold rolled<br>steel artist's frame<br>24.75 x 48.75 x 1&quot;"
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a2600c31c846f28649c6bd3_GATEFOLD%20DETAIL%202.jpg",
+        "cls": "jo-protect-left",
+        "cap": "<em>Gatefold 007</em> (detail), 2019-2024<br>UV inkjet print on metallic paper<br>mounted on dibond in cold rolled<br>steel artist's frame<br>24.75 x 48.75 x 1&quot;"
       }
     ],
     "pr": {
@@ -48,6 +67,57 @@ window.JO_PROJECTS = [
       "dark": 0,
       "text": "<p>Compound is pleased to present <em>Gatefolds</em>, an exhibition of prints and video by Jed Ochmanek. An opening reception will be held from 6 to 10pm on Saturday, June 29th, and the exhibition will be open by appointment through July 28th.</p><p>In 2018, Ochmanek collaborated with musicians Merz and Laraaji on <em>A Monastic Gig</em>, a concert-ceremony held at Dampfzentrale Bern, Switzerland. For the event, Ochmanek filled the former power plant’s voluminous hall with a video work made by filming his painting process, consisting of chromatically shifting, layered shots of slowly cascading paint and solvent. Merz and Laraaji composed a set in response to these hypnotic washes of particulate motion, prominently featuring zithers from various musical traditions. The following year, Dampfzentrale released the resulting recording as a gatefold double LP, <em>Dreams of Sleep and Wakes of Sound</em>. Adapting the video process to still photography, Ochmanek emulated the set’s spindly verticals of zither and the horizontal sweeps of tonality for the LP’s artwork.</p><p>Following the LP’s release, Ochmanek continued to work with the files from the LP artwork, reconfiguring and “remastering” them into large-format prints. The title <em>Gatefolds</em> alludes to their origin as album artwork, and reinforces their 1:2 aspect ratio, highlighting the tension central to Ochmanek’s work between exacting proportion and sinuous, organic flow. Accompanying the prints, both <em>A Monastic Gig</em>, 2018 and its “remix”, <em>Dropping A Pin in Time</em>, made for the 2019 concert series of Merz’s 25th anniversary tour, will be shown on loop in Compound’s front window 24 hours a day throughout the duration of the exhibition. This public-facing gesture emphasizes the generously experiential nature of the work, illuminating the desert’s summer nights for gallery attendees and chance passersby alike.</p>",
       "imgs": ["https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a068f8eb7267d6f84c885b8_GATEFOLDS.jpg"]
+    }
+  },
+  {
+    "id": "blindspot",
+    "gallery": "blindspot",
+    "title": ["Blindspot"],
+    "meta": ["Lazy Eye Gallery", "Yucca Valley, CA", "5.20.23 - 6.16.23"],
+    "dark": 1,
+    "search": "blindspot blind spot lazy eye gallery yucca valley 2023 untitled oil based enamel on aluminum black and white black-and-white painting paintings monochrome creosote larrea tridentata branches zips aluminum channel lacquer grid mono-prints static",
+    "slides": [
+      {
+        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a25ef06fb74c69c17845ba9_BLINDSPOT.jpg",
+        "cls": "jo-protect-left",
+        "cap": "<em>Untitled</em>, 2023 (detail)<br>oil on aluminum, Larrea tridentata, hardware<br>36 × 48 x 1 13/16&quot;"
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a25ef069577a06c53c66e0e_BLINDSPOT-3.jpg",
+        "cls": "jo-fit-right",
+        "cap": "<em>Untitled</em>, 2023<br>oil on aluminum, Larrea tridentata, hardware<br>36 × 48 x 1 13/16&quot;"
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a25ef06a5fda1afab5ee8e9_BLINDSPOT-4.jpg",
+        "cls": "jo-protect-left",
+        "cap": "<em>Untitled</em>, 2023 (detail)<br>oil on aluminum, Larrea tridentata, hardware<br>36 × 48 x 1 13/16&quot;"
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a25ef07a18d5d024dd92703_BLINDSPOT-7.jpg",
+        "cls": "jo-fit-right",
+        "cap": "<em>Untitled</em>, 2023<br>oil on aluminum, Larrea tridentata, hardware<br>36 × 48 x 1 13/16&quot;"
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a25ef06e0bd5b67229132df_BLINDSPOT-2.jpg",
+        "cls": "jo-protect-left",
+        "cap": "<em>Untitled</em>, 2023 (detail)<br>oil on aluminum, Larrea tridentata, hardware<br>36 × 48 x 1 13/16&quot;"
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a25ef06f5d99b0739bea736_BLINDSPOT-5.jpg",
+        "cls": "jo-protect-left",
+        "cap": "<em>Untitled</em>, 2023 (detail)<br>oil on aluminum, Larrea tridentata, hardware<br>36 × 48 x 1 13/16&quot;"
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a25ef0632632ad41e94a98a_BLINDSPOT-6.jpg",
+        "cls": "jo-fit-right",
+        "cap": "<em>Untitled</em>, 2023<br>oil on aluminum, Larrea tridentata, hardware<br>36 × 48 x 1 13/16&quot;"
+      }
+    ],
+    "pr": {
+      "id": "blindspot-pr",
+      "dark": 1,
+      "text": "<p>Lazy Eye Gallery is pleased to present <em>Blindspot</em>, an exhibition of three new paintings by Jed Ochmanek. An opening reception will be held on May 20th, 2023 from 4pm to 6pm. The show will remain on view by appointment through June 16th.</p><p>The industrial, high gloss surfaces of the works in <em>Blindspot</em> present a storm of hyper-indexical, frenetic detail. Achieved through undiluted, wet-into-wet applications of oil-based enamel on aluminum, these black-and-white works revel in an intense immediacy. Their velocity runs counter to the contemplative repose of Ochmanek’s layered poured paintings, meditative video installations, and luminous light-and-space sculptures. Ultimately, however, the new paintings’ gestural turbulence recedes into the inky depths of the image via the self-leveling qualities of their lacquer coatings. Submerged grids, blotted out mono-prints, and scrambled passages of static are flayed with creosote branches, fragments of which can be seen entombed in oil.</p><p>Single, central “zips” of aluminum channel material, the same used to construct the strainers, are bolted through punctures in the sheet metal supports. Floating off the painting’s surface, their decisive geometry holds the work’s organic flow in a state of balanced tension. As spatial constructs, these channels heighten a relation between painting and architecture that undergirds Ochmanek’s practice. These recent black-and-white works represent an ongoing exploration of the themes first introduced in his 2009 exhibition <em>Daylight Paintings</em> at Young Art: the interaction between grid and post-painterly, incidental mark-making, infinite variation through a strict economy of means, and a persistent focus on the phenomenology of acute opticality.</p>",
+      "imgs": ["https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a175e55f85325209f48c2ae_BLINDSPOT.jpg"]
     }
   },
   {
@@ -116,7 +186,7 @@ window.JO_PROJECTS = [
   {
     "id": "dreams",
     "gallery": "dreams-sleep-wakes-sound",
-    "title": ["Laraaji, Merz, and Shahzad Ismaily", "Dreams of Sleep and Wakes of Sound", "Double LP album artwork"],
+    "title": ["Laraaji, Merz, and Shahzad Ismaily:", "Dreams of Sleep and Wakes of Sound", "Double LP album artwork"],
     "meta": ["Dampfzentrale Bern", "Bern, Switzerland", "6.28.19"],
     "dark": 0,
     "search": "dreams of sleep and wakes of sound double lp artwork laraaji merz shahzad ismaily dampfzentrale bern guardian vinyl factory bandcamp spotify",
@@ -130,23 +200,23 @@ window.JO_PROJECTS = [
         "cls": "jo-protect-left"
       },
       {
-        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a06a2299acde6d9d220d60e_DOSAWOS-8.jpg",
+        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a260d84d597c8e6797e364e_DOS-5.jpg",
         "cls": "jo-protect-left"
       },
       {
-        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a06a2296254e2fa0fed502d_DOSAWOS-3-2.jpg",
+        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a260dbc04d7e5984a79a037_DOS-4.jpg",
         "cls": "jo-protect-left"
       },
       {
-        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a06a229ac358e213a7bb4f0_DOSAWOS-7.jpg",
+        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a260dde03b09f1df976d985_DOS.jpg",
         "cls": "jo-protect-left"
       },
       {
-        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a06a2295475436e602b5fc3_DOSAWOS-5-2.jpg",
+        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a260dfc1c846f28649e9986_DOS-3.jpg",
         "cls": "jo-protect-left"
       },
       {
-        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a06a22945242444c646499c_DOSAWOS-6.jpg",
+        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a260e18a2827253f7454f58_DOS-2.jpg",
         "cls": "jo-protect-left"
       },
       {
@@ -166,7 +236,7 @@ window.JO_PROJECTS = [
         "cls": "jo-protect-left"
       },
       {
-        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a06a22911ce40f755761710_DOSAWOS-2-3.jpg",
+        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a26100ac62c4449fd1ad4c2_DOS-6.jpg",
         "cls": "jo-protect-left"
       }
     ],
@@ -347,7 +417,7 @@ window.JO_PROJECTS = [
         "cap": "<em>Plateaux</em> (detail), 2012<br>oil on mirror-polished stainless steel<br>48 × 96&quot;"
       },
       {
-        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a1910a38e89f3b118d0431c_BREED%20ST-15.jpg",
+        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a1910a310b0c76d4666967b_BREED%20ST-14.jpg",
         "cap": "<em>Beekeeper</em>, 2012<br>oil on mirror-polished stainless steel<br>48 × 96&quot;"
       },
       {
@@ -355,12 +425,13 @@ window.JO_PROJECTS = [
         "cap": "<em>Beekeeper</em> (detail), 2012<br>oil on mirror-polished stainless steel<br>48 × 96&quot;"
       },
       {
-        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a1910a38e89f3b118d0431c_BREED%20ST-15.jpg",
+        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a1910a34e31974a75054878_BREED%20ST-5.jpg",
         "cls": "jo-fit-right",
         "cap": "installation view"
       },
       {
-        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a1910a34e31974a75054878_BREED%20ST-5.jpg",
+        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a1910a38e89f3b118d0431c_BREED%20ST-15.jpg",
+        "cls": "jo-fit-right",
         "cap": "installation view"
       },
       {
@@ -376,7 +447,7 @@ window.JO_PROJECTS = [
         "cap": "installation view"
       },
       {
-        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a1910a4d503d973ad214861_BREED%20ST-19.jpg",
+        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a25fc76563d93a2d2401eb3_SOLID%20RAIN.jpg",
         "cap": "<em>Solid Rain</em> (detail), 2012<br>cement<br>16 × 24&quot;"
       }
     ],
@@ -412,18 +483,6 @@ window.JO_PROJECTS = [
           {
             "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a18e204a0aff33bf2c3c0dd_547d2dfdd0db3b8058aca2fe_front.jpg",
             "caption": "<em>Exotherm</em>, 2012, oil on stainless steel, 16 × 24&quot;"
-          },
-          {
-            "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a1910a38e89f3b118d0431c_BREED%20ST-15.jpg",
-            "caption": "<em>Breed St.</em>, 2012, installation view, Young Art"
-          },
-          {
-            "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a1910a380d46fc269e237c2_BREED%20ST-16.jpg",
-            "caption": "<em>Breed St.</em>, 2012, installation view, Young Art"
-          },
-          {
-            "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a1910a46de372b2489ffdab_BREED%20ST-10.jpg",
-            "caption": "<em>Plateaux</em> (detail), 2012, oil on mirror-polished stainless steel, 48 × 96&quot;"
           }
         ]
       }
@@ -479,7 +538,7 @@ window.JO_PROJECTS = [
         "cap": "installation view"
       },
       {
-        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a18c46a2bf04d67c290d689_PALLADIUM-13.jpg",
+        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a18cc836c0dc2b32f0dfed2_547f6cf540693e05136cf3c8_JO11_11.jpg",
         "cls": "jo-fit-right",
         "cap": "<em>Oil</em>, 2011<br>oil on steel, magnet mounted<br>8 × 12&quot;"
       },
