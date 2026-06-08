@@ -1082,13 +1082,13 @@ body.is-cv-open .jo-cv-page {
     transform: none;
     order: 1;
     width: 100%;
-    margin-bottom: 2em;
+    margin-bottom: 1em;        /* one empty paragraph before the first image */
   }
   .jo-pr-document .jo-pr-image {
     order: 2;
     display: block;
     width: 100%;
-    margin-bottom: 2em;
+    margin-bottom: 1em;        /* uniform one-paragraph gap between images */
   }
   .jo-pr-document .jo-pr-text,
   .jo-pr-document .jo-pr-text.jo-pr-wide {
@@ -1111,7 +1111,7 @@ body.is-cv-open .jo-cv-page {
   .jo-pr-document .jo-pr-text figure {
     display: block;
     width: 100%;
-    margin: 1.75em 0;
+    margin: 1em 0;             /* uniform one-paragraph gap */
     padding: 0;
   }
   .jo-pr-document .jo-pr-text figure img {
@@ -1130,8 +1130,24 @@ body.is-cv-open .jo-cv-page {
     font-weight: 200;
     line-height: normal;
   }
+  /* On mobile every PR sits on a white page, so dark shows must render
+     their text/meta/back-arrow in BLACK — otherwise it's white-on-white
+     and the press release (and its back arrow) vanish, e.g. Blindspot.
+     These selectors outrank the desktop is-pr-dark white rules. */
+  body.is-pr-dark .jo-nav,
+  body.is-pr-dark .jo-pr.open,
+  body.is-pr-dark .jo-pr.open .jo-pr-text,
+  body.is-pr-dark .jo-pr.open .jo-pr-text p,
+  body.is-pr-dark .jo-pr.open .jo-pr-title,
+  body.is-pr-dark .jo-pr.open .jo-pr-meta,
+  body.is-pr-dark .jo-pr.open .jo-pr-meta p,
+  .jo-pr-document.jo-dark .jo-pr-text,
+  .jo-pr-document.jo-dark .jo-pr-text p,
+  .jo-pr-document.jo-dark .jo-pr-title,
+  .jo-pr-document.jo-dark .jo-pr-meta,
+  .jo-pr-document.jo-dark .jo-pr-meta p,
   .jo-pr-document.jo-dark .jo-pr-text figcaption {
-    color: var(--white);
+    color: #000 !important;
   }
   .jo-pr-back-zone {
     display: none;
@@ -1139,7 +1155,7 @@ body.is-cv-open .jo-cv-page {
   /* mobile back chevron after the date */
   .jo-pr-mobile-back {
     display: inline-block;
-    margin-top: 1.2em;
+    margin-top: 1em;
     color: var(--black);
     text-decoration: none;
     font-family: aktiv-grotesk-thin, "Aktiv Grotesk Thin", aktiv-grotesk, Arial, sans-serif;
@@ -1149,8 +1165,9 @@ body.is-cv-open .jo-cv-page {
   .jo-pr-mobile-back:active {
     color: var(--black-hover);
   }
-  .jo-pr-document.jo-dark .jo-pr-mobile-back {
-    color: var(--white) !important;
+  .jo-pr-document.jo-dark .jo-pr-mobile-back,
+  body.is-pr-dark .jo-pr.open .jo-pr-mobile-back {
+    color: #000 !important;
   }
   /* news: image first, then text, with a slash between items */
   .jo-news-entry,
@@ -2154,7 +2171,7 @@ body.is-index-open .jo-index-page {
 .jo-index-row {
   display: block;
   margin: 0 0 1em 0;       /* one blank return between entries */
-  padding: 0;
+  padding: 0 0 0 3.4em;    /* hanging indent: every line sits at the title column */
   color: var(--black-hover);
   font-family: aktiv-grotesk-thin, "Aktiv Grotesk Thin", aktiv-grotesk, Arial, sans-serif;
   font-size: var(--menu-size);
@@ -2168,10 +2185,10 @@ body.is-index-open .jo-index-page {
 }
 .jo-index-line {
   display: block;
+  text-indent: -3.4em;     /* pull the year back to the true left on the first line */
 }
 .jo-index-venue {
-  display: block;
-  padding-left: 3.4em;     /* aligns under the title, past the year column */
+  display: block;          /* inherits the row's 3.4em indent — aligns under the title */
 }
 .jo-index-year {
   display: inline-block;
@@ -2217,5 +2234,4 @@ body.is-index-open .jo-index-page {
   }
   .jo-index-image { display: none !important; }
   .jo-index-row { margin-bottom: 1.4em; color: #000; }
-  .jo-index-venue { padding-left: 3em; }
 }
