@@ -78,8 +78,9 @@
     if (project.mode === 'right') modeClass = 'jo-mode-right';
     if (project.mode === 'protected') modeClass = 'jo-mode-protected';
 
+    var boldLines = project.boldLines || 1;
     var title = (project.title || []).map(function(line, index) {
-      if (index === 0) return '<p class="jo-section-title">' + line + '</p>';
+      if (index < boldLines) return '<p class="jo-section-title">' + line + '</p>';
       return '<p class="jo-meta-line">' + line + '</p>';
     }).join('');
 
@@ -145,8 +146,9 @@
       imgs = '<div class="jo-pr-image">' + doc.imgs.map(joRenderDocumentImage).join('') + '</div>';
     }
 
+    var boldLines = project.boldLines || 1;
     var title = (project.title || []).map(function(line, index) {
-      if (index === 0) return '<p class="jo-section-title">' + line + '</p>';
+      if (index < boldLines) return '<p class="jo-section-title">' + line + '</p>';
       return '<p class="jo-meta-line">' + line + '</p>';
     }).join('');
 
