@@ -312,7 +312,7 @@ body.is-cv-open .jo-nav a:hover {
   left: var(--gutter);
   bottom: 42px;
   z-index: 20;
-  width: 360px;
+  width: var(--menu-width);   /* stays inside the protected left zone */
   color: inherit;
 }
 .jo-caption em {
@@ -2175,10 +2175,14 @@ body.is-index-open .jo-index-page {
 }
 /* =========================================================
    MOBILE — caption column starts at the venue line, not the
-   exhibition-title line.
+   exhibition-title line; splash title sits exactly where the
+   nav title sits so it never jumps on entry.
 ========================================================= */
 @media (max-width: 900px) {
   .jo-caption {
     margin-top: 55px;
+  }
+  #joSplash .jo-splash-title {
+    top: 30px;
   }
 }
