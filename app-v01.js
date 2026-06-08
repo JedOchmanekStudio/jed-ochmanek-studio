@@ -6,18 +6,6 @@
     document.documentElement.classList.remove('jo-fonts-loading');
   }, 1200);
 
-  // TEMP DIAGNOSTIC: surface any uncaught script error on-screen so it can be
-  // read on a phone. Remove once mobile navigation is confirmed working.
-  window.addEventListener('error', function (e) {
-    var bar = document.getElementById('joErrBar');
-    if (!bar) {
-      bar = document.createElement('div');
-      bar.id = 'joErrBar';
-      bar.style.cssText = 'position:fixed;left:0;right:0;bottom:0;z-index:99999;background:#c00;color:#fff;font:12px/1.4 monospace;padding:8px;white-space:pre-wrap;';
-      (document.body || document.documentElement).appendChild(bar);
-    }
-    bar.textContent = 'JOERR: ' + e.message + '  @ line ' + (e.lineno || '?') + ':' + (e.colno || '?');
-  });
 
   function joReplaceNewsCvFromData() {
     if (!window.JO_NEWS_CV) return;
@@ -935,7 +923,6 @@
   });
 
   document.addEventListener('click', function(event) {
-    if (isMobile()) return;
     if (clickIsBlocked(event.target)) return;
 
     const gallery = event.target.closest('[data-gallery]');
