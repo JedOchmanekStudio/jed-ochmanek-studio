@@ -190,6 +190,203 @@
   joReplaceNewsCvFromData();
   joReplaceProjectsFromData();
 
+  // ---------- REBUILD NAV: Archive / Office / News / CV ----------
+  (function joBuildNav() {
+    var nav = document.querySelector('.jo-nav');
+    if (!nav) return;
+    nav.innerHTML =
+      '<div class="jo-title" data-splash>Jed Ochmanek Studio</div>' +
+      '<div class="jo-spacer"></div>' +
+      '<a href="#" data-archive>Archive</a>' +
+      '<a href="#" data-office-open>Office</a>' +
+      '<a href="#" data-news-open>News</a>' +
+      '<a href="#" data-cv-open>CV</a>';
+  })();
+
+  // ---------- SPLASH (front page) ----------
+  (function joBuildSplash() {
+    if (document.getElementById('joSplash')) return;
+    var projects = window.JO_PROJECTS || [];
+    function firstImg(p) {
+      var s = p.slides || [];
+      for (var i = 0; i < s.length; i++) { if (!s[i].video) return s[i].url; }
+      return '';
+    }
+    var heroes = [];
+    if (window.JO_SPLASH && window.JO_SPLASH.length) {
+      heroes = window.JO_SPLASH.map(function(h) { return { url: h.url, dark: !!h.dark }; });
+    } else {
+      projects.forEach(function(p) { var u = firstImg(p); if (u) heroes.push({ url: u, dark: !!p.dark }); });
+      heroes = heroes.slice(0, 6);
+    }
+    if (!heroes.length) return;
+
+    var splash = document.createElement('div');
+    splash.id = 'joSplash';
+    splash.innerHTML =
+      heroes.map(function(h, i) {
+        return '<div class="jo-splash-pane' + (i === 0 ? ' active' : '') + '" style="background-image:url(\'' + h.url + '\')"></div>';
+      }).join('') +
+      '<a class="jo-splash-title" href="#" data-splash-enter>Jed Ochmanek Studio</a>' +
+      '<div class="jo-splash-z l" data-splash-prev></div>' +
+      '<div class="jo-splash-z r" data-splash-next></div>';
+    document.body.appendChild(splash);
+    document.body.classList.add('is-splash');
+
+    var sidx = 0;
+    var panes = splash.querySelectorAll('.jo-splash-pane');
+    function applyDark() { splash.classList.toggle('jo-splash-dark', !!heroes[sidx].dark); }
+    applyDark();
+    function show(n) {
+      panes[sidx].classList.remove('active');
+      sidx = (n + panes.length) % panes.length;
+      panes[sidx].classList.add('active');
+      applyDark();
+    }
+    splash.querySelector('[data-splash-prev]').addEventListener('click', function() { show(sidx - 1); });
+    splash.querySelector('[data-splash-next]').addEventListener('click', function() { show(sidx + 1); });
+    splash.querySelector('[data-splash-enter]').addEventListener('click', function(e) {
+      e.preventDefault();
+      document.body.classList.remove('is-splash');
+      go(0);
+    });
+  })();
+
+  // ---------- OFFICE PAGE ----------
+  (function joBuildOffice() {
+    if (document.getElementById('joOfficePage')) return;
+    var page = document.createElement('section');
+    page.className = 'jo-office-page';
+    page.id = 'joOfficePage';
+    page.innerHTML =
+      '<div class="jo-office-content">' +
+        '<div class="jo-office-row"><a href="mailto:jedochmanekstudio@gmail.com">Contact</a></div>' +
+        '<div class="jo-office-row"><a href="https://www.instagram.com/jed_ochmanek_studio/" target="_blank" rel="noopener">Instagram</a></div>' +
+        '<form class="jo-office-row" data-subscribe-form><input class="jo-office-field" data-subscribe-input type="email" placeholder="Subscribe" autocomplete="email" aria-label="Subscribe"></form>' +
+        '<form class="jo-office-row" data-office-search-form><input class="jo-office-field" data-office-search type="text" placeholder="Search" autocomplete="off" aria-label="Search"></form>' +
+        '<div class="jo-office-results" data-office-results></div>' +
+      '</div>';
+    document.body.appendChild(page);
+  })();
+
+  function joAlignOffice() {
+    var nav = document.querySelector('.jo-nav');
+    var archive = nav && nav.querySelector('[data-archive]');
+    var content = document.querySelector('.jo-office-content');
+    if (!archive || !content) return;
+    if (window.matchMedia('(max-width: 900px)').matches) { content.style.top = ''; return; }
+    content.style.top = archive.getBoundingClientRect().top + 'px';
+  }
+
+  function joOpenOffice() {
+    closeLightbox();
+    closePR(false);
+    document.body.classList.remove('is-news-open', 'is-cv-open', 'is-search-open', 'is-dark', 'is-pr-dark', 'is-slide-meta-white', 'is-slide-all-white');
+    document.body.classList.add('is-office-open');
+    joAlignOffice();
+    var page = document.getElementById('joOfficePage');
+    if (page) page.scrollTop = 0;
+  }
+
+  // ---------- NAV CLICK ROUTING (Archive / Office / Splash) ----------
+  (function joWireNav() {
+    var nav = document.querySelector('.jo-nav');
+    if (!nav) return;
+    nav.addEventListener('click', function(event) {
+      var link = event.target.closest('[data-splash],[data-archive],[data-office-open],[data-news-open],[data-cv-open]');
+      if (!link) return;
+
+      if (link.hasAttribute('data-office-open')) {
+        event.preventDefault();
+        document.body.classList.remove('is-splash');
+        joOpenOffice();
+        return;
+      }
+
+      // any other menu action leaves the office page
+      document.body.classList.remove('is-office-open');
+
+      if (link.hasAttribute('data-splash')) {
+        event.preventDefault();
+        closeLightbox();
+        closePR(false);
+        document.body.classList.add('is-splash');
+        return;
+      }
+
+      if (link.hasAttribute('data-archive')) {
+        event.preventDefault();
+        document.body.classList.remove('is-splash');
+        closePR(false);
+        closeUtility();
+        go(0);
+        return;
+      }
+
+      // News / CV: handled by their own [data-*] handlers; just leave splash
+      document.body.classList.remove('is-splash');
+    });
+  })();
+
+  // office search: live results underneath, in the menu's type
+  (function joWireOfficeSearch() {
+    var form = document.querySelector('[data-office-search-form]');
+    var input = document.querySelector('[data-office-search]');
+    var results = document.querySelector('[data-office-results]');
+    if (!form || !input || !results) return;
+
+    function matches(query) {
+      var needle = normalizeSearchText(query);
+      if (!needle) return [];
+      var projects = window.JO_PROJECTS || [];
+      var out = [];
+      projects.forEach(function(p, i) {
+        var hay = normalizeSearchText(
+          (p.search || '') + ' ' + (p.title || []).join(' ') + ' ' + (p.meta || []).join(' ')
+        );
+        if (hay.indexOf(needle) !== -1) out.push({ i: i, title: (p.title || []).join(' ') });
+      });
+      return out;
+    }
+
+    function render() {
+      var hits = matches(input.value);
+      results.innerHTML = hits.map(function(h) {
+        return '<a href="#" class="jo-office-result" data-go-section="' + h.i + '">' + h.title + '</a>';
+      }).join('');
+    }
+
+    function goToSection(i) {
+      document.body.classList.remove('is-office-open');
+      input.value = '';
+      results.innerHTML = '';
+      go(i);
+    }
+
+    input.addEventListener('input', render);
+    results.addEventListener('click', function(event) {
+      var hit = event.target.closest('[data-go-section]');
+      if (!hit) return;
+      event.preventDefault();
+      goToSection(+hit.dataset.goSection);
+    });
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      var first = results.querySelector('[data-go-section]');
+      if (first) { goToSection(+first.dataset.goSection); return; }
+      // fall back to the full search routing (handles "news" / "cv")
+      var value = input.value;
+      document.body.classList.remove('is-office-open');
+      searchAndGo(value);
+      input.value = '';
+      results.innerHTML = '';
+    });
+  })();
+
+  window.addEventListener('resize', function() {
+    if (document.body.classList.contains('is-office-open')) joAlignOffice();
+  });
+
   const stage = document.getElementById('joStage');
   const sections = Array.from(document.querySelectorAll('.jo-stage .jo-section'));
   const galleries = {};
@@ -197,6 +394,16 @@
   let locked = false;
   let touchStartY = null;
   let touchStartX = null;
+
+  // section height in whole pixels — keeps the snap transform pixel-aligned
+  // so a project's fixed meta doesn't shift a hair when a PR opens over it.
+  function joSecH() {
+    var s = stage && stage.querySelector('.jo-section');
+    return s ? s.clientHeight : window.innerHeight;
+  }
+  function joStageTransform() {
+    return 'translate3d(0,' + (-Math.round(activeIndex * joSecH())) + 'px,0)';
+  }
 
   function joActivateVideo(slide) {
     if (!slide) return;
@@ -261,6 +468,8 @@
     if (isMobile()) return;
     if (!section) return;
     if (
+      document.body.classList.contains('is-splash') ||
+      document.body.classList.contains('is-office-open') ||
       document.body.classList.contains('is-pr-open') ||
       document.body.classList.contains('is-news-open') ||
       document.body.classList.contains('is-cv-open')
@@ -327,7 +536,7 @@
     activeIndex = Math.max(0, Math.min(sections.length - 1, index));
     locked = true;
 
-    stage.style.transform = 'translate3d(0,' + (-activeIndex * 100) + 'svh,0)';
+    stage.style.transform = joStageTransform();
     setTone(sections[activeIndex]);
     joUpdateVertZones();
 
@@ -378,6 +587,8 @@
   var joHScrollLock = false;
   window.addEventListener('wheel', function(event) {
     if (
+      document.body.classList.contains('is-splash') ||
+      document.body.classList.contains('is-office-open') ||
       document.body.classList.contains('is-pr-open') ||
       document.body.classList.contains('is-news-open') ||
       document.body.classList.contains('is-cv-open') ||
@@ -408,6 +619,11 @@
   }, { passive: false });
 
   window.addEventListener('keydown', function(event) {
+    if (document.body.classList.contains('is-splash') || document.body.classList.contains('is-office-open')) {
+      if (event.key === 'Escape') document.body.classList.remove('is-office-open');
+      return;
+    }
+
     if (document.body.classList.contains('is-lightbox-open')) {
       if (event.key === 'Escape') closeLightbox();
       return;
@@ -441,6 +657,8 @@
 
   document.addEventListener('touchstart', function(event) {
     if (
+      document.body.classList.contains('is-splash') ||
+      document.body.classList.contains('is-office-open') ||
       document.body.classList.contains('is-pr-open') ||
       document.body.classList.contains('is-news-open') ||
       document.body.classList.contains('is-cv-open')
@@ -454,6 +672,8 @@
 
   document.addEventListener('touchend', function(event) {
     if (
+      document.body.classList.contains('is-splash') ||
+      document.body.classList.contains('is-office-open') ||
       document.body.classList.contains('is-pr-open') ||
       document.body.classList.contains('is-news-open') ||
       document.body.classList.contains('is-cv-open')
@@ -761,7 +981,7 @@
 
   window.addEventListener('resize', function() {
     if (!stage) return;
-    stage.style.transform = 'translate3d(0,' + (-activeIndex * 100) + 'svh,0)';
+    stage.style.transform = joStageTransform();
   });
 
   // ---------- IMAGE LIGHTBOX + DOCUMENT GALLERIES ----------
@@ -922,19 +1142,7 @@
 
   // ---------- SUBSCRIBE (below the contact icons, behaves like Search) ----------
   var JO_SUBSCRIBE_ENDPOINT = ''; // set to your mailing-list form-action URL to capture addresses
-
-  (function () {
-    var cv = document.querySelector('[data-cv-open]');
-    if (!cv || !cv.parentNode || document.querySelector('.jo-subscribe-row')) return;
-    var row = document.createElement('div');
-    row.className = 'jo-subscribe-row';
-    row.innerHTML =
-      '<a href="#" class="jo-subscribe-link" data-subscribe-open>Subscribe</a>' +
-      '<form class="jo-subscribe-form" data-subscribe-form>' +
-        '<input class="jo-subscribe-input" data-subscribe-input type="email" autocomplete="email" aria-label="Email address">' +
-      '</form>';
-    cv.parentNode.insertBefore(row, cv.nextSibling);
-  })();
+  // Subscribe now lives inside the Office page (built above); the handlers below bind to it.
 
   document.querySelectorAll('[data-subscribe-open]').forEach(function(link) {
     link.addEventListener('click', function(event) {
