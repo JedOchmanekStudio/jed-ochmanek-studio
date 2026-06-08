@@ -1,10 +1,9 @@
 window.JO_SPLASH = [
-  { "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a06bf13ff6143c879355f4d_GATEFOLDS-2-3.jpg", "dark": 0 },
-  { "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a06bf148f8efd5c42edc882_GATEFOLDS-6-2.jpg", "dark": 0 },
-  { "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a0661aeabff8a7e070a64ef_A%20MONASTIC%20GIG%203.jpg", "dark": 1 },
-  { "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a064234f1834decc93e3f0e_SUNDIALS.jpg", "dark": 0 },
-  { "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a06438484b8b72fa10e1e8b_SUNDIALS-9.jpg", "dark": 0 },
-  { "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a1910a26de372b2489ffd62_BREED%20ST-4.jpg", "dark": 0 }
+  { "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a068f8eb7267d6f84c885b8_GATEFOLDS.jpg", "dark": 0 },
+  { "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a25ee3b6409195f8d29105c_BLINDSPOT-5.jpg", "dark": 0 },
+  { "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a260177297b7ffd244135b8_GATEFOLD%20DETAIL%203.jpg", "dark": 1 },
+  { "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a066e0c5c4376b0769eb0b5_SOLSTICE%20SOUNDING.jpg", "dark": 0 },
+  { "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a2600c31c846f28649c6bd3_GATEFOLD%20DETAIL%202.jpg", "dark": 0 }
 ];
 
 window.JO_PROJECTS = [
@@ -124,21 +123,25 @@ window.JO_PROJECTS = [
     "id": "solstice",
     "gallery": "solstice-sounding",
     "title": ["Solstice Sounding: Dusk Till Dawn", "with Seth Olinsky", "curated by Wild Up"],
+    "indexLines": ["Solstice Sounding: Dusk Till Dawn", "with Seth Olinsky"],
     "meta": ["Human Resources", "Los Angeles, CA", "12.22.19"],
     "dark": 1,
     "search": "solstice sounding dusk till dawn seth olinsky wild up human resources los angeles 2019",
     "slides": [
       {
         "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a066e0c5c4376b0769eb0b5_SOLSTICE%20SOUNDING.jpg",
-        "cls": "jo-protect-left"
+        "cls": "jo-protect-left",
+        "cap": "<em>Solstice Sounding: Dusk Till Dawn</em> (still), 2019<br>musical performance with 2 channel, 4k black and white video<br>60 minutes"
       },
       {
         "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a066e0c43a7bc88bb430ab0_SOLSTICE%20SOUNDING-3.jpg",
-        "cls": "jo-protect-left"
+        "cls": "jo-protect-left",
+        "cap": "<em>Solstice Sounding: Dusk Till Dawn</em> (still), 2019<br>musical performance with 2 channel, 4k black and white video<br>60 minutes"
       },
       {
         "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a066e0c524977ad39552d1d_SOLSTICE%20SOUNDING-2.jpg",
-        "cls": "jo-protect-left"
+        "cls": "jo-protect-left",
+        "cap": "<em>Solstice Sounding: Dusk Till Dawn</em> (still), 2019<br>musical performance with 2 channel, 4k black and white video<br>60 minutes"
       }
     ],
     "pr": {
@@ -187,6 +190,7 @@ window.JO_PROJECTS = [
     "id": "dreams",
     "gallery": "dreams-sleep-wakes-sound",
     "title": ["Laraaji, Merz, and Shahzad Ismaily:", "Dreams of Sleep and Wakes of Sound", "Double LP album artwork"],
+    "indexLines": ["Laraaji, Merz, and Shahzad Ismaily:", "Dreams of Sleep and Wakes of Sound"],
     "meta": ["Dampfzentrale Bern", "Bern, Switzerland", "6.28.19"],
     "dark": 0,
     "search": "dreams of sleep and wakes of sound double lp artwork laraaji merz shahzad ismaily dampfzentrale bern guardian vinyl factory bandcamp spotify",
@@ -208,7 +212,7 @@ window.JO_PROJECTS = [
         "cls": "jo-protect-left"
       },
       {
-        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a260dde03b09f1df976d985_DOS.jpg",
+        "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a262df11e536a2e9243731c_DOS.jpg",
         "cls": "jo-protect-left"
       },
       {
@@ -253,7 +257,7 @@ window.JO_PROJECTS = [
   {
     "id": "monastic",
     "gallery": "monastic-gig",
-    "title": ["A Monastic Gig", "w/ Laraaji and Merz"],
+    "title": ["A Monastic Gig", "with Laraaji and Merz"],
     "meta": ["Dampfzentrale Bern", "Bern, Switzerland", "6.13.18"],
     "dark": 1,
     "search": "a monastic gig laraaji merz dampfzentrale bern 2018 shahzad ismaily video projection",
@@ -569,7 +573,7 @@ window.JO_PROJECTS = [
       {
         "url": "https://player.vimeo.com/video/85052386?h=e83114cc9a&background=1&autoplay=1&loop=1&muted=1&controls=0&playsinline=1&dnt=1",
         "video": 1,
-        "cls": "jo-video-bl",
+        "cls": "jo-video-bl jo-video-socketed",
         "cap": "<em>Socketed</em>, 2011<br>HD video and sound on blu-ray disc<br>6 minutes, 25 seconds"
       },
       {
