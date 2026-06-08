@@ -855,10 +855,13 @@ body.is-cv-open .jo-cv-page {
     color: #000 !important;
     z-index: 1000;
   }
-  .jo-title,
+  .jo-title {
+    font-size: var(--menu-size);
+    color: #000 !important;            /* title is the black exception */
+  }
   .jo-nav a {
     font-size: var(--menu-size);
-    color: #000 !important;
+    color: var(--black-hover) !important;   /* menu links grey, like desktop */
   }
   .jo-spacer {
     height: 1.2em;
