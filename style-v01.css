@@ -1942,10 +1942,56 @@ body.is-office-open .jo-office-page {
   color: var(--black-hover);
   opacity: 1;
 }
+/* Subscribe row: the field plus an inline "Submit" that appears to its
+   right (same baseline, same grey light type as the menu) once you type,
+   and flips to "Thank you" on send. */
+.jo-subscribe-row {
+  display: flex;
+  align-items: baseline;
+  gap: 1.5em;                      /* "one tab over to the right" */
+}
+.jo-subscribe-row .jo-office-field {
+  flex: 0 1 var(--menu-width);
+  width: var(--menu-width);
+}
+.jo-subscribe-submit {
+  display: none;                   /* hidden until the field has text */
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  appearance: none;
+  -webkit-appearance: none;
+  color: var(--black-hover);       /* link grey at rest */
+  font-family: aktiv-grotesk-thin, "Aktiv Grotesk Thin", aktiv-grotesk, Arial, sans-serif;
+  font-size: var(--menu-size);
+  font-weight: 200;
+  line-height: normal;
+  cursor: pointer;
+  transition: color var(--transition) ease;
+}
+.jo-subscribe-row.is-typing .jo-subscribe-submit {
+  display: inline-block;
+}
+.jo-subscribe-submit:hover {
+  color: var(--black);
+}
+.jo-subscribe-row.is-done .jo-subscribe-submit {
+  color: var(--black-hover);
+  cursor: default;
+}
 @media (max-width: 900px) {
   .jo-office-page {
     background: #fff !important;
     color: #000 !important;
+  }
+  /* on a phone let the field fill the row and the Submit sit at the far
+     right edge, still on the same baseline */
+  .jo-subscribe-row .jo-office-field {
+    flex: 1 1 auto;
+    width: auto;
+    min-width: 0;
   }
   .jo-office-content {
     position: relative;
@@ -2198,17 +2244,21 @@ body.is-index-open .jo-index-page {
   color: var(--black);
 }
 .jo-index-line {
+  display: flex;           /* year column + title column, no negative offsets */
+  align-items: baseline;
+}
+.jo-index-title {
   display: block;
-  padding-left: 3.4em;     /* hanging indent: year sits in the negative-indent space, */
-  text-indent: -3.4em;     /* wrapped title lines hang at the 3.4em title column      */
+  flex: 1 1 auto;
+  min-width: 0;
 }
 .jo-index-venue {
   display: block;
   padding-left: 3.4em;     /* venue + extra title lines align under the title */
 }
 .jo-index-year {
-  display: inline-block;
-  width: 3.4em;
+  display: block;
+  flex: 0 0 3.4em;         /* fixed year column; never shifts or clips */
 }
 .jo-index-image {
   position: fixed;
