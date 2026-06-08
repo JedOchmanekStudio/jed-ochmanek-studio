@@ -986,7 +986,9 @@ body.is-cv-open .jo-cv-page {
     left: auto;
     bottom: auto;
     width: auto;
-    margin: 18px var(--gutter) 24px 10px;
+    /* drop one line so the artwork caption begins beside the SECOND meta
+       line (the exhibition title stands alone on the top line) */
+    margin: calc(18px + 1.35em) var(--gutter) 24px 10px;
     color: #000;
     font-size: var(--caption-size);
   }
