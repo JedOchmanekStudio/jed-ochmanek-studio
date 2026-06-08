@@ -2109,7 +2109,27 @@ body.is-search-open .jo-archive-toggle {
   display: none;
 }
 @media (max-width: 900px) {
-  .jo-archive-toggle { display: none !important; }
+  /* mobile: hamburger sits top-right of the nav bar (taps are how you
+     navigate between projects, since swipe is unreliable on iOS) */
+  .jo-archive-toggle {
+    display: flex !important;
+    position: fixed;
+    top: 34px;
+    right: var(--gutter);
+    margin-top: 0;
+    width: 20px;
+    height: 16px;
+    color: #000 !important;
+    z-index: 1001;
+  }
+  body.is-splash .jo-archive-toggle,
+  body.is-news-open .jo-archive-toggle,
+  body.is-cv-open .jo-archive-toggle,
+  body.is-office-open .jo-archive-toggle,
+  body.is-search-open .jo-archive-toggle,
+  body.is-pr-open .jo-archive-toggle {
+    display: none !important;
+  }
 }
 .jo-index-page {
   position: fixed;
@@ -2185,4 +2205,17 @@ body.is-index-open .jo-index-page {
   #joSplash .jo-splash-title {
     top: 30px;
   }
+  /* mobile index: full-width tappable list, no hover preview image */
+  .jo-index-list {
+    position: static;
+    left: auto;
+    right: auto;
+    top: auto;
+    margin: 0;
+    width: 100%;
+    padding: 190px var(--gutter) 90px var(--gutter);
+  }
+  .jo-index-image { display: none !important; }
+  .jo-index-row { margin-bottom: 1.4em; color: #000; }
+  .jo-index-venue { padding-left: 3em; }
 }
