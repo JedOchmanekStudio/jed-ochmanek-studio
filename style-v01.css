@@ -1109,12 +1109,24 @@ body.is-cv-open .jo-cv-page {
   .jo-pr-document .jo-pr-image figure + figure {
     margin-top: var(--gutter);
   }
+  /* the desktop "reserve" (an invisible Press Release link that holds
+     layout space) is dead weight on mobile — drop it so the gap under the
+     back arrow stays one uniform paragraph. `body` prefix outranks the
+     unscoped PR-META-HEIGHT-LOCK rule that forces it to display. */
+  body .jo-pr-document .jo-pr-meta .jo-pr-meta-reserve {
+    display: none !important;
+  }
   /* interleaved figures inside the text on mobile */
   .jo-pr-document .jo-pr-text figure {
     display: block;
     width: 100%;
     margin: 1em 0;             /* uniform one-paragraph gap */
     padding: 0;
+  }
+  /* the first image sits right under the meta block, which already supplies
+     its own one-paragraph margin-bottom — so don't double the gap */
+  .jo-pr-document .jo-pr-text figure:first-child {
+    margin-top: 0;
   }
   .jo-pr-document .jo-pr-text figure img {
     display: block;
@@ -2173,7 +2185,7 @@ body.is-index-open .jo-index-page {
 .jo-index-row {
   display: block;
   margin: 0 0 1em 0;       /* one blank return between entries */
-  padding: 0 0 0 3.4em;    /* hanging indent: every line sits at the title column */
+  padding: 0;
   color: var(--black-hover);
   font-family: aktiv-grotesk-thin, "Aktiv Grotesk Thin", aktiv-grotesk, Arial, sans-serif;
   font-size: var(--menu-size);
@@ -2187,10 +2199,12 @@ body.is-index-open .jo-index-page {
 }
 .jo-index-line {
   display: block;
-  text-indent: -3.4em;     /* pull the year back to the true left on the first line */
+  padding-left: 3.4em;     /* hanging indent: year sits in the negative-indent space, */
+  text-indent: -3.4em;     /* wrapped title lines hang at the 3.4em title column      */
 }
 .jo-index-venue {
-  display: block;          /* inherits the row's 3.4em indent — aligns under the title */
+  display: block;
+  padding-left: 3.4em;     /* venue + extra title lines align under the title */
 }
 .jo-index-year {
   display: inline-block;
