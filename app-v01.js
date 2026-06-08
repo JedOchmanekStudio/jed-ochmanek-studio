@@ -6,8 +6,6 @@
     document.documentElement.classList.remove('jo-fonts-loading');
   }, 1200);
 
-  try {
-
 
   function joReplaceNewsCvFromData() {
     if (!window.JO_NEWS_CV) return;
@@ -703,13 +701,14 @@
     // mobile: Title, year / Materials (flows, may wrap) / Dimensions —
     // three lines, never sharing. Middle breaks inside the materials
     // collapse so they fill the column evenly.
+    var capHtml = capText;
     if (isMobile()) {
       var capParts = capText.split(/<br\s*\/?>/i);
       if (capParts.length >= 3) {
-        capText = capParts[0] + '<br>' + capParts.slice(1, -1).join(' ') + '<br>' + capParts[capParts.length - 1];
+        capHtml = capParts[0] + '<br>' + capParts.slice(1, -1).join(' ') + '<br>' + capParts[capParts.length - 1];
       }
     }
-    caption.innerHTML = capText;
+    caption.innerHTML = capHtml;
   }
 
   function go(index) {
@@ -1441,16 +1440,4 @@
   }, 1500);
 
   setTone(sections[0]);
-  } catch (e) {
-    // TEMP DIAGNOSTIC: prints the real error (blue bar). Remove once fixed.
-    var bar = document.getElementById('joErrBar');
-    if (!bar) {
-      bar = document.createElement('div');
-      bar.id = 'joErrBar';
-      bar.style.cssText = 'position:fixed;left:0;right:0;bottom:0;z-index:99999;background:#06c;color:#fff;font:12px/1.4 monospace;padding:8px;white-space:pre-wrap;';
-      (document.body || document.documentElement).appendChild(bar);
-    }
-    var stk = (e && e.stack) ? String(e.stack).split('\n').slice(0, 3).join('  ||  ') : '';
-    bar.textContent = 'JO CAUGHT: ' + (e && e.message ? e.message : e) + '  ||  ' + stk;
-  }
 })();
