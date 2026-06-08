@@ -280,8 +280,9 @@
       '<div class="jo-office-content">' +
         '<div class="jo-office-row"><a href="mailto:jedochmanekstudio@gmail.com">Contact</a></div>' +
         '<div class="jo-office-row"><a href="https://www.instagram.com/jed_ochmanek_studio/" target="_blank" rel="noopener">Instagram</a></div>' +
-        '<form class="jo-office-row jo-subscribe-row" data-subscribe-form><input class="jo-office-field" data-subscribe-input type="email" placeholder="Subscribe" autocomplete="email" aria-label="Subscribe"><button type="submit" class="jo-subscribe-submit" data-subscribe-submit tabindex="-1">Submit</button></form>' +
+        '<form class="jo-office-row jo-subscribe-row" data-subscribe-form><input class="jo-office-field" data-subscribe-input type="email" placeholder="Subscribe" autocomplete="email" aria-label="Subscribe"></form>' +
         '<form class="jo-office-row" data-office-search-form><input class="jo-office-field" data-office-search type="text" placeholder="Search" autocomplete="off" aria-label="Search"></form>' +
+        '<button type="button" class="jo-office-row jo-subscribe-submit" data-subscribe-submit>Submit</button>' +
         '<div class="jo-office-results" data-office-results></div>' +
       '</div>';
     document.body.appendChild(page);
@@ -1335,18 +1336,18 @@
 
   // ---------- SUBSCRIBE (below the contact icons, behaves like Search) ----------
   // ---- Mailing list (Brevo) ----
-  // Paste your Brevo form's "serve" action URL here, e.g.
-  //   https://sibforms.com/serve/MUIFxxxxxxxxxxxxxxxx
-  // Brevo expects the email field to be named EMAIL.
-  var JO_SUBSCRIBE_ENDPOINT = '';
+  // Brevo signup form "serve" endpoint. Submissions land in the
+  // "Jed Ochmanek Studio Subscribers" list (single opt-in, no confirmation).
+  var JO_SUBSCRIBE_ENDPOINT = 'https://c47d7fed.sibforms.com/serve/MUIFAFV1AmqOWNc17v5x6Q7o1qNDE32qwKJs2oh0OBz6UWA1Ze_cgQDOXnmY6168xZjzkD98RCzgPAvenLn95x2DUkMn83C53MSsC3INuSQv4bdlUvN7BOxcgJVO9wnRB4PpHHeDiWLvwllxkYgNXfY_uzGrptnOhIq9iZSapGDMmAAzR7IxDwfpUUONuN5FF7OjaIIBoNznXe0vUA==';
   var JO_SUBSCRIBE_FIELD = 'EMAIL';
 
   // The Subscribe field lives in the Office page. Typing reveals a grey
-  // "Submit" to its right (same baseline as the menu); clicking it — or
-  // pressing Return — sends the address and flips "Submit" to "Thank you".
+  // "Submit" on its own line below the whole stack (after Search), evenly
+  // spaced like the search results. Clicking it — or pressing Return —
+  // sends the address and flips "Submit" to "Thank you".
   document.querySelectorAll('[data-subscribe-form]').forEach(function(form) {
     var input = form.querySelector('[data-subscribe-input]');
-    var submit = form.querySelector('[data-subscribe-submit]');
+    var submit = form.parentNode.querySelector('[data-subscribe-submit]');
     if (!input || !submit) return;
     var busy = false;
 
@@ -1357,8 +1358,7 @@
     input.addEventListener('input', sync);
     input.addEventListener('focus', sync);
 
-    form.addEventListener('submit', function(event) {
-      event.preventDefault();
+    function send() {
       var email = input.value.trim();
       if (!email || busy) return;
       busy = true;
@@ -1367,11 +1367,13 @@
         input.value = '';
         input.blur();
         submit.textContent = 'Thank you';
-        form.classList.add('is-typing', 'is-done');
+        form.classList.add('is-typing');
+        submit.classList.add('is-done');
         setTimeout(function() {
           busy = false;
           submit.textContent = 'Submit';
-          form.classList.remove('is-typing', 'is-done');
+          submit.classList.remove('is-done');
+          form.classList.remove('is-typing');
         }, 2500);
       }
 
@@ -1387,7 +1389,10 @@
       } else {
         done();
       }
-    });
+    }
+
+    form.addEventListener('submit', function(event) { event.preventDefault(); send(); });
+    submit.addEventListener('click', function(event) { event.preventDefault(); send(); });
 
     input.addEventListener('keydown', function(event) {
       if (event.key === 'Escape') {
