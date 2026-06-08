@@ -1,5 +1,10 @@
 (function () {
   document.documentElement.classList.add('jo-fonts-loading');
+  // FAILSAFE: registered first, so text can never stay hidden even if later
+  // code errors or the script parses slowly on mobile.
+  setTimeout(function () {
+    document.documentElement.classList.remove('jo-fonts-loading');
+  }, 1200);
 
   function joReplaceNewsCvFromData() {
     if (!window.JO_NEWS_CV) return;
