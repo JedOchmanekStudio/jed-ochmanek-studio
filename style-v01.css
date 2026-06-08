@@ -1942,27 +1942,20 @@ body.is-office-open .jo-office-page {
   color: var(--black-hover);
   opacity: 1;
 }
-/* Subscribe row: the field plus an inline "Submit" that appears to its
-   right (same baseline, same grey light type as the menu) once you type,
-   and flips to "Thank you" on send. */
-.jo-subscribe-row {
-  display: flex;
-  align-items: baseline;
-  gap: 1.5em;                      /* "one tab over to the right" */
-}
-.jo-subscribe-row .jo-office-field {
-  flex: 0 1 var(--menu-width);
-  width: var(--menu-width);
-}
+/* Subscribe: typing in the field reveals a grey light "Submit" on its own
+   line BELOW the whole stack (after Search), evenly spaced like the search
+   results — so a long address can never collide with it. It flips to
+   "Thank you" on send. Left-aligned, same menu type as every other row. */
 .jo-subscribe-submit {
   display: none;                   /* hidden until the field has text */
-  flex: 0 0 auto;
+  width: auto;
   margin: 0;
   padding: 0;
   border: 0;
   background: transparent;
   appearance: none;
   -webkit-appearance: none;
+  text-align: left;
   color: var(--black-hover);       /* link grey at rest */
   font-family: aktiv-grotesk-thin, "Aktiv Grotesk Thin", aktiv-grotesk, Arial, sans-serif;
   font-size: var(--menu-size);
@@ -1971,13 +1964,14 @@ body.is-office-open .jo-office-page {
   cursor: pointer;
   transition: color var(--transition) ease;
 }
-.jo-subscribe-row.is-typing .jo-subscribe-submit {
-  display: inline-block;
+.jo-subscribe-row.is-typing ~ .jo-subscribe-submit {
+  display: block;
 }
 .jo-subscribe-submit:hover {
   color: var(--black);
 }
-.jo-subscribe-row.is-done .jo-subscribe-submit {
+.jo-subscribe-submit.is-done,
+.jo-subscribe-submit.is-done:hover {
   color: var(--black-hover);
   cursor: default;
 }
@@ -1985,13 +1979,6 @@ body.is-office-open .jo-office-page {
   .jo-office-page {
     background: #fff !important;
     color: #000 !important;
-  }
-  /* on a phone let the field fill the row and the Submit sit at the far
-     right edge, still on the same baseline */
-  .jo-subscribe-row .jo-office-field {
-    flex: 1 1 auto;
-    width: auto;
-    min-width: 0;
   }
   .jo-office-content {
     position: relative;
