@@ -2,8 +2,8 @@ window.JO_SPLASH = [
   { "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a068f8eb7267d6f84c885b8_GATEFOLDS.jpg", "dark": 0 },
   { "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a25ee3b6409195f8d29105c_BLINDSPOT-5.jpg", "dark": 0 },
   { "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a260177297b7ffd244135b8_GATEFOLD%20DETAIL%203.jpg", "dark": 1 },
-  { "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a066e0c5c4376b0769eb0b5_SOLSTICE%20SOUNDING.jpg", "dark": 0 },
-  { "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a2600c31c846f28649c6bd3_GATEFOLD%20DETAIL%202.jpg", "dark": 0 }
+  { "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a066e0c5c4376b0769eb0b5_SOLSTICE%20SOUNDING.jpg", "dark": 0, "darkMobile": 1 },
+  { "url": "https://cdn.prod.website-files.com/6a062f1f41603d445ad81713/6a2600c31c846f28649c6bd3_GATEFOLD%20DETAIL%202.jpg", "dark": 0, "darkMobile": 1 }
 ];
 
 window.JO_PROJECTS = [
