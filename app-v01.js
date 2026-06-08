@@ -218,7 +218,9 @@
       : window.JO_SPLASH;
     var heroes = [];
     if (splashList && splashList.length) {
-      heroes = splashList.map(function(h) { return { url: h.url, dark: !!h.dark }; });
+      heroes = splashList.map(function(h) {
+        return { url: h.url, dark: !!h.dark, darkMobile: (h.darkMobile == null ? null : !!h.darkMobile) };
+      });
     } else {
       projects.forEach(function(p) { var u = firstImg(p); if (u) heroes.push({ url: u, dark: !!p.dark }); });
       heroes = heroes.slice(0, 6);
@@ -239,7 +241,11 @@
 
     var sidx = 0;
     var panes = splash.querySelectorAll('.jo-splash-pane');
-    function applyDark() { splash.classList.toggle('jo-splash-dark', !!heroes[sidx].dark); }
+    function applyDark() {
+      var h = heroes[sidx];
+      var dark = (isMobile() && h.darkMobile != null) ? h.darkMobile : h.dark;
+      splash.classList.toggle('jo-splash-dark', !!dark);
+    }
     applyDark();
     function show(n) {
       panes[sidx].classList.remove('active');
@@ -657,8 +663,16 @@
     const caption = section ? section.querySelector('.jo-caption') : null;
     if (!caption) return;
 
-    // mobile: let captions flow naturally instead of hard line breaks
-    caption.innerHTML = isMobile() ? capText.replace(/<br\s*\/?>/gi, ' ') : capText;
+    // mobile: Title, year / Materials (flows, may wrap) / Dimensions —
+    // three lines, never sharing. Middle breaks inside the materials
+    // collapse so they fill the column evenly.
+    if (isMobile()) {
+      var capParts = capText.split(/<br\s*\/?>/i);
+      if (capParts.length >= 3) {
+        capText = capParts[0] + '<br>' + capParts.slice(1, -1).join(' ') + '<br>' + capParts[capParts.length - 1];
+      }
+    }
+    caption.innerHTML = capText;
   }
 
   function go(index) {
