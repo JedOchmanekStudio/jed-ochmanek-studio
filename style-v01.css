@@ -3,7 +3,7 @@
    Full replacement CSS
 */
 :root {
-  --menu-size: 18px;
+  --menu-size: 21px;
   --body-size: 14px;
   --caption-size: 12px;
   --gutter: 54px;
@@ -294,15 +294,18 @@ body.is-cv-open .jo-nav a:hover {
 }
 .jo-document-link {
   display: block;
-  color: inherit;
+  color: var(--black-hover);          /* link: grey at rest */
   text-decoration: none;
   transition: color var(--transition) ease;
 }
 .jo-document-link:hover {
-  color: var(--black-hover);
+  color: var(--black);                /* link: black on hover */
+}
+.jo-dark .jo-document-link {
+  color: var(--white-hover);
 }
 .jo-dark .jo-document-link:hover {
-  color: var(--white-hover);
+  color: var(--white);
 }
 .jo-caption {
   position: absolute;
@@ -387,7 +390,7 @@ body.is-news-open .jo-news-page {
 .jo-news-entry,
 .jo-news-minor {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 480px);
   grid-template-areas: "text image";
   column-gap: var(--gutter);
   row-gap: 0;
@@ -633,7 +636,7 @@ body.is-pr-dark .jo-pr.open .jo-pr-text p {
   padding: 0;
 }
 .jo-pr-document .jo-pr-text a {
-  color: inherit;
+  color: var(--black-hover);          /* link: grey at rest */
   text-decoration: none;
   font-family: aktiv-grotesk-thin, "Aktiv Grotesk Thin", aktiv-grotesk, Arial, sans-serif;
   font-size: var(--body-size);
@@ -641,11 +644,15 @@ body.is-pr-dark .jo-pr.open .jo-pr-text p {
   transition: color var(--transition) ease;
 }
 .jo-pr-document .jo-pr-text a:hover {
-  color: var(--black-hover);
+  color: var(--black);                /* link: black on hover */
+}
+.jo-pr-document.jo-dark .jo-pr-text a,
+body.is-pr-dark .jo-pr-document .jo-pr-text a {
+  color: var(--white-hover);
 }
 .jo-pr-document.jo-dark .jo-pr-text a:hover,
 body.is-pr-dark .jo-pr-document .jo-pr-text a:hover {
-  color: var(--white-hover);
+  color: var(--white);
 }
 .jo-pr-document .jo-pr-image {
   position: relative;
@@ -842,7 +849,7 @@ body.is-cv-open .jo-cv-page {
     left: 0;
     right: 0;
     width: 100vw;
-    height: 148px;
+    height: 176px;
     padding: 30px var(--gutter) 0 var(--gutter);
     background: #fff;
     color: #000 !important;
@@ -879,7 +886,7 @@ body.is-cv-open .jo-cv-page {
     top: auto;
     width: 100vw;
     height: 47svh;
-    margin-top: 148px;
+    margin-top: 176px;
     flex: 0 0 100%;
     background: #fff;
     overflow: hidden;
@@ -1008,7 +1015,7 @@ body.is-cv-open .jo-cv-page {
     min-width: 0;
     margin-left: var(--gutter);
     margin-right: var(--gutter);
-    padding-top: 172px;
+    padding-top: 200px;
     padding-bottom: 120px;
   }
   .jo-news-entry,
@@ -1050,7 +1057,7 @@ body.is-cv-open .jo-cv-page {
   .jo-pr-text.jo-pr-wide {
     width: calc(100vw - 56px);
     margin-left: var(--gutter);
-    padding-top: 172px;
+    padding-top: 200px;
     padding-bottom: 120px;
     color: #000 !important;
     font-size: var(--body-size);
@@ -1065,7 +1072,7 @@ body.is-cv-open .jo-cv-page {
     width: calc(100vw - 56px);
     min-width: 0;
     margin-left: var(--gutter);
-    padding-top: 172px;
+    padding-top: 200px;
     padding-bottom: 120px;
   }
   .jo-pr-document .jo-pr-meta {
@@ -1196,7 +1203,7 @@ body.is-cv-open .jo-cv-page {
   .jo-cv-content {
     width: calc(100vw - 56px);
     margin-left: var(--gutter);
-    padding-top: 172px;
+    padding-top: 200px;
     padding-bottom: 120px;
     font-size: var(--body-size);
   }
@@ -1779,4 +1786,254 @@ html.jo-fonts-loading .jo-cv-page {
     order: 10;
     margin: 32px var(--gutter) 90px var(--gutter);
   }
+}
+/* =========================================================
+   SPLASH (front page) — full-bleed heroes, < > to page,
+   click the title to enter. Solid arrows, auto black/white.
+========================================================= */
+#joSplash {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: none;
+  background: #fff;
+}
+body.is-splash #joSplash {
+  display: block;
+}
+#joSplash .jo-splash-pane {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center center;
+  display: none;
+}
+#joSplash .jo-splash-pane.active {
+  display: block;
+}
+#joSplash .jo-splash-z {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  z-index: 5;
+}
+#joSplash .jo-splash-z.l { left: 0; }
+#joSplash .jo-splash-z.r { right: 0; }
+/* solid arrows — dark over light images */
+#joSplash .jo-splash-z.l {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M31 10 L17 24 L31 38' fill='none' stroke='black' stroke-width='1.05' stroke-linecap='square' stroke-linejoin='miter'/%3E%3C/svg%3E") 17 24, w-resize;
+}
+#joSplash .jo-splash-z.r {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M17 10 L31 24 L17 38' fill='none' stroke='black' stroke-width='1.05' stroke-linecap='square' stroke-linejoin='miter'/%3E%3C/svg%3E") 31 24, e-resize;
+}
+/* white arrows over dark images */
+#joSplash.jo-splash-dark .jo-splash-z.l {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M31 10 L17 24 L31 38' fill='none' stroke='white' stroke-width='1.05' stroke-linecap='square' stroke-linejoin='miter'/%3E%3C/svg%3E") 17 24, w-resize;
+}
+#joSplash.jo-splash-dark .jo-splash-z.r {
+  cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M17 10 L31 24 L17 38' fill='none' stroke='white' stroke-width='1.05' stroke-linecap='square' stroke-linejoin='miter'/%3E%3C/svg%3E") 31 24, e-resize;
+}
+#joSplash .jo-splash-title {
+  position: fixed;
+  top: 42px;
+  left: var(--gutter);
+  z-index: 10;
+  margin: 0;
+  padding: 0;
+  color: var(--black);
+  font-family: aktiv-grotesk, "Aktiv Grotesk", aktiv-grotesk-thin, "Aktiv Grotesk Thin", Arial, sans-serif;
+  font-weight: 300;
+  font-size: var(--menu-size);
+  line-height: normal;
+  text-decoration: none;
+  cursor: pointer;
+}
+#joSplash.jo-splash-dark .jo-splash-title {
+  color: var(--white);
+}
+/* =========================================================
+   OFFICE PAGE — Contact / Instagram / Subscribe / Search,
+   each row on the same baseline as its menu item.
+   Type matches the menu (size + weight + grey).
+========================================================= */
+.jo-office-page {
+  position: fixed;
+  inset: 0;
+  z-index: 600;
+  display: none;
+  overflow-y: auto;
+  background: #fff;
+  color: var(--black);
+}
+body.is-office-open .jo-office-page {
+  display: block;
+}
+.jo-office-content {
+  position: absolute;
+  left: var(--content-left);
+  top: 42px;            /* JS aligns this to the Archive row */
+  z-index: 20;
+}
+.jo-office-row,
+.jo-office-row a,
+.jo-office-field {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--black-hover);     /* link grey at rest */
+  font-family: aktiv-grotesk-thin, "Aktiv Grotesk Thin", aktiv-grotesk, Arial, sans-serif;
+  font-size: var(--menu-size);
+  font-weight: 200;
+  line-height: normal;
+  text-decoration: none;
+  letter-spacing: normal;
+  transition: color var(--transition) ease;
+}
+.jo-office-row a:hover {
+  color: var(--black);
+}
+.jo-office-field {
+  width: var(--menu-width);
+  outline: 0;
+  appearance: none;
+  -webkit-appearance: none;
+}
+.jo-office-field:focus {
+  color: var(--black);
+}
+.jo-office-field::placeholder {
+  color: var(--black-hover);
+  opacity: 1;
+}
+@media (max-width: 900px) {
+  .jo-office-page {
+    background: #fff !important;
+    color: #000 !important;
+  }
+  .jo-office-content {
+    position: relative;
+    left: auto;
+    top: auto;
+    margin-left: var(--gutter);
+    padding-top: 200px;
+  }
+  .jo-office-field {
+    width: calc(100vw - 56px);
+  }
+}
+/* =========================================================
+   FOLLOW-UP — remove email / Instagram logos everywhere,
+   title is a clickable div, Office live search results.
+========================================================= */
+.jo-utility-social {
+  display: none !important;
+}
+.jo-nav .jo-title {
+  cursor: pointer;
+}
+.jo-office-results {
+  /* sits directly under the Search line; native spacing only */
+}
+.jo-office-result {
+  display: block;
+  margin: 0;
+  padding: 0;
+  color: var(--black-hover);          /* link grey at rest */
+  font-family: aktiv-grotesk-thin, "Aktiv Grotesk Thin", aktiv-grotesk, Arial, sans-serif;
+  font-size: var(--menu-size);
+  font-weight: 200;
+  line-height: normal;
+  text-decoration: none;
+  transition: color var(--transition) ease;
+}
+.jo-office-result:hover {
+  color: var(--black);
+}
+/* =========================================================
+   INTERACTABLE TEXT — grey at rest, black on hover, for every
+   link. "Jed Ochmanek Studio" is the sole exception (solid at
+   rest, grey on hover). Loaded last so it wins.
+========================================================= */
+.jo-nav a { color: var(--black-hover); }
+.jo-nav a:hover { color: var(--black); }
+.jo-title { color: var(--black); }
+.jo-title:hover { color: var(--black-hover); }
+/* dark sections */
+body.is-dark .jo-nav a,
+body.is-pr-dark .jo-nav a { color: var(--white-hover); }
+body.is-dark .jo-nav a:hover,
+body.is-pr-dark .jo-nav a:hover { color: var(--white); }
+body.is-dark .jo-title,
+body.is-pr-dark .jo-title { color: var(--white); }
+body.is-dark .jo-title:hover,
+body.is-pr-dark .jo-title:hover { color: var(--white-hover); }
+/* News / CV overlays (light) */
+body.is-news-open .jo-nav a,
+body.is-cv-open .jo-nav a { color: var(--black-hover); }
+body.is-news-open .jo-nav a:hover,
+body.is-cv-open .jo-nav a:hover { color: var(--black); }
+body.is-news-open .jo-title,
+body.is-cv-open .jo-title { color: var(--black); }
+body.is-news-open .jo-title:hover,
+body.is-cv-open .jo-title:hover { color: var(--black-hover); }
+/* =========================================================
+   PR / INTERVIEW IMAGES — fixed inside the right border, one
+   at a time, no scrolling. Text scrolls on the left. (Desktop)
+========================================================= */
+@media (min-width: 901px) {
+  .jo-pr-document .jo-pr-document-wrap {
+    display: block;
+    width: calc(48vw - var(--content-left));
+    margin-left: var(--content-left);
+    margin-right: 0;
+  }
+  .jo-pr-document.jo-pr-no-image .jo-pr-document-wrap {
+    width: calc(100vw - var(--content-left) - var(--gutter));
+  }
+  .jo-pr-document .jo-pr-text,
+  .jo-pr-document .jo-pr-text.jo-pr-wide {
+    width: 100%;
+  }
+  .jo-pr-document .jo-pr-image {
+    position: fixed;
+    top: 42px;
+    bottom: 42px;
+    left: 52vw;
+    right: var(--gutter);
+    width: auto;
+    margin: 0;
+    z-index: 720;
+  }
+  .jo-pr-document .jo-pr-image figure {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;   /* top-aligned, like the text */
+  }
+  .jo-pr-document .jo-pr-image figure + figure { margin-top: 0; }
+  .jo-pr-document .jo-pr-image.jo-doc-multi figure { display: none; }
+  .jo-pr-document .jo-pr-image.jo-doc-multi figure.active { display: flex; }
+  .jo-pr-document .jo-pr-image figure img {
+    flex: 0 1 auto;
+    width: 100%;
+    height: auto;
+    max-height: calc(100% - 2.4em);
+    object-fit: contain;
+    object-position: right top;   /* top right, like the text is top left */
+  }
+  .jo-pr-document .jo-pr-image figure figcaption {
+    flex: 0 0 auto;
+    margin-top: 1em;
+  }
+}
+/* doc captions stay light (match body weight), never heavy */
+.jo-pr-document .jo-pr-image figcaption,
+body .jo-pr-document .jo-pr-image figcaption {
+  font-weight: 200 !important;
 }
