@@ -1502,6 +1502,9 @@ body.is-pr-open .jo-nav-vert,
 body.is-news-open .jo-nav-vert,
 body.is-cv-open .jo-nav-vert,
 body.is-search-open .jo-nav-vert,
+body.is-office-open .jo-nav-vert,
+body.is-index-open .jo-nav-vert,
+body.is-splash .jo-nav-vert,
 body.is-lightbox-open .jo-nav-vert {
   display: none;
 }
@@ -2036,4 +2039,146 @@ body.is-cv-open .jo-title:hover { color: var(--black-hover); }
 .jo-pr-document .jo-pr-image figcaption,
 body .jo-pr-document .jo-pr-image figcaption {
   font-weight: 200 !important;
+}
+/* =========================================================
+   SOCKETED VIDEO — true aspect (640 × 432) full-bleed cover.
+   jo-video-bl pins the lower-left corner, so the left edge
+   is never cropped.
+========================================================= */
+@media (min-width: 901px) {
+  .jo-slide.jo-video-socketed iframe {
+    width: 100vw !important;
+    height: 67.5vw !important;
+    min-width: 148.15svh !important;
+    min-height: 100svh !important;
+  }
+}
+@media (max-width: 900px) {
+  .jo-mode-full .jo-slide.jo-video-socketed iframe,
+  .jo-mode-right .jo-slide.jo-video-socketed iframe,
+  .jo-mode-protected .jo-slide.jo-video-socketed iframe {
+    height: 67.5vw !important;
+    min-width: calc(47svh * 1.4815) !important;
+    min-height: 47svh !important;
+  }
+}
+/* =========================================================
+   ARCHIVE INDEX — a hamburger under CV (archive view only)
+   toggles a list view: year + title in the Office format,
+   the hovered show's first image on the right in the
+   news-image format. The hamburger becomes an X when open.
+========================================================= */
+.jo-archive-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 15px;
+  height: 15px;
+  margin-top: 6px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--black-hover);
+  cursor: pointer;
+  transition: color var(--transition) ease;
+}
+.jo-archive-toggle:hover {
+  color: var(--black);
+}
+.jo-archive-toggle i {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transition: transform var(--transition) ease, opacity var(--transition) ease;
+}
+body.is-dark .jo-archive-toggle { color: var(--white-hover); }
+body.is-dark .jo-archive-toggle:hover { color: var(--white); }
+body.is-index-open .jo-archive-toggle { color: var(--black-hover); }
+body.is-index-open .jo-archive-toggle:hover { color: var(--black); }
+body.is-index-open .jo-archive-toggle i:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+body.is-index-open .jo-archive-toggle i:nth-child(2) { opacity: 0; }
+body.is-index-open .jo-archive-toggle i:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+/* hidden outside the archive universe — but it stays during PRs
+   and interviews, which belong to the archive */
+body.is-splash .jo-archive-toggle,
+body.is-news-open .jo-archive-toggle,
+body.is-cv-open .jo-archive-toggle,
+body.is-office-open .jo-archive-toggle,
+body.is-search-open .jo-archive-toggle {
+  display: none;
+}
+@media (max-width: 900px) {
+  .jo-archive-toggle { display: none !important; }
+}
+.jo-index-page {
+  position: fixed;
+  inset: 0;
+  z-index: 600;
+  display: none;
+  overflow-y: auto;
+  background: #fff;
+  color: var(--black);
+}
+body.is-index-open .jo-index-page {
+  display: block;
+}
+.jo-index-list {
+  position: absolute;
+  left: var(--content-left);
+  right: calc(var(--gutter) * 2 + min(480px, 34vw));   /* never run under the image */
+  top: 42px;               /* JS aligns this to the Archive row */
+  z-index: 20;
+  padding-bottom: 120px;
+}
+.jo-index-row {
+  display: block;
+  margin: 0 0 1em 0;       /* one blank return between entries */
+  padding: 0;
+  color: var(--black-hover);
+  font-family: aktiv-grotesk-thin, "Aktiv Grotesk Thin", aktiv-grotesk, Arial, sans-serif;
+  font-size: var(--menu-size);
+  font-weight: 200;
+  line-height: normal;
+  text-decoration: none;
+  transition: color var(--transition) ease;
+}
+.jo-index-row:hover {
+  color: var(--black);
+}
+.jo-index-line {
+  display: block;
+}
+.jo-index-venue {
+  display: block;
+  padding-left: 3.4em;     /* aligns under the title, past the year column */
+}
+.jo-index-year {
+  display: inline-block;
+  width: 3.4em;
+}
+.jo-index-image {
+  position: fixed;
+  top: 42px;               /* JS aligns */
+  right: var(--gutter);
+  width: min(480px, 34vw);
+  z-index: 20;
+  cursor: pointer;
+}
+.jo-index-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: calc(100svh - 84px);
+  object-fit: contain;
+  object-position: left top;
+}
+/* =========================================================
+   MOBILE — caption column starts at the venue line, not the
+   exhibition-title line.
+========================================================= */
+@media (max-width: 900px) {
+  .jo-caption {
+    margin-top: 55px;
+  }
 }
