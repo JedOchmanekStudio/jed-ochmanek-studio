@@ -280,7 +280,7 @@
       '<div class="jo-office-content">' +
         '<div class="jo-office-row"><a href="mailto:jedochmanekstudio@gmail.com">Contact</a></div>' +
         '<div class="jo-office-row"><a href="https://www.instagram.com/jed_ochmanek_studio/" target="_blank" rel="noopener">Instagram</a></div>' +
-        '<form class="jo-office-row" data-subscribe-form><input class="jo-office-field" data-subscribe-input type="email" placeholder="Subscribe" autocomplete="email" aria-label="Subscribe"></form>' +
+        '<form class="jo-office-row jo-subscribe-row" data-subscribe-form><input class="jo-office-field" data-subscribe-input type="email" placeholder="Subscribe" autocomplete="email" aria-label="Subscribe"><button type="submit" class="jo-subscribe-submit" data-subscribe-submit tabindex="-1">Submit</button></form>' +
         '<form class="jo-office-row" data-office-search-form><input class="jo-office-field" data-office-search type="text" placeholder="Search" autocomplete="off" aria-label="Search"></form>' +
         '<div class="jo-office-results" data-office-results></div>' +
       '</div>';
@@ -320,7 +320,7 @@
           var lines = project.indexLines || project.title || [];
           var metaLines = project.meta || [];
           var venue = metaLines.length > 1 ? metaLines[0] : '';   /* venue only, no city */
-          var html = '<span class="jo-index-line"><span class="jo-index-year">' + yearOf(project) + '</span>' + (lines[0] || '') + '</span>';
+          var html = '<span class="jo-index-line"><span class="jo-index-year">' + yearOf(project) + '</span><span class="jo-index-title">' + (lines[0] || '') + '</span></span>';
           lines.slice(1).forEach(function(line) {
             html += '<span class="jo-index-venue">' + line + '</span>';
           });
@@ -1334,66 +1334,71 @@
   joUtilBack.addEventListener('click', function() { closeUtility(); });
 
   // ---------- SUBSCRIBE (below the contact icons, behaves like Search) ----------
-  var JO_SUBSCRIBE_ENDPOINT = ''; // set to your mailing-list form-action URL to capture addresses
-  // Subscribe now lives inside the Office page (built above); the handlers below bind to it.
+  // ---- Mailing list (Brevo) ----
+  // Paste your Brevo form's "serve" action URL here, e.g.
+  //   https://sibforms.com/serve/MUIFxxxxxxxxxxxxxxxx
+  // Brevo expects the email field to be named EMAIL.
+  var JO_SUBSCRIBE_ENDPOINT = '';
+  var JO_SUBSCRIBE_FIELD = 'EMAIL';
 
-  document.querySelectorAll('[data-subscribe-open]').forEach(function(link) {
-    link.addEventListener('click', function(event) {
-      event.preventDefault();
-      var contact = link.closest('.jo-subscribe-row');
-      if (!contact) return;
-      contact.classList.add('is-subscribe-open');
-      var input = contact.querySelector('[data-subscribe-input]');
-      if (input) input.focus();
-    });
-  });
-
+  // The Subscribe field lives in the Office page. Typing reveals a grey
+  // "Submit" to its right (same baseline as the menu); clicking it — or
+  // pressing Return — sends the address and flips "Submit" to "Thank you".
   document.querySelectorAll('[data-subscribe-form]').forEach(function(form) {
+    var input = form.querySelector('[data-subscribe-input]');
+    var submit = form.querySelector('[data-subscribe-submit]');
+    if (!input || !submit) return;
+    var busy = false;
+
+    function sync() {
+      if (busy) return;
+      form.classList.toggle('is-typing', !!input.value.trim());
+    }
+    input.addEventListener('input', sync);
+    input.addEventListener('focus', sync);
+
     form.addEventListener('submit', function(event) {
       event.preventDefault();
-      var input = form.querySelector('[data-subscribe-input]');
-      var email = input ? input.value.trim() : '';
-      if (!email) return;
-      var contact = form.closest('.jo-subscribe-row');
-      var link = contact ? contact.querySelector('.jo-subscribe-link') : null;
+      var email = input.value.trim();
+      if (!email || busy) return;
+      busy = true;
 
       function done() {
-        if (input) input.value = '';
-        if (contact) contact.classList.remove('is-subscribe-open');
-        if (link) {
-          link.textContent = 'Thank you';
-          setTimeout(function() { link.textContent = 'Subscribe'; }, 2500);
-        }
+        input.value = '';
+        input.blur();
+        submit.textContent = 'Thank you';
+        form.classList.add('is-typing', 'is-done');
+        setTimeout(function() {
+          busy = false;
+          submit.textContent = 'Submit';
+          form.classList.remove('is-typing', 'is-done');
+        }, 2500);
       }
 
       if (JO_SUBSCRIBE_ENDPOINT) {
+        var body = JO_SUBSCRIBE_FIELD + '=' + encodeURIComponent(email) +
+                   '&email_address_check=&locale=en';
         fetch(JO_SUBSCRIBE_ENDPOINT, {
           method: 'POST',
           mode: 'no-cors',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: 'email=' + encodeURIComponent(email)
+          body: body
         }).then(done).catch(done);
       } else {
         done();
       }
     });
-  });
 
-  document.querySelectorAll('[data-subscribe-input]').forEach(function(input) {
     input.addEventListener('keydown', function(event) {
       if (event.key === 'Escape') {
-        event.preventDefault();
-        var contact = input.closest('.jo-subscribe-row');
-        if (contact) contact.classList.remove('is-subscribe-open');
         input.value = '';
+        form.classList.remove('is-typing');
         input.blur();
       }
     });
-    // Click out with no text: collapse back to the "Subscribe" link.
     input.addEventListener('blur', function() {
-      if (input.value.trim()) return;
-      var contact = input.closest('.jo-subscribe-row');
-      if (contact) contact.classList.remove('is-subscribe-open');
+      if (busy) return;
+      if (!input.value.trim()) form.classList.remove('is-typing');
     });
   });
 
