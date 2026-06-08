@@ -410,11 +410,29 @@
   function joOpenOffice() {
     closeLightbox();
     closePR(false);
-    document.body.classList.remove('is-news-open', 'is-cv-open', 'is-search-open', 'is-dark', 'is-pr-dark', 'is-slide-meta-white', 'is-slide-all-white');
+    document.body.classList.remove('is-news-open', 'is-cv-open', 'is-index-open', 'is-search-open', 'is-dark', 'is-pr-dark', 'is-slide-meta-white', 'is-slide-all-white');
     document.body.classList.add('is-office-open');
     joAlignOffice();
     var page = document.getElementById('joOfficePage');
     if (page) page.scrollTop = 0;
+  }
+
+  // News / CV opened through the same proven path as Office.
+  function joOpenUtility(which) {
+    closeLightbox();
+    closePR(false);
+    document.body.classList.remove('is-office-open', 'is-index-open', 'is-search-open', 'is-splash', 'is-dark', 'is-pr-dark', 'is-slide-meta-white', 'is-slide-all-white');
+    if (which === 'cv') {
+      document.body.classList.remove('is-news-open');
+      document.body.classList.add('is-cv-open');
+      var cv = document.getElementById('joCvPage');
+      if (cv) cv.scrollTop = 0;
+    } else {
+      document.body.classList.remove('is-cv-open');
+      document.body.classList.add('is-news-open');
+      var news = document.getElementById('joNewsPage');
+      if (news) news.scrollTop = 0;
+    }
   }
 
   // ---------- NAV CLICK ROUTING (Archive / Office / Splash) ----------
@@ -454,7 +472,18 @@
         return;
       }
 
-      // News / CV: handled by their own [data-*] handlers; just leave splash
+      if (link.hasAttribute('data-news-open')) {
+        event.preventDefault();
+        joOpenUtility('news');
+        return;
+      }
+
+      if (link.hasAttribute('data-cv-open')) {
+        event.preventDefault();
+        joOpenUtility('cv');
+        return;
+      }
+
       document.body.classList.remove('is-splash');
     });
   })();
@@ -652,7 +681,7 @@
   }
 
   function closeUtility() {
-    document.body.classList.remove('is-news-open', 'is-cv-open', 'is-search-open');
+    document.body.classList.remove('is-news-open', 'is-cv-open', 'is-search-open', 'is-office-open', 'is-index-open');
     setTone(sections[activeIndex]);
   }
 
