@@ -205,8 +205,8 @@
     nav.innerHTML =
       '<div class="jo-title" data-splash>Jed Ochmanek Studio</div>' +
       '<div class="jo-spacer"></div>' +
-      '<a href="#" data-archive>Archive</a>' +
-      '<a href="#" data-office-open>Office</a>' +
+      '<a href="#" data-archive>Work</a>' +
+      '<a href="#" data-office-open>About</a>' +
       '<a href="#" data-news-open>News</a>' +
       '<a href="#" data-cv-open>CV</a>' +
       '<div class="jo-archive-toggle" data-index-toggle role="button" aria-label="Index"><i></i><i></i><i></i></div>';
