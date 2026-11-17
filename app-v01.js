@@ -1,5 +1,20 @@
 (function () {
   document.documentElement.classList.add('jo-fonts-loading');
+  // Webflow's page carries no language; screen readers and translation
+  // tools rely on it. Set only if Webflow hasn't.
+  if (!document.documentElement.getAttribute('lang')) document.documentElement.setAttribute('lang', 'en');
+  // The first homepage image is a CSS background, which the browser finds
+  // late; a high-priority preload moves it ahead of the other images.
+  (function joPreloadFirstSplash() {
+    var list = window.JO_SPLASH || [];
+    if (!list.length || !list[0].url) return;
+    var l = document.createElement('link');
+    l.rel = 'preload';
+    l.as = 'image';
+    l.href = list[0].url;
+    l.setAttribute('fetchpriority', 'high');
+    document.head.appendChild(l);
+  })();
   // FAILSAFE: registered first, so text can never stay hidden even if later
   // code errors or the script parses slowly on mobile.
   setTimeout(function () {
@@ -101,7 +116,8 @@
       var lazy = index === 0 ? '' : ' loading="lazy"';
 
       if (slide.video) {
-        return '<div class="jo-slide' + active + cls + '" data-slide data-caption="' + cap + '"' + tone + '><iframe data-src="' + slide.url + '" allow="autoplay; fullscreen; picture-in-picture" frameborder="0"></iframe></div>';
+        var vtitle = joEscapeAttr(String(slide.cap || '').replace(/<br\s*\/?>/gi, ', ').replace(/<[^>]*>/g, '').replace(/&quot;/g, '"').replace(/\s+/g, ' ').trim() || 'Video');
+        return '<div class="jo-slide' + active + cls + '" data-slide data-caption="' + cap + '"' + tone + '><iframe data-src="' + slide.url + '" title="' + vtitle + '" allow="autoplay; fullscreen; picture-in-picture" frameborder="0"></iframe></div>';
       }
 
       return '<div class="jo-slide' + active + cls + '" data-slide data-caption="' + cap + '"' + tone + '><img src="' + slide.url + '" alt="" decoding="async"' + lazy + '></div>';
@@ -205,8 +221,8 @@
     nav.innerHTML =
       '<div class="jo-title" data-splash>Jed Ochmanek Studio</div>' +
       '<div class="jo-spacer"></div>' +
-      '<a href="#" data-archive>Archive</a>' +
-      '<a href="#" data-office-open>Office</a>' +
+      '<a href="#" data-archive>Work</a>' +
+      '<a href="#" data-office-open>About</a>' +
       '<a href="#" data-news-open>News</a>' +
       '<a href="#" data-cv-open>CV</a>' +
       '<div class="jo-archive-toggle" data-index-toggle role="button" aria-label="Index"><i></i><i></i><i></i></div>';
@@ -628,9 +644,20 @@
       slide.style.display = index === 0 ? 'block' : 'none';
     });
 
-    joActivateVideo(slides[0]);
     updateCaption(name);
   });
+
+  // Video players start only for the section on screen and the one either
+  // side of it, so a section's video is already running when it is reached
+  // but the homepage does not download every player up front.
+  function joActivateNear(index) {
+    for (var i = index - 1; i <= index + 1; i++) {
+      var section = sections[i];
+      var galleryEl = section && section.querySelector('[data-gallery]');
+      var data = galleryEl && galleries[galleryEl.dataset.gallery];
+      if (data && data.slides.length) joActivateVideo(data.slides[data.index]);
+    }
+  }
 
   function isMobile() {
     return window.matchMedia('(max-width: 900px)').matches;
@@ -728,6 +755,7 @@
     stage.style.transform = joStageTransform();
     setTone(sections[activeIndex]);
     joUpdateVertZones();
+    joActivateNear(activeIndex);
 
     setTimeout(function() {
       locked = false;
@@ -1452,4 +1480,5 @@
   }, 1500);
 
   setTone(sections[0]);
+  if (!document.body.classList.contains('is-splash')) joActivateNear(0);
 })();
