@@ -1,5 +1,8 @@
 (function () {
   document.documentElement.classList.add('jo-fonts-loading');
+  // Webflow's page carries no language; screen readers and translation
+  // tools rely on it. Set only if Webflow hasn't.
+  if (!document.documentElement.getAttribute('lang')) document.documentElement.setAttribute('lang', 'en');
   // The first homepage image is a CSS background, which the browser finds
   // late; a high-priority preload moves it ahead of the other images.
   (function joPreloadFirstSplash() {
